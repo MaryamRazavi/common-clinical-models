@@ -1,0 +1,91 @@
+guidelines:
+  1: Pediatric_Respiratory_Assessment_Measure_PRAM_for_Asthma_Exacerbation_Severity_guideline.v1
+test_cases:
+- id: Score 0 and Mild Asthma
+  input:
+    1:
+      gt0003|O₂ saturation: 0|local::at0005|≥ 95%|
+      gt0004|Suprasternal retractions present: 0|local::at0009|No|
+      gt0005|Scalene muscle contractions present: 0|local::at0012|No|
+      gt0006|Air entry: 0|local::at0015|Normal|
+      gt0007|Wheezing: 0|local::at0020|Absent|
+  expected_output:
+    1:
+      gt0009|Score: 0
+      gt0011|Asthma Severity: local::at0003|Mild|
+
+- id: Score 3 and Mild Asthma
+  input:
+    1:
+      gt0003|O₂ saturation: 1|local::at0006|92-94%|
+      gt0004|Suprasternal retractions present: 2|local::at0010|Yes|
+      gt0005|Scalene muscle contractions present: 0|local::at0012|No|
+      gt0006|Air entry: 0|local::at0015|Normal|
+      gt0007|Wheezing: 0|local::at0020|Absent|
+  expected_output:
+    1:
+      gt0009|Score: 3
+      gt0011|Asthma Severity: local::at0003|Mild|
+
+- id: Score 4 and Moderate Asthma
+  input:
+    1:
+      gt0003|O₂ saturation: 1|local::at0006|92-94%|
+      gt0004|Suprasternal retractions present: 2|local::at0010|Yes|
+      gt0005|Scalene muscle contractions present: 0|local::at0012|No|
+      gt0006|Air entry: 1|local::at0016|Decreased at the base|
+      gt0007|Wheezing: 0|local::at0020|Absent|
+  expected_output:
+    1:
+      gt0009|Score: 4
+      gt0011|Asthma Severity: local::at0004|Moderate |
+
+
+
+- id: Score 7 and Moderate Asthma
+  input:
+    1:
+      gt0003|O₂ saturation: 1|local::at0006|92-94%|
+      gt0004|Suprasternal retractions present: 2|local::at0010|Yes|
+      gt0005|Scalene muscle contractions present: 2|local::at0013|Yes|
+      gt0006|Air entry: 1|local::at0016|Decreased at the base|
+      gt0007|Wheezing: 1|local::at0021|Expiratory only|
+  expected_output:
+    1:
+      gt0009|Score: 7
+      gt0011|Asthma Severity: local::at0004|Moderate |
+
+- id: Score 8 and Severe Asthma
+  input:
+    1:
+      gt0003|O₂ saturation: 1|local::at0006|92-94%|
+      gt0004|Suprasternal retractions present: 2|local::at0010|Yes|
+      gt0005|Scalene muscle contractions present: 2|local::at0013|Yes|
+      gt0006|Air entry: 1|local::at0016|Decreased at the base|
+      gt0007|Wheezing: 2|local::at0022|Inspiratory (± expiratory)|
+  expected_output:
+    1:
+      gt0009|Score: 8
+      gt0011|Asthma Severity: local::at0005|Severe|
+
+- id: Score 12 and Severe Asthma
+  input:
+    1:
+      gt0003|O₂ saturation: 2|local::at0007|< 92%|
+      gt0004|Suprasternal retractions present: 2|local::at0010|Yes|
+      gt0005|Scalene muscle contractions present: 2|local::at0013|Yes|
+      gt0006|Air entry: 3|local::at0018|Minimal or absent|
+      gt0007|Wheezing: 3|local::at0023|Audible without stethoscope or silent chest\
+        \ (minimal or no air entry)|
+  expected_output:
+    1:
+      gt0009|Score: 12
+      gt0011|Asthma Severity: local::at0005|Severe|
+
+
+
+
+
+
+
+
