@@ -7,77 +7,78 @@
   },
   "description": {
     "original_author": {
-      "date": "2020-04-15",
+      "date": "2020-04-16",
       "name": "Maryam Razavi",
       "organisation": "CambioCDS",
       "email": "maryam.razavi2009@gmail.com"
     },
-    "lifecycle_state": "Author draft",
+    "lifecycle_state": "Not set",
     "details": {
       "en": {
         "id": "en",
-        "purpose": "The Pediatric Respiratory Assessment Measure (PRAM) can predict likelihood of admission or extended ED stay.This score can help decide which patients need admission, especially when providers disagree or the patient may be “borderline” for needing admission.",
+        "purpose": " This score can help decide which patients need admission, especially when providers disagree or the patient may be “borderline” for needing admission.",
         "keywords": [
-          "Pediatric",
-          "Respiratory",
-          "Asthma",
-          "Exacerbation"
+          "Pediatric ",
+          "Respiratory ",
+          "Asthma ",
+          "Exacerbation ",
+          "Severity"
         ],
-        "use": "The PRAM has been used in patients 3-17 years old and works best to evaluate improvement of symptoms pre- and post-treatment.\nFormula: Addition of selected points.\nScore interpretation:\n0-3: Mild\n4-7: Moderate\n8-12: Severe",
-        "misuse": "Pediatric Respiratory Assessment Measure (PRAM) for Asthma Exacerbation Severity can not be used in pediatrics younger than 3 years old and older than 17. \nThe PRAM is not typically used in severe asthma exacerbations, as these obviously require very aggressive, intensive treatment (including admission).",
+        "use": "The PRAM has been used in pediatric patients 3-17 years old with asthma exacerbations and works best to evaluate improvement of symptoms pre- and post-treatment.\nFORMULA\nAddition of selected points.\n\nScore interpretation:\n\nScore 0-3: Asthma Severity is Mild\nScore 4-7: Asthma Severity is\tModerate\nScore 8-12: Asthma Severity is Severe",
+        "misuse": "The PRAM can not be used in patients 3-17 years old. The PRAM is not typically used in severe asthma exacerbations, as these obviously require very aggressive, intensive treatment (including admission).",
         "copyright": "@CambioCDS"
       }
     },
     "other_details": {
-      "references": "Chalut DS, Ducharme FM, Davis GM. The Preschool Respiratory Assessment Measure (PRAM): a responsive index of acute asthma severity. The Journal of pediatrics. 2000 Dec 1;137(6):762-8.\nDucharme FM, Chalut D, Plotnick L, Savdie C, Kudirka D, Zhang X, Meng L, McGillivray D. The Pediatric Respiratory Assessment Measure: a valid clinical score for assessing acute asthma severity from toddlers to teenagers. The Journal of pediatrics. 2008 Apr 1;152(4):476-80."
+      "references": "Chalut DS, Ducharme FM, Davis GM. The Preschool Respiratory Assessment Measure (PRAM): a responsive index of acute asthma severity. The Journal of pediatrics. 2000 Dec 1;137(6):762-8.\n\nDucharme FM, Chalut D, Plotnick L, Savdie C, Kudirka D, Zhang X, Meng L, McGillivray D. The Pediatric Respiratory Assessment Measure: a valid clinical score for assessing acute asthma severity from toddlers to teenagers. The Journal of pediatrics. 2008 Apr 1;152(4):476-80."
     }
   },
   "definition": {
     "data_bindings": {
       "gt0002": {
         "id": "gt0002",
-        "model_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v1",
-        "template_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v1",
+        "model_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v0",
         "type": "INPUT",
         "elements": {
-          "gt0003": {
-            "id": "gt0003",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
-          },
-          "gt0004": {
-            "id": "gt0004",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0008]"
-          },
           "gt0005": {
             "id": "gt0005",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
           },
           "gt0006": {
             "id": "gt0006",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0014]"
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0008]"
           },
           "gt0007": {
             "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0014]"
+          },
+          "gt0009": {
+            "id": "gt0009",
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0019]"
           }
         }
       },
-      "gt0008": {
-        "id": "gt0008",
-        "model_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v1",
-        "template_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v1",
+      "gt0003": {
+        "id": "gt0003",
+        "model_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v0",
         "type": "OUTPUT",
         "elements": {
-          "gt0009": {
-            "id": "gt0009",
+          "gt0004": {
+            "id": "gt0004",
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0024]"
           }
         }
       },
       "gt0010": {
         "id": "gt0010",
-        "model_id": "openEHR-EHR-EVALUATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v1",
-        "template_id": "openEHR-EHR-EVALUATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v1",
+        "model_id": "openEHR-EHR-EVALUATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v0",
+        "template_id": "openEHR-EHR-EVALUATION.pediatric_respiratory_assessment_measure_pram_for_asthma_exacerbation_severity.v0",
         "type": "OUTPUT",
         "elements": {
           "gt0011": {
@@ -92,22 +93,22 @@
         "id": "gt0012",
         "priority": 4,
         "when": [
-          "$gt0003|O₂ saturation|!=null",
-          "$gt0004|Suprasternal retractions present|!=null",
-          "$gt0005|Scalene muscle contractions present|!=null",
-          "$gt0006|Air entry|!=null",
-          "$gt0007|Wheezing|!=null"
+          "$gt0005|O₂ saturation|!=null",
+          "$gt0006|Suprasternal retractions present|!=null",
+          "$gt0007|Scalene muscle contractions present|!=null",
+          "$gt0008|Air entry|!=null",
+          "$gt0009|Wheezing|!=null"
         ],
         "then": [
-          "$gt0009|Score|.magnitude=$gt0003.value+$gt0004.value+$gt0005.value+$gt0006.value+$gt0007.value"
+          "$gt0004|Score|.magnitude=$gt0005.value+$gt0006.value+$gt0007.value+$gt0008.value+$gt0009.value"
         ]
       },
       "gt0013": {
         "id": "gt0013",
         "priority": 3,
         "when": [
-          "$gt0009|Score|>=0",
-          "$gt0009|Score|<=3"
+          "$gt0004|Score|>=0",
+          "$gt0004|Score|<=3"
         ],
         "then": [
           "$gt0011|Asthma Severity|=local::at0003|Mild|"
@@ -117,19 +118,19 @@
         "id": "gt0014",
         "priority": 2,
         "when": [
-          "$gt0009|Score|>=4",
-          "$gt0009|Score|<=7"
+          "$gt0004|Score|>=4",
+          "$gt0004|Score|<=7"
         ],
         "then": [
-          "$gt0011|Asthma Severity|=local::at0004|Moderate |"
+          "$gt0011|Asthma Severity|=local::at0004|Moderate|"
         ]
       },
       "gt0015": {
         "id": "gt0015",
         "priority": 1,
         "when": [
-          "$gt0009|Score|>=8",
-          "$gt0009|Score|<=12"
+          "$gt0004|Score|>=8",
+          "$gt0004|Score|<=12"
         ],
         "then": [
           "$gt0011|Asthma Severity|=local::at0005|Severe|"
@@ -145,37 +146,37 @@
           "gt0001": {
             "id": "gt0001",
             "text": "Pediatric Respiratory Assessment Measure (PRAM) for Asthma Exacerbation Severity",
-            "description": "Pediatric Respiratory Assessment Measure (PRAM) for Asthma Exacerbation Severity measures severity of airway obstruction in pediatric patients using clinical observations.\n"
-          },
-          "gt0003": {
-            "id": "gt0003",
-            "text": "O₂ saturation",
-            "description": "*"
+            "description": "The PRAM provides an objective assessment of asthma exacerbation severity and can predict likelihood of admission or extended ED stay."
           },
           "gt0004": {
             "id": "gt0004",
-            "text": "Suprasternal retractions present",
+            "text": "Score",
             "description": "*"
           },
           "gt0005": {
             "id": "gt0005",
-            "text": "Scalene muscle contractions present",
-            "description": "*"
+            "text": "O₂ saturation",
+            "description": "Oxygen saturation is the fraction of oxygen-saturated hemoglobin relative to total hemoglobin (unsaturated + saturated) in the blood."
           },
           "gt0006": {
             "id": "gt0006",
-            "text": "Air entry",
-            "description": "If asymmetry, use the most severely affected lung field."
+            "text": "Suprasternal retractions present",
+            "description": "Suprasternal retractions: When the skin in the middle of your neck sucks in."
           },
           "gt0007": {
             "id": "gt0007",
-            "text": "Wheezing",
-            "description": "If asymmetry, use the two most severely affected auscultation zones."
+            "text": "Scalene muscle contractions present",
+            "description": "The scalene muscles are a group of three pairs of muscles in the lateral neck, namely the anterior scalene, middle scalene, and posterior scalene. Contraction is a process leading to shortening and/or development of tension in muscle tissue."
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Air entry",
+            "description": "If asymmetry, use the most severely affected lung field."
           },
           "gt0009": {
             "id": "gt0009",
-            "text": "Score",
-            "description": "*"
+            "text": "Wheezing",
+            "description": "A wheeze is a high-pitched, musical, adventitious lung sound produced by airflow through an abnormally narrowed or compressed airway(s). If asymmetry, use the two most severely affected auscultation zones."
           },
           "gt0011": {
             "id": "gt0011",
@@ -184,7 +185,7 @@
           },
           "gt0012": {
             "id": "gt0012",
-            "text": "score"
+            "text": "Score"
           },
           "gt0013": {
             "id": "gt0013",
