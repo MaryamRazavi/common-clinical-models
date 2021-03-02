@@ -16,11 +16,11 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record the managment of a patient based on the result of the ACC/AHA Heart Failure Staging. ">
-			use = <"Management of patients based on 4 stages of Heart Failure: 
+			use = <"Management of patients based on 4 stages of Heart Failure:
 
-Stage A identifies the patient who is at high risk for developing HF but has no structural disorder of the heart; 
+Stage A identifies the patient who is at high risk for developing HF but has no structural disorder of the heart;
 
-Stage B refers to a patient with a structural disorder of the heart but who has never developed symptoms of HF; 
+Stage B refers to a patient with a structural disorder of the heart but who has never developed symptoms of HF;
 
 Stage C denotes the patient with past or current symptoms of HF associated with underlying structural heart disease;
 
