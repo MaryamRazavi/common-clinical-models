@@ -14,6 +14,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 0
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0004|Unlikely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 1,%
 
 - id: penetrating_trauma(-),systolic(-),rate(-),result(+)
   input:
@@ -28,6 +30,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 1
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0004|Unlikely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 10,%
 
 - id: penetrating_trauma(-),systolic(-),rate(+),result(-)
   input:
@@ -42,6 +46,8 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 1
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0004|Unlikely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 10,%
 
 - id: penetrating_trauma(-),systolic(-),rate(+),result(+)
   input:
@@ -56,6 +62,8 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 2
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 41,%
 
 - id: penetrating_trauma(-),systolic(+),rate(-),result(-)
   input:
@@ -70,6 +78,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 1
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0004|Unlikely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 10,%
 
 - id: penetrating_trauma(-),systolic(+),rate(-),result(+)
   input:
@@ -84,6 +94,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 2
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 41,%
 
 - id: penetrating_trauma(-),systolic(+),rate(+),result(-)
   input:
@@ -98,6 +110,8 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 2
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 41,%
 
 - id: penetrating_trauma(-),systolic(+),rate(+),result(+)
   input:
@@ -112,6 +126,8 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 3
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 48,%
 
 - id: penetrating_trauma(+),systolic(-),rate(-),result(-)
   input:
@@ -126,6 +142,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 1
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0004|Unlikely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 10,%
 
 - id: penetrating_trauma(+),systolic(-),rate(-),result(+)
   input:
@@ -140,6 +158,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 2
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 41,%
 
 - id: penetrating_trauma(+),systolic(-),rate(+),result(-)
   input:
@@ -154,6 +174,8 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 2
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 41,%
 
 - id: penetrating_trauma(+),systolic(-),rate(+),result(+)
   input:
@@ -168,6 +190,8 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 3
       gt0012|Systolic blood pressure (SBP): 0|local::at0008|>90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 48,%
 
 - id: penetrating_trauma(+),systolic(+),rate(-),result(-)
   input:
@@ -182,6 +206,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 2
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 41,%
 
 - id: penetrating_trauma(+),systolic(+),rate(-),result(+)
   input:
@@ -196,6 +222,8 @@ test_cases:
       gt0013|Heart rate: 0|local::at0011|<120 /min|
       gt0032|Total score: 3
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 48,%
 
 - id: penetrating_trauma(+),systolic(+),rate(+),result(-)
   input:
@@ -210,6 +238,8 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 3
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0005|Likely to require massive transfusion|
+      gt0039|Probability of massive transfusion: 48,%
 
 - id: penetrating_trauma(+),systolic(+),rate(+),result(+)
   input:
@@ -224,3 +254,5 @@ test_cases:
       gt0013|Heart rate: 1|local::at0012|≥120 /min|
       gt0032|Total score: 4
       gt0012|Systolic blood pressure (SBP): 1|local::at0009|≤90 mmHg|
+      gt0038|Massive transfusion assessment: local::at0006|Highly likely to receive massive transfusion|
+      gt0039|Probability of massive transfusion: 100,%

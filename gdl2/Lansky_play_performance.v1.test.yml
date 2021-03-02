@@ -8,6 +8,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 0
+      gt0011|Play Performance Scale: 2|local::at0005|Moderate restriction|
 
 - id: case_2:Score=10
   input:
@@ -16,6 +17,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 10
+      gt0011|Play Performance Scale: 2|local::at0005|Moderate restriction|
 
 - id: case_3:Score=20
   input:
@@ -24,6 +26,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 20
+      gt0011|Play Performance Scale: 2|local::at0005|Moderate restriction|
 
 - id: case_4:Score=30
   input:
@@ -32,6 +35,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 30
+      gt0011|Play Performance Scale: 2|local::at0005|Moderate restriction|
 
 - id: case_5:Score=40
   input:
@@ -40,6 +44,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 40
+      gt0011|Play Performance Scale: 2|local::at0005|Moderate restriction|
 
 - id: case_6:Score=50
   input:
@@ -48,6 +53,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 50
+      gt0011|Play Performance Scale: 1|local::at0004|Mild restriction|
 
 - id: case_7:Score=60
   input:
@@ -56,6 +62,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 60
+      gt0011|Play Performance Scale: 1|local::at0004|Mild restriction|
 
 - id: case_8:Score=70
   input:
@@ -64,6 +71,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 70
+      gt0011|Play Performance Scale: 0|local::at0003|No restriction|
 
 - id: case_9:Score=80
   input:
@@ -72,6 +80,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 80
+      gt0011|Play Performance Scale: 0|local::at0003|No restriction|
 
 - id: case_10:Score=90
   input:
@@ -80,6 +89,7 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 90
+      gt0011|Play Performance Scale: 0|local::at0003|No restriction|
 
 - id: case_11:Score=100
   input:
@@ -88,5 +98,4 @@ test_cases:
   expected_output:
     1:
       gt0009|Final score: 100
-
-
+      gt0011|Play Performance Scale: 0|local::at0003|No restriction|

@@ -21,6 +21,9 @@ test_cases:
       gt0020|Body temperature: 3|local::at0039|≤35.0|
       gt0023|Heart rate: 0|local::at0013|51-90|
       gt0022|Systolic blood pressure: 3|local::at0017|≤90 or ≥220|
+      gt0054|Frequency of monitoring: 2|local::at0010|Increased frequency to a minimum of 1 hourly|
+      gt0053|NEWS Assessment: 2|local::at0006|Medium-risk group|
+
 - id: lower HR, higher T
   input:
     1:
@@ -41,6 +44,8 @@ test_cases:
       gt0020|Body temperature: 1|local::at0023|35.1-36.0 or 38.1-39.0|
       gt0023|Heart rate: 1|local::at0012|41-50 or 91-110|
       gt0022|Systolic blood pressure: 3|local::at0017|≤90 or ≥220|
+      gt0054|Frequency of monitoring: 2|local::at0010|Increased frequency to a minimum of 1 hourly|
+      gt0053|NEWS Assessment: 2|local::at0006|Medium-risk group|
 
 - id: Voice, low BP, lower O2
   input:
@@ -62,6 +67,8 @@ test_cases:
       gt0020|Body temperature: 0|local::at0022|36.1-38.0|
       gt0023|Heart rate: 1|local::at0012|41-50 or 91-110|
       gt0022|Systolic blood pressure: 3|local::at0017|≤90 or ≥220|
+      gt0054|Frequency of monitoring: 3|local::at0011|Continuous monitoring of vital signs|
+      gt0053|NEWS Assessment: 3|local::at0007|High-risk group|
 
 
 - id: pain, supplement O2, lower o2, higher RR, very low HR
@@ -84,6 +91,8 @@ test_cases:
       gt0020|Body temperature: 0|local::at0022|36.1-38.0|
       gt0023|Heart rate: 3|local::at0010|≤40 or ≥131|
       gt0022|Systolic blood pressure: 3|local::at0017|≤90 or ≥220|
+      gt0054|Frequency of monitoring: 3|local::at0011|Continuous monitoring of vital signs|
+      gt0053|NEWS Assessment: 3|local::at0007|High-risk group|
 
 - id: sao2 very low, unresponsive, very high HR
   input:
@@ -105,6 +114,9 @@ test_cases:
       gt0020|Body temperature: 0|local::at0022|36.1-38.0|
       gt0023|Heart rate: 3|local::at0010|≤40 or ≥131|
       gt0022|Systolic blood pressure: 2|local::at0016|91-100|
+      gt0054|Frequency of monitoring: 3|local::at0011|Continuous monitoring of vital signs|
+      gt0053|NEWS Assessment: 3|local::at0007|High-risk group|
+
 
 
 - id: fever, very low RR
@@ -127,6 +139,8 @@ test_cases:
       gt0020|Body temperature: 1|local::at0023|35.1-36.0 or 38.1-39.0|
       gt0023|Heart rate: 2|local::at0011|111-130|
       gt0022|Systolic blood pressure: 1|local::at0015|101-110|
+      gt0054|Frequency of monitoring: 3|local::at0011|Continuous monitoring of vital signs|
+      gt0053|NEWS Assessment: 3|local::at0007|High-risk group|
 
 - id: low o2, fever, stable circulation
   input:
@@ -148,3 +162,5 @@ test_cases:
       gt0020|Body temperature: 2|local::at0038|≥39.1|
       gt0023|Heart rate: 1|local::at0012|41-50 or 91-110|
       gt0022|Systolic blood pressure: 0|local::at0014|111-219|
+      gt0054|Frequency of monitoring: 3|local::at0011|Continuous monitoring of vital signs|
+      gt0053|NEWS Assessment: 3|local::at0007|High-risk group|

@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -105,12 +105,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0045]"
           }
         }
+      },
+      "gt0031": {
+        "id": "gt0031",
+        "model_id": "openEHR-EHR-EVALUATION.epworth_sleepiness_scale_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.epworth_sleepiness_scale_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0032": {
+            "id": "gt0032",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0029": {
         "id": "gt0029",
-        "priority": 1,
+        "priority": 4,
         "when": [
           "$gt0003|Sitting and reading|!=null",
           "$gt0004|Watching TV|!=null",
@@ -123,6 +135,37 @@
         ],
         "then": [
           "$gt0030|Total score|.magnitude=$gt0003.value+$gt0004.value+$gt0005.value+$gt0006.value+$gt0007.value+$gt0008.value+$gt0009.value+$gt0018.value"
+        ]
+      },
+      "gt0033": {
+        "id": "gt0033",
+        "priority": 3,
+        "when": [
+          "$gt0030|Total score|<=9"
+        ],
+        "then": [
+          "$gt0032|Epworth assessment|=0|local::at0003|Normal|"
+        ]
+      },
+      "gt0034": {
+        "id": "gt0034",
+        "priority": 2,
+        "when": [
+          "$gt0030|Total score|>=10",
+          "$gt0030|Total score|<=15"
+        ],
+        "then": [
+          "$gt0032|Epworth assessment|=1|local::at0004|Possible mild sleep apnea or narcolepsy|"
+        ]
+      },
+      "gt0035": {
+        "id": "gt0035",
+        "priority": 1,
+        "when": [
+          "$gt0030|Total score|>=16"
+        ],
+        "then": [
+          "$gt0032|Epworth assessment|=2|local::at0005|Possible severe sleep apnea or narcolepsy|"
         ]
       }
     }
@@ -185,6 +228,26 @@
             "id": "gt0030",
             "text": "Total poäng",
             "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Epworth utvärdering",
+            "description": "Assessment of score generated in accordance with the Epworth Sleepiness Scale."
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "CDS utvärdering - normal",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "CDS utvärdering - mild apne",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "CDS utvärdering - svår apne",
+            "description": ""
           }
         }
       },
@@ -244,6 +307,23 @@
             "id": "gt0030",
             "text": "Total score",
             "description": "*"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Epworth assessment",
+            "description": "Assessment of score generated in accordance with the Epworth Sleepiness Scale."
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "CDS assessment normal"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "CDS assessment mild apnea"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "CDS assessment severe apnea"
           }
         }
       }

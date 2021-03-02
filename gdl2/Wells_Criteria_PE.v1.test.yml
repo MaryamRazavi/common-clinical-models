@@ -15,6 +15,11 @@ test_cases:
     1:
       gt0021|Total score: 0.0
       gt0016|Heart rate > 100 BPM?: 0|local::at0017|No|
+      gt0033|3 Tier Risk Level: 0|local::at0005|Low Risk|
+      gt0034|2 Tier Risk Level: 0|local::at0008|Pulmonary embolism unlikely (with d-dimer)|
+      gt0035|Risk Prevelance: 0|local::at0015|1.3% risk prevalence|
+      gt0036|Risk Incidence: 0|local::at0021|12.1% risk incidence|
+      gt0037|Recommendation: 0|local::at0010|Consider d-dimer testing to rule out pulmonary embolism or a rule out criteria such as PERC|
 
 
 - id: case_2:Total score = 11.0
@@ -31,9 +36,14 @@ test_cases:
     1:
       gt0021|Total score: 11.0
       gt0016|Heart rate > 100 BPM?: 0|local::at0017|No|
+      gt0033|3 Tier Risk Level: 2|local::at0007|High Risk|
+      gt0034|2 Tier Risk Level: 1|local::at0009|Pulmonary embolism likely (with CTA)|
+      gt0035|Risk Prevelance: 2|local::at0019|37.5% risk prevalence|
+      gt0036|Risk Incidence: 1|local::at0022|37.1% risk incidence|
+      gt0037|Recommendation: 3|local::at0013|Consider CTA testing|
 
 
-- id: case_3:Total score = 12.5 (max) 
+- id: case_3:Total score = 12.5 (max)
   input:
     1:
       gt0003|Heart Rate: 110,/min
@@ -47,3 +57,8 @@ test_cases:
     1:
       gt0021|Total score: 12.5
       gt0016|Heart rate > 100 BPM?: 3|local::at0018|Yes|
+      gt0033|3 Tier Risk Level: 2|local::at0007|High Risk|
+      gt0034|2 Tier Risk Level: 1|local::at0009|Pulmonary embolism likely (with CTA)|
+      gt0035|Risk Prevelance: 2|local::at0019|37.5% risk prevalence|
+      gt0036|Risk Incidence: 1|local::at0022|37.1% risk incidence|
+      gt0037|Recommendation: 3|local::at0013|Consider CTA testing|

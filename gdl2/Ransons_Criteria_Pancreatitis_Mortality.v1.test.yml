@@ -1,3 +1,4 @@
+current_datetime: '2019-11-28T00:00:00+01:00'
 guidelines:
   1: Ransons_Criteria_Pancreatitis_Mortality.v1
 test_cases:
@@ -31,6 +32,8 @@ test_cases:
       gt0007|AST score > 250: 0|local::at0031|No|
       gt0065|Age: 47,a
       gt0067|Base deficit: 20,mg/dl
+      gt0105|Likelihood of severe pancreatitis: 0|local::at0009|Severe pancreatitis unlikely|
+      gt0106|Predicted mortality: 0|local::at0005|1% Predicted mortality|
 
 - id: case_2:Total score 8
   input:
@@ -62,6 +65,8 @@ test_cases:
       gt0007|AST score > 250: 0|local::at0031|No|
       gt0065|Age: 68,a
       gt0067|Base deficit: 19,mg/dl
+      gt0105|Likelihood of severe pancreatitis: 1|local::at0010|Severe pancreatitis likely|
+      gt0106|Predicted mortality: 3|local::at0008|100% Predicted mortality|
 
 - id: case_3:Total score 7
   input:
@@ -93,3 +98,5 @@ test_cases:
       gt0007|AST score > 250: 0|local::at0031|No|
       gt0065|Age: 68,a
       gt0067|Base deficit: 21,mg/dl
+      gt0105|Likelihood of severe pancreatitis: 1|local::at0010|Severe pancreatitis likely|
+      gt0106|Predicted mortality: 3|local::at0008|100% Predicted mortality|

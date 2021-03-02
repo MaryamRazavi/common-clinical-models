@@ -16,7 +16,7 @@
       "Oskar Nielsen",
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Aulia Zahrina Qashri"
+      "Aulia Zahrina Qashri"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -120,12 +120,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0027]"
           }
         }
+      },
+      "gt0049": {
+        "id": "gt0049",
+        "model_id": "openEHR-EHR-EVALUATION.dfri_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.dfri_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0050": {
+            "id": "gt0050",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0048": {
         "id": "gt0048",
-        "priority": 1,
+        "priority": 3,
         "when": [
           "$gt0016|DFRI score|==null",
           "$gt0019|Known previous falls|!=null",
@@ -143,6 +155,26 @@
         "then": [
           "$gt0016|DFRI score|.magnitude=$gt0019.value+$gt0021.value+$gt0022.value+$gt0023.value+$gt0024.value+$gt0025.value+$gt0027.value+$gt0028.value+$gt0029.value+$gt0030.value+$gt0031.value"
         ]
+      },
+      "gt0051": {
+        "id": "gt0051",
+        "priority": 2,
+        "when": [
+          "$gt0016|Total score|<=2"
+        ],
+        "then": [
+          "$gt0050|Risk group|=0|local::at0003|Low-risk group|"
+        ]
+      },
+      "gt0052": {
+        "id": "gt0052",
+        "priority": 1,
+        "when": [
+          "$gt0016|Total score|>=3"
+        ],
+        "then": [
+          "$gt0050|Risk group|=1|local::at0004|High-risk group|"
+        ]
       }
     }
   },
@@ -158,67 +190,82 @@
           },
           "gt0016": {
             "id": "gt0016",
-            "text": "*DFRI score (en)",
-            "description": "** (en)"
+            "text": "DFRI score",
+            "description": ""
           },
           "gt0019": {
             "id": "gt0019",
-            "text": "*Known previous falls (en)",
-            "description": "** (en)"
+            "text": "Known previous falls",
+            "description": ""
           },
           "gt0021": {
             "id": "gt0021",
-            "text": "*Tranquilizers/sedatives (en)",
-            "description": "** (en)"
+            "text": "Tranquilizers/sedatives",
+            "description": ""
           },
           "gt0022": {
             "id": "gt0022",
-            "text": "*Diuretics (en)",
-            "description": "** (en)"
+            "text": "Diuretics",
+            "description": ""
           },
           "gt0023": {
             "id": "gt0023",
-            "text": "*Antihypertensives (other than diuretics) (en)",
-            "description": "** (en)"
+            "text": "Antihypertensives (other than diuretics)",
+            "description": ""
           },
           "gt0024": {
             "id": "gt0024",
-            "text": "*Antiparkinsonian drugs (en)",
-            "description": "** (en)"
+            "text": "Antiparkinsonian drugs",
+            "description": ""
           },
           "gt0025": {
             "id": "gt0025",
-            "text": "*Antidepressants (en)",
-            "description": "** (en)"
+            "text": "Antidepressants",
+            "description": ""
           },
           "gt0027": {
             "id": "gt0027",
-            "text": "*Visual impairment (en)",
-            "description": "** (en)"
+            "text": "Visual impairment",
+            "description": ""
           },
           "gt0028": {
             "id": "gt0028",
-            "text": "*Hearing impairment (en)",
-            "description": "** (en)"
+            "text": "Hearing impairment",
+            "description": ""
           },
           "gt0029": {
             "id": "gt0029",
-            "text": "*Motor impairment (en)",
-            "description": "** (en)"
+            "text": "Motor impairment",
+            "description": ""
           },
           "gt0030": {
             "id": "gt0030",
-            "text": "*Mental state (en)",
-            "description": "** (en)"
+            "text": "Mental state",
+            "description": ""
           },
           "gt0031": {
             "id": "gt0031",
-            "text": "*Ability to walk (en)",
-            "description": "** (en)"
+            "text": "Ability to walk",
+            "description": ""
           },
           "gt0048": {
             "id": "gt0048",
             "text": "Beräkna total poäng"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Fallrisk",
+            "description": "Low- or high-risk group in accordance with the Downton Fall Risk Index"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Sätt fallrisk till låg",
+            "description": ""
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Sätt fallrisk till hög",
+            "description": ""
           }
         }
       },
@@ -233,66 +280,79 @@
           "gt0016": {
             "id": "gt0016",
             "text": "DFRI score",
-            "description": "*"
+            "description": ""
           },
           "gt0019": {
             "id": "gt0019",
             "text": "Known previous falls",
-            "description": "*"
+            "description": ""
           },
           "gt0021": {
             "id": "gt0021",
             "text": "Tranquilizers/sedatives",
-            "description": "*"
+            "description": ""
           },
           "gt0022": {
             "id": "gt0022",
             "text": "Diuretics",
-            "description": "*"
+            "description": ""
           },
           "gt0023": {
             "id": "gt0023",
             "text": "Antihypertensives (other than diuretics)",
-            "description": "*"
+            "description": ""
           },
           "gt0024": {
             "id": "gt0024",
             "text": "Antiparkinsonian drugs",
-            "description": "*"
+            "description": ""
           },
           "gt0025": {
             "id": "gt0025",
             "text": "Antidepressants",
-            "description": "*"
+            "description": ""
           },
           "gt0027": {
             "id": "gt0027",
             "text": "Visual impairment",
-            "description": "*"
+            "description": ""
           },
           "gt0028": {
             "id": "gt0028",
             "text": "Hearing impairment",
-            "description": "*"
+            "description": ""
           },
           "gt0029": {
             "id": "gt0029",
             "text": "Motor impairment",
-            "description": "*"
+            "description": ""
           },
           "gt0030": {
             "id": "gt0030",
             "text": "Mental state",
-            "description": "*"
+            "description": ""
           },
           "gt0031": {
             "id": "gt0031",
             "text": "Ability to walk",
-            "description": "*"
+            "description": ""
           },
           "gt0048": {
             "id": "gt0048",
             "text": "Calculate total score"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Risk group",
+            "description": "Low- or high-risk group in accordance with the Downton Fall Risk Index"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Set risk group to low"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Set risk group to high"
           }
         }
       }

@@ -15,7 +15,7 @@
     "other_contributors": [
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -126,12 +126,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]"
           }
         }
+      },
+      "gt0036": {
+        "id": "gt0036",
+        "model_id": "openEHR-EHR-EVALUATION.intracerebral_haemorrhage_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.intracerebral_haemorrhage_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0037": {
+            "id": "gt0037",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0022": {
         "id": "gt0022",
-        "priority": 8,
+        "priority": 14,
         "when": [
           "$gt0005|Birthdate|!=null"
         ],
@@ -142,7 +154,7 @@
       },
       "gt0023": {
         "id": "gt0023",
-        "priority": 7,
+        "priority": 13,
         "when": [
           "$gt0007|Age|.magnitude>=80",
           "$gt0007|Age|!=null"
@@ -153,7 +165,7 @@
       },
       "gt0024": {
         "id": "gt0024",
-        "priority": 6,
+        "priority": 12,
         "when": [
           "$gt0007|Age|.magnitude<80",
           "$gt0007|Age|!=null"
@@ -164,7 +176,7 @@
       },
       "gt0025": {
         "id": "gt0025",
-        "priority": 5,
+        "priority": 11,
         "when": [
           "$gt0003|GCS total score|<=4",
           "$gt0003|GCS total score|>=3",
@@ -176,7 +188,7 @@
       },
       "gt0026": {
         "id": "gt0026",
-        "priority": 4,
+        "priority": 10,
         "when": [
           "$gt0003|GCS total score|>=5",
           "$gt0003|GCS total score|<=12",
@@ -188,7 +200,7 @@
       },
       "gt0027": {
         "id": "gt0027",
-        "priority": 3,
+        "priority": 9,
         "when": [
           "$gt0003|GCS total score|<=15",
           "$gt0003|GCS total score|>=13",
@@ -200,7 +212,7 @@
       },
       "gt0035": {
         "id": "gt0035",
-        "priority": 1,
+        "priority": 7,
         "when": [
           "$gt0011|ICH Vol ≥ 30ml|!=null",
           "$gt0012|Intraventricular haemorrhage|!=null",
@@ -210,6 +222,66 @@
         ],
         "then": [
           "$gt0020|Calculate total score|.magnitude=$gt0015.value+$gt0011.value+$gt0013.value+$gt0012.value+$gt0016.value"
+        ]
+      },
+      "gt0038": {
+        "id": "gt0038",
+        "priority": 6,
+        "when": [
+          "$gt0020|Total score|==0"
+        ],
+        "then": [
+          "$gt0037|Mortality Rate|=0|local::at0003|0% |"
+        ]
+      },
+      "gt0039": {
+        "id": "gt0039",
+        "priority": 5,
+        "when": [
+          "$gt0020|Total score|==1"
+        ],
+        "then": [
+          "$gt0037|Mortality Rate|=1|local::at0004|13% |"
+        ]
+      },
+      "gt0040": {
+        "id": "gt0040",
+        "priority": 4,
+        "when": [
+          "$gt0020|Total score|==2"
+        ],
+        "then": [
+          "$gt0037|Mortality Rate|=2|local::at0005|26% |"
+        ]
+      },
+      "gt0041": {
+        "id": "gt0041",
+        "priority": 3,
+        "when": [
+          "$gt0020|Total score|==3"
+        ],
+        "then": [
+          "$gt0037|Mortality Rate|=3|local::at0006|72% |"
+        ]
+      },
+      "gt0042": {
+        "id": "gt0042",
+        "priority": 2,
+        "when": [
+          "$gt0020|Total score|==4"
+        ],
+        "then": [
+          "$gt0037|Mortality Rate|=4|local::at0007|94% |"
+        ]
+      },
+      "gt0043": {
+        "id": "gt0043",
+        "priority": 1,
+        "when": [
+          "$gt0020|Total score|>=5"
+        ],
+        "then": [
+          "$gt0037|Mortality Rate|=5|local::at0008|100% |"
         ]
       }
     }
@@ -227,47 +299,47 @@
           "gt0003": {
             "id": "gt0003",
             "text": "GCS resultat",
-            "description": "*(en) The sum of the ordinal scores recorded for each of the three component responses."
+            "description": "The sum of the ordinal scores recorded for each of the three component responses."
           },
           "gt0005": {
             "id": "gt0005",
             "text": "Födelsedatum",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0007": {
             "id": "gt0007",
             "text": "Ålder",
-            "description": "*(en) Age in years, and for babies: months, weeks or days"
+            "description": "Age in years, and for babies: months, weeks or days"
           },
           "gt0011": {
             "id": "gt0011",
             "text": "Intracerebral blödning - volym ≥ 30ml",
-            "description": "*(en) ICH vol >=30ml?"
+            "description": "ICH vol >=30ml?"
           },
           "gt0012": {
             "id": "gt0012",
             "text": "Intraventrikulär blödning",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0013": {
             "id": "gt0013",
             "text": "Infratentoriellt ursprung till blödning",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0015": {
             "id": "gt0015",
             "text": "GCS",
-            "description": "*(en) Glasgow Coma Scale"
+            "description": "Glasgow Coma Scale"
           },
           "gt0016": {
             "id": "gt0016",
             "text": "Ålder >= 80",
-            "description": "*(en) Is the patient 80 yrs or over?"
+            "description": "Is the patient 80 yrs or over?"
           },
           "gt0020": {
             "id": "gt0020",
             "text": "Resultat",
-            "description": "*(en) Sum of each individual score"
+            "description": "Sum of each individual score"
           },
           "gt0022": {
             "id": "gt0022",
@@ -295,7 +367,42 @@
           },
           "gt0035": {
             "id": "gt0035",
-            "text": "*(en) Calc total score",
+            "text": "Calc total score",
+            "description": ""
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Mortalitet",
+            "description": "The ICH tool helps clinicians communicate effectively in order to safely and consistently grade ICH which provides a measure for ICH severity and consequent 30-day mortality. Do not use this tool to provide diagnostic information or as the main method of predicting ICH patient outcomes. Neither should it be used to guide treatment."
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "CDS mortalitet - 0p",
+            "description": ""
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "CDS mortalitet - 1p",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "CDS mortalitet - 2p",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "CDS mortalitet - 3p",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "CDS mortalitet - 4p",
+            "description": ""
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "SCDS mortalitet - ≥ 5p",
             "description": ""
           }
         }
@@ -380,6 +487,35 @@
           "gt0035": {
             "id": "gt0035",
             "text": "Calc total score"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Mortality Rate",
+            "description": "The ICH tool helps clinicians communicate effectively in order to safely and consistently grade ICH which provides a measure for ICH severity and consequent 30-day mortality. Do not use this tool to provide diagnostic information or as the main method of predicting ICH patient outcomes. Neither should it be used to guide treatment."
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Set Mortality Rate: Score 0"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Set Mortality Rate: Score 1"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Set Mortality Rate: Score 2"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Set Mortality Rate: Score 3"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Set Mortality Rate: Score 4"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "Set Mortality Rate: Score ≥ 5"
           }
         }
       }

@@ -1,7 +1,8 @@
+current_datetime: '2019-06-06T00:00:00+01:00'
 guidelines:
   1: VBAC.v1
 test_cases:
-- id: case_1:Age<40, total score =2 
+- id: case_1:Age<40, total score =2
   input:
     1:
       gt0015|Birthdate: 1988-06-01T16:41Z
@@ -14,6 +15,7 @@ test_cases:
       gt0016|Age: 31,a
       gt0021|Maternal age < 40 years: 2|local::at0023|Yes|
       gt0010|Total score: 2
+      gt0027|Percentage of women with successful vaginal delivery: 0|local::at0003|49%|
 
 - id: case_2:Age<40, total score =6
   input:
@@ -28,6 +30,7 @@ test_cases:
       gt0016|Age: 31,a
       gt0021|Maternal age < 40 years: 2|local::at0023|Yes|
       gt0010|Total score: 6
+      gt0027|Percentage of women with successful vaginal delivery: 4|local::at0007|89%|
 
 - id: case_3:Age<40, total score =8
   input:
@@ -42,6 +45,7 @@ test_cases:
       gt0016|Age: 31,a
       gt0021|Maternal age < 40 years: 2|local::at0023|Yes|
       gt0010|Total score: 8
+      gt0027|Percentage of women with successful vaginal delivery: 6|local::at0009|95%|
 
 - id: case_4:Age<40, total score =10
   input:
@@ -56,8 +60,9 @@ test_cases:
       gt0016|Age: 31,a
       gt0021|Maternal age < 40 years: 2|local::at0023|Yes|
       gt0010|Total score: 10
+      gt0027|Percentage of women with successful vaginal delivery: 6|local::at0009|95%|
 
-- id: case_5:Age<40, total score = 8 
+- id: case_5:Age<40, total score = 8
   input:
     1:
       gt0015|Birthdate: 1975-06-04T16:41Z
@@ -70,8 +75,9 @@ test_cases:
       gt0016|Age: 44,a
       gt0021|Maternal age < 40 years: 0|local::at0022|No|
       gt0010|Total score: 8
+      gt0027|Percentage of women with successful vaginal delivery: 6|local::at0009|95%|
 
-- id: case_6:Age<40, total score = 0 
+- id: case_6:Age<40, total score = 0
   input:
     1:
       gt0015|Birthdate: 1977-07-21T16:41Z
@@ -84,4 +90,4 @@ test_cases:
       gt0016|Age: 42,a
       gt0021|Maternal age < 40 years: 0|local::at0022|No|
       gt0010|Total score: 0
-
+      gt0027|Percentage of women with successful vaginal delivery: 0|local::at0003|49%|

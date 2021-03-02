@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Dennis Forslund, Cambio Healthcare Systems",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -90,12 +90,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0014]"
           }
         }
+      },
+      "gt0024": {
+        "id": "gt0024",
+        "model_id": "openEHR-EHR-EVALUATION.cheops_for_pediatric_pain_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.cheops_for_pediatric_pain_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0025": {
+            "id": "gt0025",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0023": {
         "id": "gt0023",
-        "priority": 1,
+        "priority": 3,
         "when": [
           "$gt0011|Cry|!=null",
           "$gt0012|Facial|!=null",
@@ -106,6 +118,26 @@
         ],
         "then": [
           "$gt0010|Total Score|.magnitude=$gt0011.value+$gt0012.value+$gt0013.value+$gt0014.value+$gt0015.value+$gt0016.value"
+        ]
+      },
+      "gt0026": {
+        "id": "gt0026",
+        "priority": 2,
+        "when": [
+          "$gt0010|Total Score|<5"
+        ],
+        "then": [
+          "$gt0025|Score interpretation|=0|local::at0003|Analgesia should not be needed|"
+        ]
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "priority": 1,
+        "when": [
+          "$gt0010|Total Score|>=5"
+        ],
+        "then": [
+          "$gt0025|Score interpretation|=1|local::at0004|Consider analgesia|"
         ]
       }
     }
@@ -158,6 +190,21 @@
           "gt0023": {
             "id": "gt0023",
             "text": "Beräkna poängsumma"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Resultat",
+            "description": "Scores ≥5: Consider analgesia."
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "CDS Resultat < 5",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "CDS Resultat ≥5",
+            "description": ""
           }
         }
       },
@@ -207,6 +254,19 @@
           "gt0023": {
             "id": "gt0023",
             "text": "Calculate Total Score"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Score interpretation",
+            "description": "Scores ≥5: Consider analgesia."
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Score interpretation < 5"
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Score interpretation ≥5"
           }
         }
       }

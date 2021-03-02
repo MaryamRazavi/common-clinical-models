@@ -16,6 +16,7 @@ test_cases:
   expected_output:
     1:
       gt0072|Total score: 0
+      gt0077|Grade of depression: local::at0007|None or very mild depression|
 
 - id: case_2:alternativ 1 in all Q
   input:
@@ -32,6 +33,7 @@ test_cases:
   expected_output:
     1:
       gt0072|Total score: 9
+      gt0077|Grade of depression: local::at0007|None or very mild depression|
 
 - id: case_3:alternativ 2 in all Q
   input:
@@ -48,6 +50,7 @@ test_cases:
   expected_output:
     1:
       gt0072|Total score: 18
+      gt0077|Grade of depression: local::at0008|Mild depression|
 
 - id: case_4:alternativ 3 in all Q
   input:
@@ -64,6 +67,7 @@ test_cases:
   expected_output:
     1:
       gt0072|Total score: 27
+      gt0077|Grade of depression: local::at0009|Moderate depression|
 
 - id: case_5:alternativ 4 in all Q
   input:
@@ -80,6 +84,7 @@ test_cases:
   expected_output:
     1:
       gt0072|Total score: 36
+      gt0077|Grade of depression: local::at0011|Severe depression|
 
 - id: case_6:alternativ 5 in all Q
   input:
@@ -96,6 +101,7 @@ test_cases:
   expected_output:
     1:
       gt0072|Total score: 45
+      gt0077|Grade of depression: local::at0011|Severe depression|
 
 - id: case_7:alternativ 6 in all Q
   input:
@@ -112,3 +118,4 @@ test_cases:
   expected_output:
     1:
       gt0072|Total score: 54
+      gt0077|Grade of depression: local::at0011|Severe depression|

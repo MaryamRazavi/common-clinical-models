@@ -1,7 +1,7 @@
 guidelines:
   1: MADRS.v1
 test_cases:
-- id: case_1:Alternativ 0 in all Q =Total score 0 
+- id: case_1:Alternativ 0 in all Q =Total score 0
   input:
     1:
       gt0004|1. Apparent sadness: 0|local::at0006|No sadness.|
@@ -17,8 +17,9 @@ test_cases:
   expected_output:
     1:
       gt0024|Total score: 0
+      gt0029|Grade of depression: local::at0007|None or very mild depression|
 
-- id: case_2:Alternativ 1 in all Q = Total score 10 
+- id: case_2:Alternativ 1 in all Q = Total score 10
   input:
     1:
       gt0004|1. Apparent sadness: 1|local::at0007|*|
@@ -34,6 +35,7 @@ test_cases:
   expected_output:
     1:
       gt0024|Total score: 10
+      gt0029|Grade of depression: local::at0007|None or very mild depression|
 
 - id: case_3:Alternativ 2 in all Q = Total score 20
   input:
@@ -51,6 +53,7 @@ test_cases:
   expected_output:
     1:
       gt0024|Total score: 20
+      gt0029|Grade of depression: local::at0009|Moderate depression|
 
 - id: case_4:Alternativ 3 in all Q = Total score 30
   input:
@@ -68,6 +71,7 @@ test_cases:
   expected_output:
     1:
       gt0024|Total score: 30
+      gt0029|Grade of depression: local::at0009|Moderate depression|
 
 - id: case_5:Alternativ 4 in all Q = Total score 40
   input:
@@ -85,6 +89,7 @@ test_cases:
   expected_output:
     1:
       gt0024|Total score: 40
+      gt0029|Grade of depression: local::at0011|Severe depression|
 
 - id: case_6:Alternativ 5 in all Q = Total score 50
   input:
@@ -102,6 +107,7 @@ test_cases:
   expected_output:
     1:
       gt0024|Total score: 50
+      gt0029|Grade of depression: local::at0011|Severe depression|
 
 - id: case_7:Alternativ 6 in all Q = Total score 60
   input:
@@ -119,4 +125,4 @@ test_cases:
   expected_output:
     1:
       gt0024|Total score: 60
-
+      gt0029|Grade of depression: local::at0011|Severe depression|

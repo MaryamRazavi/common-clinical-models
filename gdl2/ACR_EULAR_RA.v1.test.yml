@@ -11,7 +11,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 0
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(0)-duration(0)-reactants(1)
   input:
@@ -23,7 +23,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 1
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(0)-duration(1)-reactants(0)
   input:
@@ -35,7 +35,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 1
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(0)-duration(1)-reactants(1)
   input:
@@ -47,7 +47,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 2
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(2)-duration(0)-reactants(0)
   input:
@@ -59,7 +59,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 2
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(2)-duration(0)-reactants(1)
   input:
@@ -71,7 +71,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(2)-duration(1)-reactants(0)
   input:
@@ -83,7 +83,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(2)-duration(1)-reactants(1)
   input:
@@ -95,7 +95,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(3)-duration(0)-reactants(0)
   input:
@@ -107,7 +107,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(3)-duration(0)-reactants(1)
   input:
@@ -119,7 +119,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(3)-duration(1)-reactants(0)
   input:
@@ -131,7 +131,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(0)-serology(3)-duration(1)-reactants(1)
   input:
@@ -143,7 +143,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(0)-duration(0)-reactants(0)
   input:
@@ -155,7 +155,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 1
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(0)-duration(0)-reactants(1)
   input:
@@ -167,7 +167,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 2
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(0)-duration(1)-reactants(0)
   input:
@@ -179,7 +179,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 2
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(0)-duration(1)-reactants(1)
   input:
@@ -191,7 +191,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(2)-duration(0)-reactants(0)
   input:
@@ -203,7 +203,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(2)-duration(0)-reactants(1)
   input:
@@ -215,7 +215,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(2)-duration(1)-reactants(0)
   input:
@@ -227,7 +227,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(2)-duration(1)-reactants(1)
   input:
@@ -239,7 +239,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(3)-duration(0)-reactants(0)
   input:
@@ -251,7 +251,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(3)-duration(0)-reactants(1)
   input:
@@ -263,7 +263,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(3)-duration(1)-reactants(0)
   input:
@@ -275,7 +275,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(1)-serology(3)-duration(1)-reactants(1)
   input:
@@ -287,7 +287,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(0)-duration(0)-reactants(0)
   input:
@@ -299,7 +299,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 2
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(0)-duration(0)-reactants(1)
   input:
@@ -311,7 +311,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(0)-duration(1)-reactants(0)
   input:
@@ -323,7 +323,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(0)-duration(1)-reactants(1)
   input:
@@ -335,7 +335,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(2)-duration(0)-reactants(0)
   input:
@@ -347,7 +347,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(2)-duration(0)-reactants(1)
   input:
@@ -359,7 +359,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(2)-duration(1)-reactants(0)
   input:
@@ -371,7 +371,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(2)-duration(1)-reactants(1)
   input:
@@ -383,7 +383,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(3)-duration(0)-reactants(0)
   input:
@@ -395,7 +395,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(3)-duration(0)-reactants(1)
   input:
@@ -407,7 +407,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(3)-duration(1)-reactants(0)
   input:
@@ -419,7 +419,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(2)-serology(3)-duration(1)-reactants(1)
   input:
@@ -431,7 +431,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 7
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(0)-duration(0)-reactants(0)
   input:
@@ -443,7 +443,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 3
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(0)-duration(0)-reactants(1)
   input:
@@ -455,7 +455,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(0)-duration(1)-reactants(0)
   input:
@@ -467,7 +467,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 4
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(0)-duration(1)-reactants(1)
   input:
@@ -479,7 +479,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(2)-duration(0)-reactants(0)
   input:
@@ -491,7 +491,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(2)-duration(0)-reactants(1)
   input:
@@ -503,7 +503,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(2)-duration(1)-reactants(0)
   input:
@@ -515,7 +515,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(2)-duration(1)-reactants(1)
   input:
@@ -527,7 +527,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 7
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(3)-duration(0)-reactants(0)
   input:
@@ -539,7 +539,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(3)-duration(0)-reactants(1)
   input:
@@ -551,7 +551,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 7
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(3)-duration(1)-reactants(0)
   input:
@@ -563,7 +563,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 7
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(3)-serology(3)-duration(1)-reactants(1)
   input:
@@ -575,6 +575,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 8
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(0)-duration(0)-reactants(0)
   input:
@@ -586,7 +587,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 5
-
+      gt0022|Classification of Rheumatoid Arthritis: 0|local::at0003|Not classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(0)-duration(0)-reactants(1)
   input:
@@ -598,7 +599,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(0)-duration(1)-reactants(0)
   input:
@@ -610,7 +611,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 6
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(0)-duration(1)-reactants(1)
   input:
@@ -622,7 +623,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 7
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(2)-duration(0)-reactants(0)
   input:
@@ -634,7 +635,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 7
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(2)-duration(0)-reactants(1)
   input:
@@ -646,7 +647,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 8
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(2)-duration(1)-reactants(0)
   input:
@@ -658,7 +659,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 8
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(2)-duration(1)-reactants(1)
   input:
@@ -670,7 +671,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 9
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(3)-duration(0)-reactants(0)
   input:
@@ -682,7 +683,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 8
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(3)-duration(0)-reactants(1)
   input:
@@ -694,7 +695,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 9
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(3)-duration(1)-reactants(0)
   input:
@@ -706,7 +707,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 9
-
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|
 
 - id: joint(5)-serology(3)-duration(1)-reactants(1)
   input:
@@ -718,3 +719,4 @@ test_cases:
   expected_output:
     1:
       gt0012|Score: 10
+      gt0022|Classification of Rheumatoid Arthritis: 1|local::at0004|Classifiable as having Rheumatoid Arthritis|

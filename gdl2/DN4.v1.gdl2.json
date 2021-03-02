@@ -13,7 +13,7 @@
       "email": "models@cambiocds.com"
     },
     "other_contributors": [
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Not set",
     "details": {
@@ -94,12 +94,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
           }
         }
+      },
+      "gt0041": {
+        "id": "gt0041",
+        "model_id": "openEHR-EHR-EVALUATION.dn4.v1",
+        "template_id": "openEHR-EHR-EVALUATION.dn4.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0042": {
+            "id": "gt0042",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0040": {
         "id": "gt0040",
-        "priority": 1,
+        "priority": 3,
         "when": [
           "$gt0004|Can the pain be characterized as burning?|!=null",
           "$gt0005|Can the pain be characterized as painfully cold?|!=null",
@@ -114,6 +126,26 @@
         ],
         "then": [
           "$gt0027|Score|.magnitude=$gt0004.value+$gt0005.value+$gt0006.value+$gt0007.value+$gt0008.value+$gt0009.value+$gt0010.value+$gt0011.value+$gt0012.value+$gt0013.value"
+        ]
+      },
+      "gt0043": {
+        "id": "gt0043",
+        "priority": 2,
+        "when": [
+          "$gt0027|Score|<4"
+        ],
+        "then": [
+          "$gt0042|Result |=0|local::at0003|Unlikely neuropathic pain|"
+        ]
+      },
+      "gt0044": {
+        "id": "gt0044",
+        "priority": 1,
+        "when": [
+          "$gt0027|Score|>=4"
+        ],
+        "then": [
+          "$gt0042|Result |=1|local::at0004|Likely neuropathic pain|"
         ]
       }
     }
@@ -186,6 +218,19 @@
           "gt0040": {
             "id": "gt0040",
             "text": "Calculate score"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Result ",
+            "description": "Based on score generated in accordance with DN4."
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "Set result not likely"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Set result likely"
           }
         }
       }

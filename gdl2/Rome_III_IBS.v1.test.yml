@@ -10,6 +10,8 @@ test_cases:
   expected_output:
     1:
       gt0007|Are any 2 out of the 3 criteria fulfilled?: 0|local::at0015|No|
+      gt0018|ROME III - Result: 0|local::at0003|Patient does not meet the criteria for an IBS diagnosis|
+
 
 - id: case_1
   input:
@@ -20,3 +22,4 @@ test_cases:
   expected_output:
     1:
       gt0007|Are any 2 out of the 3 criteria fulfilled?: 1|local::at0016|Yes|
+      gt0018|ROME III - Result: 1|local::at0004|Patient meets the criteria for an IBS diagnosis|

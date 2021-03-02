@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Dennis Forslund, Cambio Healthcare Systems",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -172,12 +172,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
           }
         }
+      },
+      "gt0059": {
+        "id": "gt0059",
+        "model_id": "openEHR-EHR-EVALUATION.pcdai_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.pcdai_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0060": {
+            "id": "gt0060",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0045": {
         "id": "gt0045",
-        "priority": 20,
+        "priority": 24,
         "when": [
           "$gt0056|Gender|!=null"
         ],
@@ -187,7 +199,7 @@
       },
       "gt0044": {
         "id": "gt0044",
-        "priority": 11,
+        "priority": 15,
         "when": [
           "$gt0057|Birthdate|!=null"
         ],
@@ -198,7 +210,7 @@
       },
       "gt0041": {
         "id": "gt0041",
-        "priority": 10,
+        "priority": 14,
         "when": [
           "(($gt0058|Age|<10,a)&&($gt0028|Packed cell volume (PCV)|>33,%))||((($gt0055|Gender|==local::at0006|Female|)&&(($gt0058|Age|<=19,a)&&(($gt0058|Age|>=11,a)&&($gt0028|Packed cell volume (PCV)|>=34,%))))||((($gt0055|Gender|==local::at0005|Male|)&&(($gt0058|Age|<=14,a)&&(($gt0058|Age|>=11,a)&&($gt0028|Packed cell volume (PCV)|>=35,%))))||(($gt0055|Gender|==local::at0005|Male|)&&(($gt0058|Age|<=19,a)&&(($gt0058|Age|>=15,a)&&($gt0028|Packed cell volume (PCV)|>=37,%))))))"
         ],
@@ -208,7 +220,7 @@
       },
       "gt0042": {
         "id": "gt0042",
-        "priority": 9,
+        "priority": 13,
         "when": [
           "((($gt0058|Age|<10,a)&&(($gt0028|Packed cell volume (PCV)|<=32,%)&&($gt0028|Packed cell volume (PCV)|>=28,%)))||(($gt0055|Gender|==local::at0006|Female|)&&(($gt0058|Age|<=19,a)&&(($gt0058|Age|>=11,a)&&(($gt0028|Packed cell volume (PCV)|<=33,%)&&($gt0028|Packed cell volume (PCV)|>=29,%))))))||(((($gt0058|Age|<=14,a)&&(($gt0058|Age|>=11,a)&&(($gt0028|Packed cell volume (PCV)|<=34,%)&&($gt0028|Packed cell volume (PCV)|>=30,%))))||(($gt0058|Age|<=19,a)&&(($gt0058|Age|>=15,a)&&(($gt0028|Packed cell volume (PCV)|<=36,%)&&($gt0028|Packed cell volume (PCV)|>=32,%)))))&&($gt0055|Gender|==local::at0005|Male|))"
         ],
@@ -218,7 +230,7 @@
       },
       "gt0043": {
         "id": "gt0043",
-        "priority": 8,
+        "priority": 12,
         "when": [
           "((($gt0058|Age|<10,a)&&($gt0028|Packed cell volume (PCV)|<28,%))||(($gt0055|Gender|==local::at0006|Female|)&&(($gt0058|Age|<=19,a)&&(($gt0058|Age|>=11,a)&&($gt0028|Packed cell volume (PCV)|<29,%)))))||(((($gt0058|Age|<=14,a)&&(($gt0058|Age|>=11,a)&&($gt0028|Packed cell volume (PCV)|<30,%)))||(($gt0058|Age|>=15,a)&&(($gt0058|Age|<=19,a)&&($gt0028|Packed cell volume (PCV)|<32,%))))&&($gt0055|Gender|==local::at0005|Male|))"
         ],
@@ -228,7 +240,7 @@
       },
       "gt0046": {
         "id": "gt0046",
-        "priority": 7,
+        "priority": 11,
         "when": [
           "$gt0029|Erythrocyte sedimentation rate (ESR)|<20,mm/h"
         ],
@@ -238,7 +250,7 @@
       },
       "gt0047": {
         "id": "gt0047",
-        "priority": 6,
+        "priority": 10,
         "when": [
           "$gt0029|Erythrocyte sedimentation rate (ESR)|>=20,mm/h",
           "$gt0029|Erythrocyte sedimentation rate (ESR)|<=50,mm/h"
@@ -249,7 +261,7 @@
       },
       "gt0048": {
         "id": "gt0048",
-        "priority": 5,
+        "priority": 9,
         "when": [
           "$gt0029|Erythrocyte sedimentation rate (ESR)|>50,mm/h"
         ],
@@ -259,7 +271,7 @@
       },
       "gt0049": {
         "id": "gt0049",
-        "priority": 4,
+        "priority": 8,
         "when": [
           "$gt0025|Serum albumin|>=3.5,gm/dl"
         ],
@@ -269,7 +281,7 @@
       },
       "gt0050": {
         "id": "gt0050",
-        "priority": 3,
+        "priority": 7,
         "when": [
           "$gt0025|Serum albumin|<=3.4,gm/dl",
           "$gt0025|Serum albumin|>=3.1,gm/dl"
@@ -280,7 +292,7 @@
       },
       "gt0051": {
         "id": "gt0051",
-        "priority": 2,
+        "priority": 6,
         "when": [
           "$gt0025|Serum albumin|<=3,gm/dl"
         ],
@@ -290,7 +302,7 @@
       },
       "gt0052": {
         "id": "gt0052",
-        "priority": 1,
+        "priority": 5,
         "when": [
           "$gt0022|Peri-rectal disease|!=null",
           "$gt0016|Abdominal pain|!=null",
@@ -307,6 +319,48 @@
         "then": [
           "$gt0015|Total Score|.precision=2",
           "$gt0015|Total Score|.magnitude=$gt0022.value+$gt0023.value+$gt0012.value/2+$gt0013.value+$gt0020.value+$gt0021.value+$gt0014.value+$gt0016.value+$gt0017.value+$gt0018.value+$gt0040.value"
+        ]
+      },
+      "gt0061": {
+        "id": "gt0061",
+        "priority": 4,
+        "when": [
+          "$gt0015|Total Score|.magnitude<10"
+        ],
+        "then": [
+          "$gt0060|Score interpretation|=0|local::at0003|Remission|"
+        ]
+      },
+      "gt0062": {
+        "id": "gt0062",
+        "priority": 3,
+        "when": [
+          "$gt0015|Total Score|.magnitude<=27.5",
+          "$gt0015|Total Score|.magnitude>=10"
+        ],
+        "then": [
+          "$gt0060|Score interpretation|=1|local::at0004|Mild Crohn’s Disease|"
+        ]
+      },
+      "gt0063": {
+        "id": "gt0063",
+        "priority": 2,
+        "when": [
+          "$gt0015|Total Score|.magnitude<=37.5",
+          "$gt0015|Total Score|.magnitude>=30"
+        ],
+        "then": [
+          "$gt0060|Score interpretation|=2|local::at0005|Moderate Crohn’s Disease|"
+        ]
+      },
+      "gt0064": {
+        "id": "gt0064",
+        "priority": 1,
+        "when": [
+          "$gt0015|Total Score|.magnitude>=40"
+        ],
+        "then": [
+          "$gt0060|Score interpretation|=3|local::at0006|Severe Crohn’s Disease |"
         ]
       }
     }
@@ -463,6 +517,31 @@
             "id": "gt0058",
             "text": "Ålder",
             "description": "Patientens ålder"
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Resultat",
+            "description": "Utvärdering baserad på poäng genererad i enligt med PCDAI."
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "CDS Resultat: Remission",
+            "description": ""
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "CDS Resultat: Mild Crohn's Disease",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "CDS Resultat: Moderate Crohn's Disease",
+            "description": ""
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "CDS Resultat: Severe Crohn's Disease",
+            "description": ""
           }
         }
       },
@@ -616,6 +695,27 @@
             "id": "gt0058",
             "text": "Age",
             "description": "Age in years, and for babies: months, weeks or days"
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Score interpretation",
+            "description": "Score interpretation"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "Set Interpretation: Remission"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Set Interpretation: Mild Crohn's Disease"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Set Interpretation: Moderate Crohn's Disease"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Set Interpretation: Severe Crohn's Disease"
           }
         }
       }

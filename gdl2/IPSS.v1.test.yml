@@ -16,6 +16,7 @@ test_cases:
     1:
       gt0022|Total score: 0
       gt0034|Quality of life due to urinary symptoms: 0|local::at0055|Delighted|
+      gt0035|IPSS Assessment: 0|local::at0003|Mild|
 
 - id: case_2
   input:
@@ -32,6 +33,7 @@ test_cases:
     1:
       gt0022|Total score: 7
       gt0034|Quality of life due to urinary symptoms: 1|local::at0056|Pleased|
+      gt0035|IPSS Assessment: 0|local::at0003|Mild|
 
 - id: case_3
 
@@ -49,6 +51,7 @@ test_cases:
     1:
       gt0022|Total score: 14
       gt0034|Quality of life due to urinary symptoms: 2|local::at0057|Mostly satisfied|
+      gt0035|IPSS Assessment: 1|local::at0004|Moderate|
 
 - id: case_4
   input:
@@ -65,6 +68,8 @@ test_cases:
     1:
       gt0022|Total score: 21
       gt0034|Quality of life due to urinary symptoms: 3|local::at0058|Mixed|
+      gt0035|IPSS Assessment: 2|local::at0005|Severe|
+
 
 - id: case_5
   input:
@@ -81,6 +86,8 @@ test_cases:
     1:
       gt0022|Total score: 28
       gt0034|Quality of life due to urinary symptoms: 4|local::at0059|Mostly dissatisfied|
+      gt0035|IPSS Assessment: 2|local::at0005|Severe|
+
 
 - id: case_6
   input:
@@ -97,6 +104,8 @@ test_cases:
     1:
       gt0022|Total score: 35
       gt0034|Quality of life due to urinary symptoms: 5|local::at0060|Unhappy|
+      gt0035|IPSS Assessment: 2|local::at0005|Severe|
+
 
 - id: case_7
   input:
@@ -113,3 +122,4 @@ test_cases:
     1:
       gt0022|Total score: 35
       gt0034|Quality of life due to urinary symptoms: 6|local::at0061|Terrible|
+      gt0035|IPSS Assessment: 2|local::at0005|Severe|

@@ -22,6 +22,7 @@ test_cases:
   expected_output:
     1:
       gt0055|12 item raw score: 0.00,%
+      gt0062|12 item score interpretation: 0|local::at0009|No Difficulty|
 
 - id: all_1
   input:
@@ -44,7 +45,7 @@ test_cases:
   expected_output:
     1:
       gt0055|12 item raw score: 25.00,%
-
+      gt0062|12 item score interpretation: 1|local::at0010|Mild Difficulty|
 
 - id: all_2
   input:
@@ -67,6 +68,7 @@ test_cases:
   expected_output:
     1:
       gt0055|12 item raw score: 50.00,%
+      gt0062|12 item score interpretation: 2|local::at0011|Moderate Difficulty|
 
 - id: all_3
   input:
@@ -89,7 +91,7 @@ test_cases:
   expected_output:
     1:
       gt0055|12 item raw score: 75.00,%
-
+      gt0062|12 item score interpretation: 3|local::at0012|Severe Difficulty|
 
 - id: all_4
   input:
@@ -112,3 +114,4 @@ test_cases:
   expected_output:
     1:
       gt0055|12 item raw score: 100.00,%
+      gt0062|12 item score interpretation: 4|local::at0013|Extreme Difficulty or Cannot Do|

@@ -11,6 +11,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 0
+      gt0020|AUDIT-C: 0|local::at0003|Consistent with normal consumption|
 
 
 - id: Q1(0)-Q2(0)-Q3(1)-Gender(female)
@@ -18,11 +19,12 @@ test_cases:
     1:
       gt0003|How often do you have a drink containing alcohol?: 0|local::at0008|Never|
       gt0004|How many drinks containing alcohol do you have on a typical day when you are drinking?: 0|local::at0013|1 or 2|
-      gt0005|How often do you have six or more drinks on one occasion?: 0|local::at0018|Never|
+      gt0005|How often do you have six or more drinks on one occasion?: 1|local::at0019|Less than monthly|
       gt0017|Gender: local::at0006|Female|
   expected_output:
     1:
-      gt0010|Total score: 0
+      gt0010|Total score: 1
+      gt0020|AUDIT-C: 0|local::at0003|Consistent with normal consumption|
 
 
 - id: Q1(0)-Q2(1)-Q3(1)-Gender(female)
@@ -35,6 +37,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 2
+      gt0020|AUDIT-C: 0|local::at0003|Consistent with normal consumption|
 
 
 - id: Q1(1)-Q2(1)-Q3(1)-Gender(female)
@@ -47,6 +50,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 3
+      gt0020|AUDIT-C: 1|local::at0004|Consistent with alcohol misuse|
 
 
 - id: Q1(1)-Q2(2)-Q3(3)-Gender(female)
@@ -59,6 +63,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 6
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(2)-Q2(3)-Q3(4)-Gender(female)
@@ -71,6 +76,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 9
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(4)-Q2(3)-Q3(2)-Gender(female)
@@ -83,6 +89,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 9
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(3)-Q2(2)-Q3(1)-Gender(female)
@@ -95,6 +102,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 6
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(4)-Q2(4)-Q3(4)-Gender(female)
@@ -107,6 +115,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 12
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(0)-Q2(0)-Q3(0)-Gender(male)
@@ -119,6 +128,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 0
+      gt0020|AUDIT-C: 0|local::at0003|Consistent with normal consumption|
 
 
 - id: Q1(0)-Q2(0)-Q3(1)-Gender(male)
@@ -126,11 +136,12 @@ test_cases:
     1:
       gt0003|How often do you have a drink containing alcohol?: 0|local::at0008|Never|
       gt0004|How many drinks containing alcohol do you have on a typical day when you are drinking?: 0|local::at0013|1 or 2|
-      gt0005|How often do you have six or more drinks on one occasion?: 0|local::at0018|Never|
+      gt0005|How often do you have six or more drinks on one occasion?: 1|local::at0019|Less than monthly|
       gt0017|Gender: local::at0005|Male|
   expected_output:
     1:
-      gt0010|Total score: 0
+      gt0010|Total score: 1
+      gt0020|AUDIT-C: 0|local::at0003|Consistent with normal consumption|
 
 
 - id: Q1(0)-Q2(1)-Q3(1)-Gender(male)
@@ -143,6 +154,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 2
+      gt0020|AUDIT-C: 0|local::at0003|Consistent with normal consumption|
 
 
 - id: Q1(1)-Q2(1)-Q3(1)-Gender(male)
@@ -155,6 +167,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 3
+      gt0020|AUDIT-C: 0|local::at0003|Consistent with normal consumption|
 
 
 - id: Q1(1)-Q2(2)-Q3(3)-Gender(male)
@@ -167,6 +180,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 6
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(2)-Q2(3)-Q3(4)-Gender(male)
@@ -179,6 +193,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 9
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(4)-Q2(3)-Q3(2)-Gender(male)
@@ -191,6 +206,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 9
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(3)-Q2(2)-Q3(1)-Gender(male)
@@ -203,6 +219,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 6
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|
 
 
 - id: Q1(4)-Q2(4)-Q3(4)-Gender(male)
@@ -215,3 +232,4 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score: 12
+      gt0020|AUDIT-C: 2|local::at0005|Consistent with alcohol abuse and possible liver damage|

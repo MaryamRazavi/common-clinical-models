@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Dennis Forslund, Cambio Healthcare Systems",
-	  "Aulia Zahrina Qashri"
+      "Aulia Zahrina Qashri"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -74,17 +74,55 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
           }
         }
+      },
+      "gt0007": {
+        "id": "gt0007",
+        "model_id": "openEHR-EHR-EVALUATION.simplified_motor_score_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.simplified_motor_score_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/data[at0001]/items[at0005]"
+          }
+        }
       }
     },
     "rules": {
       "gt0006": {
         "id": "gt0006",
-        "priority": 1,
+        "priority": 3,
         "when": [
           "$gt0003|Patient response|!=null"
         ],
         "then": [
           "$gt0005|Patient response|=$gt0003|Patient response|"
+        ]
+      },
+      "gt0010": {
+        "id": "gt0010",
+        "priority": 2,
+        "when": [
+          "$gt0005|Patient response|==2|local::at0009|Obeys commands|"
+        ],
+        "then": [
+          "$gt0008|Score interpretation|=0|local::at0003|Score = 2 Low risk|",
+          "$gt0009|Management|=0|local::at0006|No intervention necessary|"
+        ]
+      },
+      "gt0011": {
+        "id": "gt0011",
+        "priority": 1,
+        "when": [
+          "$gt0005|Patient response|.value<2"
+        ],
+        "then": [
+          "$gt0008|Score interpretation|=1|local::at0004|Score < 2 Significant risk|",
+          "$gt0009|Management|=1|local::at0007|Prompt evaluation and head CT imaging is indicated|"
         ]
       }
     }
@@ -102,16 +140,36 @@
           "gt0003": {
             "id": "gt0003",
             "text": "Patientens svar på stimuli",
-            "description": "*(en) Patient response"
+            "description": "Patient response"
           },
           "gt0005": {
             "id": "gt0005",
             "text": "Patientens svar på stimuli",
-            "description": "*(en) Patient response"
+            "description": "Patient response"
           },
           "gt0006": {
             "id": "gt0006",
             "text": "CDS SMS"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Resultat",
+            "description": "Score interpretation"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Åtgärd",
+            "description": "Management"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "CDS SMS låg risk",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "CDS signifikant förhöjd risk",
+            "description": ""
           }
         }
       },
@@ -136,6 +194,24 @@
           "gt0006": {
             "id": "gt0006",
             "text": "Set SMS"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Score interpretation",
+            "description": "Score interpretation"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Management",
+            "description": "Management"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Set SMS Low risk"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Set SMS Significant risk"
           }
         }
       }

@@ -20,6 +20,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 1
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 0|local::at0004|Initiation of anti-thrombotic and invasive therapies is reasonable given a relatively low risk of major bleeding.|
+      gt0062|Risk level: 0|local::at0009|Very low risk (3.1%)|
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(50%)-HR(65)-SysBP(125)-CC(135)
   input:
@@ -40,6 +42,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 20
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 0|local::at0004|Initiation of anti-thrombotic and invasive therapies is reasonable given a relatively low risk of major bleeding.|
+      gt0062|Risk level: 0|local::at0009|Very low risk (3.1%)|
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(38%)-HR(65)-SysBP(125)-CC(135)
   input:
@@ -60,6 +64,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 22
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 1|local::at0005|Initiation of anti-thrombotic and invasive therapies should be considered|
+      gt0062|Risk level: 1|local::at0010|Low risk (5.5%)|
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(35%)-HR(65)-SysBP(125)-CC(135)
   input:
@@ -80,6 +86,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 23
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 1|local::at0005|Initiation of anti-thrombotic and invasive therapies should be considered|
+      gt0062|Risk level: 1|local::at0010|Low risk (5.5%)|
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(32%)-HR(65)-SysBP(125)-CC(135)
   input:
@@ -100,6 +108,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 27
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 1|local::at0005|Initiation of anti-thrombotic and invasive therapies should be considered|
+      gt0062|Risk level: 1|local::at0010|Low risk (5.5%)|
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(65)-SysBP(125)-CC(135)
   input:
@@ -120,6 +130,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 29
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 1|local::at0005|Initiation of anti-thrombotic and invasive therapies should be considered|
+      gt0062|Risk level: 1|local::at0010|Low risk (5.5%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(75)-SysBP(125)-CC(135)
@@ -141,6 +153,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 30
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 1|local::at0005|Initiation of anti-thrombotic and invasive therapies should be considered|
+      gt0062|Risk level: 1|local::at0010|Low risk (5.5%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(85)-SysBP(125)-CC(135)
@@ -162,6 +176,9 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 32
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 2|local::at0006|Initiation of anti-thrombotic and invasive therapies should be considered.|
+      gt0062|Risk level: 2|local::at0011|Moderate risk (8.5%) |
+
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(95)-SysBP(125)-CC(135)
@@ -183,6 +200,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 35
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 2|local::at0006|Initiation of anti-thrombotic and invasive therapies should be considered.|
+      gt0062|Risk level: 2|local::at0011|Moderate risk (8.5%) |
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(105)-SysBP(125)-CC(135)
   input:
@@ -203,6 +222,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 37
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 2|local::at0006|Initiation of anti-thrombotic and invasive therapies should be considered.|
+      gt0062|Risk level: 2|local::at0011|Moderate risk (8.5%) |
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(115)-SysBP(125)-CC(135)
   input:
@@ -223,6 +244,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 39
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 2|local::at0006|Initiation of anti-thrombotic and invasive therapies should be considered.|
+      gt0062|Risk level: 2|local::at0011|Moderate risk (8.5%) |
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(125)-CC(135)
@@ -244,6 +267,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 40
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 2|local::at0006|Initiation of anti-thrombotic and invasive therapies should be considered.|
+      gt0062|Risk level: 2|local::at0011|Moderate risk (8.5%) |
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(190)-CC(135)
   input:
@@ -264,6 +289,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 42
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 3|local::at0007|Judicious use of anti-thrombotic and invasive therapies is prudent in this high risk of bleeding group.|
+      gt0062|Risk level: 3|local::at0012|High risk (11.9%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(115)-CC(135)
@@ -285,6 +312,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 44
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 3|local::at0007|Judicious use of anti-thrombotic and invasive therapies is prudent in this high risk of bleeding group.|
+      gt0062|Risk level: 3|local::at0012|High risk (11.9%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(95)-CC(135)
@@ -306,6 +335,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 47
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 3|local::at0007|Judicious use of anti-thrombotic and invasive therapies is prudent in this high risk of bleeding group.|
+      gt0062|Risk level: 3|local::at0012|High risk (11.9%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(80)-CC(135)
@@ -327,6 +358,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 49
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 3|local::at0007|Judicious use of anti-thrombotic and invasive therapies is prudent in this high risk of bleeding group.|
+      gt0062|Risk level: 3|local::at0012|High risk (11.9%)|
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(80)-CC(100)
   input:
@@ -347,6 +380,8 @@ test_cases:
       gt0009|Creatinine clearance score: 7|local::at0041|>90-120mL/min|
       gt0016|Total score: 56
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 4|local::at0008|Judicious use of anti-thrombotic and invasive therapies is prudent in this very high risk of bleeding group.|
+      gt0062|Risk level: 4|local::at0014|Very high risk (19.5%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(80)-CC(70)
@@ -368,6 +403,8 @@ test_cases:
       gt0009|Creatinine clearance score: 17|local::at0042|>60-90 mL/min|
       gt0016|Total score: 66
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 4|local::at0008|Judicious use of anti-thrombotic and invasive therapies is prudent in this very high risk of bleeding group.|
+      gt0062|Risk level: 4|local::at0014|Very high risk (19.5%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(80)-CC(40)
@@ -389,6 +426,8 @@ test_cases:
       gt0009|Creatinine clearance score: 28|local::at0043|>30-60 mL/min|
       gt0016|Total score: 77
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 4|local::at0008|Judicious use of anti-thrombotic and invasive therapies is prudent in this very high risk of bleeding group.|
+      gt0062|Risk level: 4|local::at0014|Very high risk (19.5%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(80)-CC(20)
@@ -410,6 +449,8 @@ test_cases:
       gt0009|Creatinine clearance score: 35|local::at0044|>15-30 mL/min|
       gt0016|Total score: 84
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 4|local::at0008|Judicious use of anti-thrombotic and invasive therapies is prudent in this very high risk of bleeding group.|
+      gt0062|Risk level: 4|local::at0014|Very high risk (19.5%)|
 
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(M)-PCV(28%)-HR(125)-SysBP(80)-CC(10)
@@ -431,6 +472,8 @@ test_cases:
       gt0009|Creatinine clearance score: 39|local::at0045|≤15 mL/min|
       gt0016|Total score: 88
       gt0010|Gender score: 0|local::at0014|Male|
+      gt0063|Recommendation: 4|local::at0008|Judicious use of anti-thrombotic and invasive therapies is prudent in this very high risk of bleeding group.|
+      gt0062|Risk level: 4|local::at0014|Very high risk (19.5%)|
 
 
 - id: CHF(0)-VasDisease(0)-DM(0)-Gender(F)-PCV(50%)-HR(75)-SysBP(120)-CC(135)
@@ -452,6 +495,8 @@ test_cases:
       gt0009|Creatinine clearance score: 0|local::at0040|>120 mL/min|
       gt0016|Total score: 14
       gt0010|Gender score: 8|local::at0015|Female|
+      gt0063|Recommendation: 0|local::at0004|Initiation of anti-thrombotic and invasive therapies is reasonable given a relatively low risk of major bleeding.|
+      gt0062|Risk level: 0|local::at0009|Very low risk (3.1%)|
 
 - id: CHF(7)-VasDisease(6)-DM(6)-Gender(F)-PCV(28%)-HR(125)-SysBP(80)-CC(10)
   input:
@@ -472,4 +517,5 @@ test_cases:
       gt0009|Creatinine clearance score: 39|local::at0045|≤15 mL/min|
       gt0016|Total score: 96
       gt0010|Gender score: 8|local::at0015|Female|
-
+      gt0063|Recommendation: 4|local::at0008|Judicious use of anti-thrombotic and invasive therapies is prudent in this very high risk of bleeding group.|
+      gt0062|Risk level: 4|local::at0014|Very high risk (19.5%)|

@@ -13,7 +13,7 @@
       "email": "models@cambiocds.com"
     },
     "other_contributors": [
-	  "Daniel Keszthelyi"
+      "Daniel Keszthelyi"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -58,17 +58,69 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
           }
         }
+      },
+      "gt0009": {
+        "id": "gt0009",
+        "model_id": "openEHR-EHR-EVALUATION.hepatic_encephalopathy_grades_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.hepatic_encephalopathy_grades_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0008": {
         "id": "gt0008",
-        "priority": 1,
+        "priority": 5,
         "when": [
           "$gt0004|Signs/Symptoms|!=null"
         ],
         "then": [
           "$gt0006|Resulting score|.magnitude=$gt0004.value"
+        ]
+      },
+      "gt0011": {
+        "id": "gt0011",
+        "priority": 4,
+        "when": [
+          "$gt0006|Resulting score|<=1"
+        ],
+        "then": [
+          "$gt0010|Grades|=1|local::at0003|Grade I|"
+        ]
+      },
+      "gt0012": {
+        "id": "gt0012",
+        "priority": 3,
+        "when": [
+          "$gt0006|Resulting score|==2"
+        ],
+        "then": [
+          "$gt0010|Grades|=2|local::at0004|Grade II|"
+        ]
+      },
+      "gt0013": {
+        "id": "gt0013",
+        "priority": 2,
+        "when": [
+          "$gt0006|Resulting score|==3"
+        ],
+        "then": [
+          "$gt0010|Grades|=3|local::at0005|Grade III|"
+        ]
+      },
+      "gt0014": {
+        "id": "gt0014",
+        "priority": 1,
+        "when": [
+          "$gt0006|Resulting score|==4"
+        ],
+        "then": [
+          "$gt0010|Grades|=4|local::at0006|Grade IV|"
         ]
       }
     }
@@ -96,6 +148,27 @@
           "gt0008": {
             "id": "gt0008",
             "text": "Calculate score"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Grades",
+            "description": "The West Haven Criteria are used to categorise the signs and symptoms to interpret the grading for Hepatic Encephalopathy."
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Grade I"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Grade II"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Grade III"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Grade IV"
           }
         }
       }

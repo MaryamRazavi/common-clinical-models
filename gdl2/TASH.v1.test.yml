@@ -21,6 +21,7 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 0|local::at0030|No|
       gt0057|Fracture of trunk/leg: 0|local::at0032|No|
       gt0055|Heart Rate score: 0|local::at0028|<= 120|
+      gt0100|Probability of Massive Transfusion: 0|local::at0003|< 50% |
 
 
 - id: All worse, HB 11, 100<BP<120
@@ -43,6 +44,8 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
+      gt0100|Probability of Massive Transfusion: 0|local::at0003|< 50% |
+
 
 
 - id: HB 10, BP<100
@@ -65,6 +68,7 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
+      gt0100|Probability of Massive Transfusion: 1|local::at0004|50-99%|
 
 - id: HB 9
   input:
@@ -86,6 +90,7 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
+      gt0100|Probability of Massive Transfusion: 1|local::at0004|50-99%|
 
 - id: HB 8
   input:
@@ -107,6 +112,7 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
+      gt0100|Probability of Massive Transfusion: 1|local::at0004|50-99%|
 
 
 - id: HB 6
@@ -129,8 +135,9 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
+      gt0100|Probability of Massive Transfusion: 1|local::at0004|50-99%|
 
-- id: Base excess -4 (works in execution tab, not here)
+- id: Base excess -4
   input:
     1:
       gt0048|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
@@ -150,8 +157,9 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
+      gt0100|Probability of Massive Transfusion: 1|local::at0004|50-99%|
 
-- id: Base excess -9 (works in execution tab, not here)
+- id: Base excess -9
   input:
     1:
       gt0048|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
@@ -171,9 +179,11 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
+      gt0100|Probability of Massive Transfusion: 1|local::at0004|50-99%|
 
 
-- id: Base excess -11 (works in execution tab, not here)
+
+- id: Base excess -11
   input:
     1:
       gt0048|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
@@ -193,5 +203,4 @@ test_cases:
       gt0056|Positive FAST for intra-abdo fluid: 3|local::at0031|Yes|
       gt0057|Fracture of trunk/leg: 3|local::at0038|Open or Dislocated Femur fracture|
       gt0055|Heart Rate score: 2|local::at0029|>120|
-
-
+      gt0100|Probability of Massive Transfusion: 1|local::at0004|50-99%|

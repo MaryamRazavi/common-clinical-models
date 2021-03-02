@@ -15,7 +15,7 @@
     "other_contributors": [
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -144,12 +144,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0016]"
           }
         }
+      },
+      "gt0104": {
+        "id": "gt0104",
+        "model_id": "openEHR-EHR-EVALUATION.opioid_risk_tool_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.opioid_risk_tool_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0105": {
+            "id": "gt0105",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0032": {
         "id": "gt0032",
-        "priority": 5,
+        "priority": 8,
         "when": [
           "$gt0027|Birthdate|!=null"
         ],
@@ -160,7 +172,7 @@
       },
       "gt0036": {
         "id": "gt0036",
-        "priority": 4,
+        "priority": 7,
         "when": [
           "$gt0035|Age|.magnitude>=16",
           "$gt0035|Age|.magnitude<=45",
@@ -172,7 +184,7 @@
       },
       "gt0037": {
         "id": "gt0037",
-        "priority": 3,
+        "priority": 6,
         "when": [
           "($gt0035|Age|.magnitude<16)||($gt0035|Age|.magnitude>45)",
           "$gt0035|Age|!=null"
@@ -183,7 +195,7 @@
       },
       "gt0102": {
         "id": "gt0102",
-        "priority": 2,
+        "priority": 5,
         "when": [
           "$gt0028|Gender|==local::at0005|Male|",
           "$gt0074|History of depression|!=null",
@@ -202,7 +214,7 @@
       },
       "gt0103": {
         "id": "gt0103",
-        "priority": 1,
+        "priority": 4,
         "when": [
           "$gt0028|Gender|==local::at0006|Female|",
           "$gt0073|History of preadolescent sexual abuse|!=null",
@@ -218,6 +230,36 @@
         ],
         "then": [
           "$gt0071|Calculate score women|.magnitude=$gt0079.value+$gt0081.value+$gt0095.value*2+$gt0073.value+$gt0061.value+$gt0075.value+$gt0074.value+$gt0078.value+$gt0085.value+$gt0076.value"
+        ]
+      },
+      "gt0106": {
+        "id": "gt0106",
+        "priority": 3,
+        "when": [
+          "($gt0070|Result - male|<=3)||($gt0071|Result - female|<=3)"
+        ],
+        "then": [
+          "$gt0105|Risk interpretation|=0|local::at0003|Low risk|"
+        ]
+      },
+      "gt0107": {
+        "id": "gt0107",
+        "priority": 2,
+        "when": [
+          "(($gt0070|Result - male|<=7)&&($gt0070|Result - male|>=4))||(($gt0071|Result - female|<=7)&&($gt0071|Result - female|>=4))"
+        ],
+        "then": [
+          "$gt0105|Risk interpretation|=1|local::at0004|Moderate risk|"
+        ]
+      },
+      "gt0108": {
+        "id": "gt0108",
+        "priority": 1,
+        "when": [
+          "($gt0070|Result - male|>=8)||($gt0071|Result - female|>=8)"
+        ],
+        "then": [
+          "$gt0105|Risk interpretation|=2|local::at0005|High risk|"
         ]
       }
     }
@@ -235,12 +277,12 @@
           "gt0027": {
             "id": "gt0027",
             "text": "Födelsedatum",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0028": {
             "id": "gt0028",
             "text": "Kön",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0030": {
             "id": "gt0030",
@@ -257,7 +299,7 @@
           "gt0035": {
             "id": "gt0035",
             "text": "Ålder",
-            "description": "*(en) Age in years, and for babies: months, weeks or days"
+            "description": "Age in years, and for babies: months, weeks or days"
           },
           "gt0036": {
             "id": "gt0036",
@@ -270,62 +312,62 @@
           "gt0061": {
             "id": "gt0061",
             "text": "Ålder 16-45",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0070": {
             "id": "gt0070",
             "text": "Resultat - man",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0071": {
             "id": "gt0071",
             "text": "Resultat - kvinna",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0073": {
             "id": "gt0073",
             "text": "Historik av sexuella övergrepp prepubertalt",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0074": {
             "id": "gt0074",
             "text": "Historik av depression",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0075": {
             "id": "gt0075",
             "text": "Historik av ADD, OCD, bipolär sjukdom eller schizofreni",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0076": {
             "id": "gt0076",
             "text": "Historik av alkoholmissbruk",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0078": {
             "id": "gt0078",
             "text": "Historik av drogmissbruk (ordinerade läkemedel)",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0079": {
             "id": "gt0079",
             "text": "Familjehistorik - alkoholmissbruk",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0081": {
             "id": "gt0081",
             "text": "Familjehistorik - drogmissbruk (ordinerade läkemedel)",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0085": {
             "id": "gt0085",
             "text": "Historik av drogmissbruk (olagliga droger)",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0095": {
             "id": "gt0095",
             "text": "Familjehistorik - drogmissbruk (olagliga droger)",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0102": {
             "id": "gt0102",
@@ -334,6 +376,26 @@
           "gt0103": {
             "id": "gt0103",
             "text": "Resultat - kvinna"
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "Riskvärdering",
+            "description": "Score interpretations"
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "CDS risk - låg",
+            "description": ""
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "CDS risk - måttlig",
+            "description": ""
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "CDS risk - hög",
+            "description": ""
           }
         }
       },
@@ -447,6 +509,23 @@
           "gt0103": {
             "id": "gt0103",
             "text": "Calculate score for women"
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "Risk interpretation",
+            "description": "Score interpretations"
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "Set Risk low"
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "Set Risk moderate"
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "Set Risk high"
           }
         }
       }

@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Dennis Forslund, Cambio Healthcare Systems",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -95,6 +95,18 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
           }
         }
+      },
+      "gt0030": {
+        "id": "gt0030",
+        "model_id": "openEHR-EHR-EVALUATION.tnm_breast_cancer_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.tnm_breast_cancer_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0031": {
+            "id": "gt0031",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "default_actions": [
@@ -105,7 +117,7 @@
     "rules": {
       "gt0011": {
         "id": "gt0011",
-        "priority": 18,
+        "priority": 26,
         "when": [
           "$gt0003|Tumour|!=null"
         ],
@@ -115,7 +127,7 @@
       },
       "gt0012": {
         "id": "gt0012",
-        "priority": 17,
+        "priority": 25,
         "when": [
           "$gt0004|Nodal involvement|!=null"
         ],
@@ -125,7 +137,7 @@
       },
       "gt0013": {
         "id": "gt0013",
-        "priority": 16,
+        "priority": 24,
         "when": [
           "$gt0005|Metastases|!=null"
         ],
@@ -135,7 +147,7 @@
       },
       "gt0014": {
         "id": "gt0014",
-        "priority": 15,
+        "priority": 23,
         "when": [
           "($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)||($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)",
           "($gt0008|Nodal involvement|==1|local::at0017|N0 - Cancer has not spread to nearby lymph nodes.|)||(($gt0008|Nodal involvement|==2|local::at0018|N0(i+) - Cancer spread < 200 cells and is < 0.2 mm|)||($gt0008|Nodal involvement|==3|local::at0019|N0(mol+) - Cancer cells cannot be seen in underarm lymph nodes but traces of cancer cells were detected using RT-PCR. |))",
@@ -147,7 +159,7 @@
       },
       "gt0015": {
         "id": "gt0015",
-        "priority": 14,
+        "priority": 22,
         "when": [
           "(($gt0008|Nodal involvement|==1|local::at0017|N0 - Cancer has not spread to nearby lymph nodes.|)||($gt0008|Nodal involvement|==3|local::at0019|N0(mol+) - Cancer cells cannot be seen in underarm lymph nodes but traces of cancer cells were detected using RT-PCR. |))||($gt0008|Nodal involvement|==2|local::at0018|N0(i+) - Cancer spread < 200 cells and is < 0.2 mm|)",
           "($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)||($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)",
@@ -159,7 +171,7 @@
       },
       "gt0016": {
         "id": "gt0016",
-        "priority": 13,
+        "priority": 21,
         "when": [
           "($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)||($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)",
           "($gt0007|Tumour|==1|local::at0010|T0 - No evidence of primary tumor|)||($gt0007|Tumour|==3|local::at0012|T1 (includes T1a, T1b, and T1c)|)",
@@ -171,7 +183,7 @@
       },
       "gt0017": {
         "id": "gt0017",
-        "priority": 12,
+        "priority": 20,
         "when": [
           "($gt0008|Nodal involvement|==5|local::at0022|N1a - Spread to 1 to 3 lymph nodes with at least one area of cancer spread > 2 mm across.|)||(($gt0008|Nodal involvement|==6|local::at0023|N1b - Spread to internal mammary lymph nodes, but only found on sentinel lymph node biopsy|)||($gt0008|Nodal involvement|==7|local::at0024|N1c - Both N1a and N1b apply.|))",
           "($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)||($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)",
@@ -183,7 +195,7 @@
       },
       "gt0018": {
         "id": "gt0018",
-        "priority": 11,
+        "priority": 19,
         "when": [
           "!fired($gt0017)",
           "($gt0008|Nodal involvement|==1|local::at0017|N0 - Cancer has not spread to nearby lymph nodes.|)||(($gt0008|Nodal involvement|==2|local::at0018|N0(i+) - Cancer spread < 200 cells and is < 0.2 mm|)||($gt0008|Nodal involvement|==3|local::at0019|N0(mol+) - Cancer cells cannot be seen in underarm lymph nodes but traces of cancer cells were detected using RT-PCR. |))",
@@ -196,7 +208,7 @@
       },
       "gt0019": {
         "id": "gt0019",
-        "priority": 10,
+        "priority": 18,
         "when": [
           "$gt0007|Tumour|==4|local::at0013|T2 - Tumor is more than 2 cm but not more than 5 cm (2 inches) across.|",
           "($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)||($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)",
@@ -208,7 +220,7 @@
       },
       "gt0020": {
         "id": "gt0020",
-        "priority": 9,
+        "priority": 17,
         "when": [
           "!fired($gt0019)",
           "$gt0007|Tumour|==5|local::at0014|T3 - Tumor is more than 5 cm across.|",
@@ -221,7 +233,7 @@
       },
       "gt0021": {
         "id": "gt0021",
-        "priority": 8,
+        "priority": 16,
         "when": [
           "($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)||($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)",
           "($gt0008|Nodal involvement|==8|local::at0025|N2a - Spread to 4-9 lymph nodes underarm, with at least one area of cancer spread larger than 2 mm.|)||($gt0008|Nodal involvement|==9|local::at0026|N2b - Spread to one or more internal mammary lymph nodes, causing them to become enlarged.|)",
@@ -233,7 +245,7 @@
       },
       "gt0022": {
         "id": "gt0022",
-        "priority": 7,
+        "priority": 15,
         "when": [
           "!fired($gt0021)",
           "$gt0007|Tumour|==5|local::at0014|T3 - Tumor is more than 5 cm across.|",
@@ -246,7 +258,7 @@
       },
       "gt0023": {
         "id": "gt0023",
-        "priority": 6,
+        "priority": 14,
         "when": [
           "$gt0007|Tumour|==6|local::at0015|T4 (includes T4a, T4b, T4c, and T4d)|",
           "($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)||($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)",
@@ -258,7 +270,7 @@
       },
       "gt0024": {
         "id": "gt0024",
-        "priority": 5,
+        "priority": 13,
         "when": [
           "($gt0009|Metastases|==1|local::at0033|M0 - No distant spread is found on x-rays (or other imaging tests) or by physical exam.|)||($gt0009|Metastases|==2|local::at0034|cM0(i+) - Small no. of cancer cells found in blood/bone marrow or tiny areas of cancer spread =< 0.2 mm in regional lymph nodes|)",
           "(($gt0008|Nodal involvement|==10|local::at0027|N3a|)||($gt0008|Nodal involvement|==11|local::at0028|N3b|))||($gt0008|Nodal involvement|==12|local::at0029|N3c|)",
@@ -270,7 +282,7 @@
       },
       "gt0025": {
         "id": "gt0025",
-        "priority": 4,
+        "priority": 12,
         "when": [
           "$gt0009|Metastases|==3|local::at0035|M1 - Cancer has spread to distant organs|",
           "($gt0008|Nodal involvement|==1|local::at0017|N0 - Cancer has not spread to nearby lymph nodes.|)||(($gt0008|Nodal involvement|==2|local::at0018|N0(i+) - Cancer spread < 200 cells and is < 0.2 mm|)||($gt0008|Nodal involvement|==3|local::at0019|N0(mol+) - Cancer cells cannot be seen in underarm lymph nodes but traces of cancer cells were detected using RT-PCR. |))",
@@ -282,7 +294,7 @@
       },
       "gt0026": {
         "id": "gt0026",
-        "priority": 3,
+        "priority": 11,
         "when": [
           "!fired($gt0025)",
           "$gt0009|Metastases|==3|local::at0035|M1 - Cancer has spread to distant organs|",
@@ -295,7 +307,7 @@
       },
       "gt0027": {
         "id": "gt0027",
-        "priority": 2,
+        "priority": 10,
         "when": [
           "!fired($gt0025)",
           "!fired($gt0026)",
@@ -309,7 +321,7 @@
       },
       "gt0028": {
         "id": "gt0028",
-        "priority": 1,
+        "priority": 9,
         "when": [
           "!fired($gt0025)",
           "!fired($gt0026)",
@@ -320,6 +332,86 @@
         ],
         "then": [
           "$gt0010|Breast cancer stage|=8|local::at0044|Stage IV|"
+        ]
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "priority": 8,
+        "when": [
+          "$gt0010|Breast cancer stage|==0|local::at0036|Stage 0|"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=0|local::at0003|99% Stage 0|"
+        ]
+      },
+      "gt0033": {
+        "id": "gt0033",
+        "priority": 7,
+        "when": [
+          "($gt0010|Breast cancer stage|==1|local::at0037|Stage IA|)||($gt0010|Breast cancer stage|==2|local::at0038|Stage IB|)"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=1|local::at0004|92% Stage I|"
+        ]
+      },
+      "gt0034": {
+        "id": "gt0034",
+        "priority": 6,
+        "when": [
+          "$gt0010|Breast cancer stage|==3|local::at0039|Stage IIA|"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=2|local::at0005|82% Stage IIA|"
+        ]
+      },
+      "gt0035": {
+        "id": "gt0035",
+        "priority": 5,
+        "when": [
+          "$gt0010|Breast cancer stage|==4|local::at0040|Stage IIB|"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=3|local::at0006|65% Stage IIB|"
+        ]
+      },
+      "gt0036": {
+        "id": "gt0036",
+        "priority": 4,
+        "when": [
+          "$gt0010|Breast cancer stage|==5|local::at0041|Stage IIIA|"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=4|local::at0007|47% Stage IIIA|"
+        ]
+      },
+      "gt0037": {
+        "id": "gt0037",
+        "priority": 3,
+        "when": [
+          "$gt0010|Breast cancer stage|==6|local::at0042|Stage IIIB|"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=5|local::at0008|44% Stage IIIB|"
+        ]
+      },
+      "gt0038": {
+        "id": "gt0038",
+        "priority": 2,
+        "when": [
+          "$gt0010|Breast cancer stage|==7|local::at0043|Stage IIIC|"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=6|local::at0009|14-44% Stage IIIc|"
+        ]
+      },
+      "gt0039": {
+        "id": "gt0039",
+        "priority": 1,
+        "when": [
+          "$gt0010|Breast cancer stage|==8|local::at0044|Stage IV|"
+        ],
+        "then": [
+          "$gt0031|5 Year Survival rates|=7|local::at0010|14% Stage IV|"
         ]
       }
     }
@@ -441,10 +533,50 @@
             "id": "gt0028",
             "text": "CDS Stadium IV - grupp 4"
           },
-          "gt0029": {
-            "id": "gt0029",
-            "text": "*(en) Event time",
-            "description": "*(en) The exact time of a single timed event during the Observation. Can represent either a specific point-in-time or an interval event."
+          "gt0031": {
+            "id": "gt0031",
+            "text": "5-årsöverlevnad",
+            "description": "5-årsöverlevnad baserat på stadieindelning."
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Stadium 0 - 5-årsöverlevnad",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Stadium I - 5-årsöverlevnad",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Stadium IIA - 5-årsöverlevnad",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Stadium IIB - 5-årsöverlevnad",
+            "description": ""
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Stadium IIIA  - 5-årsöverlevnad",
+            "description": ""
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Stadium IIIB  - 5-årsöverlevnad",
+            "description": ""
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Stadium IIIC  - 5-årsöverlevnad",
+            "description": ""
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Stadium IV - 5-årsöverlevnad",
+            "description": ""
           }
         }
       },
@@ -563,10 +695,42 @@
             "id": "gt0028",
             "text": "Set Stage IV - group 4"
           },
-          "gt0029": {
-            "id": "gt0029",
-            "text": "Event time",
-            "description": "The exact time of a single timed event during the Observation. Can represent either a specific point-in-time or an interval event."
+          "gt0031": {
+            "id": "gt0031",
+            "text": "5 Year Survival rates",
+            "description": "5 Year survival according to the Stage of breast cancer"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Stage 0 - 5 year survival"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Stage I - 5 year survival"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Stage IIA - 5 year survival"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Stage IIB - 5 year survival"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Stage IIIA  - 5 year survival"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Stage IIIB  - 5 year survival"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Stage IIIC  - 5 year survival"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Stage IV - 5 year survival"
           }
         }
       }

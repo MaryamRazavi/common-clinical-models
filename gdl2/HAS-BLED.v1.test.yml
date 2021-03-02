@@ -1,3 +1,4 @@
+current_datetime: '2019-11-28T00:00:00+01:00'
 guidelines:
   1: HAS-BLED.v1
 test_cases:
@@ -33,7 +34,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 0|local::at0014|No|
       gt0062|Age: 60,a
-
+      gt0075|HAS-BLED risk assessment: 0|local::at0003|Low risk |
+      gt0076|Bleeding risk per 100 patient-year: 0|local::at0015|(0.6-1.13%)|
+      gt0077|Recommendation: 0|local::at0018|Anticoagulation should be considered|
 
 - id: Systolic, CR
   input:
@@ -67,6 +70,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 1|local::at0015|Yes|
       gt0062|Age: 60,a
+      gt0075|HAS-BLED risk assessment: 1|local::at0004|Intermediate risk |
+      gt0076|Bleeding risk per 100 patient-year: 1|local::at0016|(1.02-3.2%)|
+      gt0077|Recommendation: 1|local::at0019|Anticoagulation can be considered|
 
 - id: Renal, HT history
   input:
@@ -100,6 +106,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 1|local::at0015|Yes|
       gt0062|Age: 60,a
+      gt0075|HAS-BLED risk assessment: 1|local::at0004|Intermediate risk |
+      gt0076|Bleeding risk per 100 patient-year: 1|local::at0016|(1.02-3.2%)|
+      gt0077|Recommendation: 1|local::at0019|Anticoagulation can be considered|
 
 - id: Both
   input:
@@ -133,6 +142,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 1|local::at0015|Yes|
       gt0062|Age: 60,a
+      gt0075|HAS-BLED risk assessment: 1|local::at0004|Intermediate risk |
+      gt0076|Bleeding risk per 100 patient-year: 1|local::at0016|(1.02-3.2%)|
+      gt0077|Recommendation: 1|local::at0019|Anticoagulation can be considered|
 
 - id: Stroke, Major bleeding, elderly, INR, medication, consumes alcohol but no abuse history
   input:
@@ -166,6 +178,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 1|local::at0015|Yes|
       gt0062|Age: 80,a
+      gt0075|HAS-BLED risk assessment: 2|local::at0006|High risk |
+      gt0076|Bleeding risk per 100 patient-year: 2|local::at0017|(4.9-19.6%) |
+      gt0077|Recommendation: 2|local::at0020|Alternatives to anticoagulation should be considered|
 
 - id: Doesn't consume, but has history
   input:
@@ -199,6 +214,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 1|local::at0015|Yes|
       gt0062|Age: 80,a
+      gt0075|HAS-BLED risk assessment: 2|local::at0006|High risk |
+      gt0076|Bleeding risk per 100 patient-year: 2|local::at0017|(4.9-19.6%) |
+      gt0077|Recommendation: 2|local::at0020|Alternatives to anticoagulation should be considered|
 
 - id: Bilirubin
   input:
@@ -232,6 +250,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 0|local::at0014|No|
       gt0062|Age: 60,a
+      gt0075|HAS-BLED risk assessment: 0|local::at0003|Low risk |
+      gt0076|Bleeding risk per 100 patient-year: 0|local::at0015|(0.6-1.13%)|
+      gt0077|Recommendation: 0|local::at0018|Anticoagulation should be considered|
 
 - id: AST
   input:
@@ -265,6 +286,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 0|local::at0014|No|
       gt0062|Age: 60,a
+      gt0075|HAS-BLED risk assessment: 0|local::at0003|Low risk |
+      gt0076|Bleeding risk per 100 patient-year: 0|local::at0015|(0.6-1.13%)|
+      gt0077|Recommendation: 0|local::at0018|Anticoagulation should be considered|
 
 - id: ALP
   input:
@@ -298,7 +322,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 0|local::at0014|No|
       gt0062|Age: 60,a
-
+      gt0075|HAS-BLED risk assessment: 0|local::at0003|Low risk |
+      gt0076|Bleeding risk per 100 patient-year: 0|local::at0015|(0.6-1.13%)|
+      gt0077|Recommendation: 0|local::at0018|Anticoagulation should be considered|
 
 - id: ALT
   input:
@@ -332,6 +358,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 0|local::at0014|No|
       gt0062|Age: 60,a
+      gt0075|HAS-BLED risk assessment: 0|local::at0003|Low risk |
+      gt0076|Bleeding risk per 100 patient-year: 0|local::at0015|(0.6-1.13%)|
+      gt0077|Recommendation: 0|local::at0018|Anticoagulation should be considered|
 
 - id: Liver d history
   input:
@@ -365,7 +394,9 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 0|local::at0014|No|
       gt0062|Age: 60,a
-
+      gt0075|HAS-BLED risk assessment: 0|local::at0003|Low risk |
+      gt0076|Bleeding risk per 100 patient-year: 0|local::at0015|(0.6-1.13%)|
+      gt0077|Recommendation: 0|local::at0018|Anticoagulation should be considered|
 
 - id: allneg
   input:
@@ -399,4 +430,6 @@ test_cases:
       gt0025|Liver Disease: 0|local::at0014|No|
       gt0023|Hypertension History: 0|local::at0014|No|
       gt0062|Age: 60,a
-
+      gt0075|HAS-BLED risk assessment: 0|local::at0003|Low risk |
+      gt0076|Bleeding risk per 100 patient-year: 0|local::at0015|(0.6-1.13%)|
+      gt0077|Recommendation: 0|local::at0018|Anticoagulation should be considered|

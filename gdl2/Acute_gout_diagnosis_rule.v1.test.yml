@@ -34,6 +34,9 @@ test_cases:
       gt0040|Serum uric acid score: 0
       gt0036|Onset duration score: 0
       gt0039|Cardiovascular disease score: 0
+      gt0037|Joint redness score: 0
+      gt0049|Gout assessment: local::at0005|Gout unlikely|
+      gt0050|Gout prevalence: 2.2,%
 
 
 - id: gender(female)-UA(0)-CVD(0)-HT(0)-Arthritis(1)-Joint(1)-MTP(1)-Onset(1)
@@ -57,6 +60,8 @@ test_cases:
       gt0036|Onset duration score: 0.5
       gt0039|Cardiovascular disease score: 0
       gt0037|Joint redness score: 1
+      gt0049|Gout assessment: local::at0006|Gout indeterminate|
+      gt0050|Gout prevalence: 31.2,%
 
 
 - id: gender(female)-UA(1)-CVD(1)-HT(1)-Arthritis(0)-Joint(0)-MTP(0)-Onset(0)
@@ -80,6 +85,8 @@ test_cases:
       gt0036|Onset duration score: 0
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 0
+      gt0049|Gout assessment: local::at0006|Gout indeterminate|
+      gt0050|Gout prevalence: 31.2,%
 
 
 
@@ -104,7 +111,8 @@ test_cases:
       gt0036|Onset duration score: 0.5
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 1
-
+      gt0049|Gout assessment: local::at0006|Gout indeterminate|
+      gt0050|Gout prevalence: 31.2,%
 
 
 - id: gender(female)-UA(0)-CVD(1)-HT(0)-Arthritis(1)-Joint(0)-MTP(1)-Onset(0)
@@ -128,7 +136,8 @@ test_cases:
       gt0036|Onset duration score: 0
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 0
-
+      gt0049|Gout assessment: local::at0006|Gout indeterminate|
+      gt0050|Gout prevalence: 31.2,%
 
 
 - id: gender(female)-UA(1)-CVD(1)-HT(1)-Arthritis(1)-Joint(1)-MTP(1)-Onset(1)
@@ -152,6 +161,8 @@ test_cases:
       gt0036|Onset duration score: 0.5
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 1
+      gt0049|Gout assessment: local::at0007|Gout very likely|
+      gt0050|Gout prevalence: 80.4,%
 
 
 - id: gender(male)-UA(0)-CVD(0)-HT(0)-Arthritis(0)-Joint(0)-MTP(0)-Onset(0)
@@ -174,6 +185,8 @@ test_cases:
       gt0040|Serum uric acid score: 0
       gt0036|Onset duration score: 0
       gt0039|Cardiovascular disease score: 0
+      gt0049|Gout assessment: local::at0005|Gout unlikely|
+      gt0050|Gout prevalence: 2.2,%
 
 
 - id: gender(male)-UA(0)-CVD(0)-HT(0)-Arthritis(1)-Joint(1)-MTP(1)-Onset(1)
@@ -197,6 +210,8 @@ test_cases:
       gt0036|Onset duration score: 0.5
       gt0039|Cardiovascular disease score: 0
       gt0037|Joint redness score: 1
+      gt0049|Gout assessment: local::at0007|Gout very likely|
+      gt0050|Gout prevalence: 80.4,%
 
 
 - id: gender(male)-UA(1)-CVD(1)-HT(1)-Arthritis(0)-Joint(0)-MTP(0)-Onset(0)
@@ -220,7 +235,8 @@ test_cases:
       gt0036|Onset duration score: 0
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 0
-
+      gt0049|Gout assessment: local::at0006|Gout indeterminate|
+      gt0050|Gout prevalence: 31.2,%
 
 
 - id: gender(male)-UA(1)-CVD(0)-HT(1)-Arthritis(0)-Joint(1)-MTP(0)-Onset(1)
@@ -244,7 +260,8 @@ test_cases:
       gt0036|Onset duration score: 0.5
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 1
-
+      gt0049|Gout assessment: local::at0007|Gout very likely|
+      gt0050|Gout prevalence: 80.4,%
 
 
 - id: gender(male)-UA(0)-CVD(1)-HT(0)-Arthritis(1)-Joint(0)-MTP(1)-Onset(0)
@@ -268,7 +285,8 @@ test_cases:
       gt0036|Onset duration score: 0
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 0
-
+      gt0049|Gout assessment: local::at0007|Gout very likely|
+      gt0050|Gout prevalence: 80.4,%
 
 
 - id: gender(male)-UA(1)-CVD(1)-HT(1)-Arthritis(1)-Joint(1)-MTP(1)-Onset(1)
@@ -292,3 +310,5 @@ test_cases:
       gt0036|Onset duration score: 0.5
       gt0039|Cardiovascular disease score: 1.5
       gt0037|Joint redness score: 1
+      gt0049|Gout assessment: local::at0007|Gout very likely|
+      gt0050|Gout prevalence: 80.4,%

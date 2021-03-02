@@ -15,7 +15,7 @@
     "other_contributors": [
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Daniel Keszthelyi"
+      "Daniel Keszthelyi"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -164,12 +164,28 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0094]"
           }
         }
+      },
+      "gt0124": {
+        "id": "gt0124",
+        "model_id": "openEHR-EHR-EVALUATION.framingham_chd_risk_score_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.framingham_chd_risk_score_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0125": {
+            "id": "gt0125",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "path": "/data[at0001]/items[at0003]"
+          }
+        }
       }
     },
     "rules": {
       "gt0033": {
         "id": "gt0033",
-        "priority": 72,
+        "priority": 102,
         "when": [
           "$gt0003|Birthdate|!=null"
         ],
@@ -180,7 +196,7 @@
       },
       "gt0034": {
         "id": "gt0034",
-        "priority": 71,
+        "priority": 101,
         "when": [
           "$gt0015|Smoker|!=null",
           "$gt0004|Gender|!=null",
@@ -193,7 +209,7 @@
       },
       "gt0035": {
         "id": "gt0035",
-        "priority": 70,
+        "priority": 100,
         "when": [
           "$gt0015|Smoker|!=null",
           "$gt0004|Gender|!=null",
@@ -209,7 +225,7 @@
       },
       "gt0037": {
         "id": "gt0037",
-        "priority": 69,
+        "priority": 99,
         "when": [
           "$gt0015|Smoker|!=null",
           "fired($gt0033)",
@@ -225,7 +241,7 @@
       },
       "gt0039": {
         "id": "gt0039",
-        "priority": 68,
+        "priority": 98,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -241,7 +257,7 @@
       },
       "gt0040": {
         "id": "gt0040",
-        "priority": 67,
+        "priority": 97,
         "when": [
           "fired($gt0033)",
           "$gt0004|Gender|!=null",
@@ -257,7 +273,7 @@
       },
       "gt0041": {
         "id": "gt0041",
-        "priority": 66,
+        "priority": 96,
         "when": [
           "$gt0015|Smoker|!=null",
           "$gt0004|Gender|!=null",
@@ -270,7 +286,7 @@
       },
       "gt0043": {
         "id": "gt0043",
-        "priority": 65,
+        "priority": 95,
         "when": [
           "fired($gt0033)",
           "$gt0015|Smoker|!=null",
@@ -286,7 +302,7 @@
       },
       "gt0042": {
         "id": "gt0042",
-        "priority": 64,
+        "priority": 94,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -302,7 +318,7 @@
       },
       "gt0044": {
         "id": "gt0044",
-        "priority": 63,
+        "priority": 93,
         "when": [
           "fired($gt0033)",
           "$gt0015|Smoker|!=null",
@@ -318,7 +334,7 @@
       },
       "gt0045": {
         "id": "gt0045",
-        "priority": 62,
+        "priority": 92,
         "when": [
           "fired($gt0033)",
           "$gt0015|Smoker|!=null",
@@ -334,7 +350,7 @@
       },
       "gt0046": {
         "id": "gt0046",
-        "priority": 61,
+        "priority": 91,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0015|Smoker|!=null",
@@ -350,7 +366,7 @@
       },
       "gt0048": {
         "id": "gt0048",
-        "priority": 60,
+        "priority": 90,
         "when": [
           "$gt0012|Total Cholesterol|<160,mg/dl",
           "$gt0012|Total Cholesterol|!=null"
@@ -362,7 +378,7 @@
       },
       "gt0049": {
         "id": "gt0049",
-        "priority": 59,
+        "priority": 89,
         "when": [
           "$gt0012|Total Cholesterol|>=160,mg/dl",
           "$gt0012|Total Cholesterol|<=239,mg/dl",
@@ -379,7 +395,7 @@
       },
       "gt0050": {
         "id": "gt0050",
-        "priority": 58,
+        "priority": 88,
         "when": [
           "fired($gt0033)",
           "$gt0004|Gender|!=null",
@@ -393,7 +409,7 @@
       },
       "gt0052": {
         "id": "gt0052",
-        "priority": 57,
+        "priority": 87,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -407,7 +423,7 @@
       },
       "gt0053": {
         "id": "gt0053",
-        "priority": 56,
+        "priority": 86,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -421,7 +437,7 @@
       },
       "gt0054": {
         "id": "gt0054",
-        "priority": 55,
+        "priority": 85,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0012|Total Cholesterol|!=null",
@@ -435,7 +451,7 @@
       },
       "gt0055": {
         "id": "gt0055",
-        "priority": 54,
+        "priority": 84,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -449,7 +465,7 @@
       },
       "gt0056": {
         "id": "gt0056",
-        "priority": 53,
+        "priority": 83,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -466,7 +482,7 @@
       },
       "gt0057": {
         "id": "gt0057",
-        "priority": 52,
+        "priority": 82,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -483,7 +499,7 @@
       },
       "gt0058": {
         "id": "gt0058",
-        "priority": 51,
+        "priority": 81,
         "when": [
           "$gt0004|Gender|==local::at0005|Male|",
           "$gt0012|Total Cholesterol|!=null",
@@ -499,7 +515,7 @@
       },
       "gt0059": {
         "id": "gt0059",
-        "priority": 50,
+        "priority": 80,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -516,7 +532,7 @@
       },
       "gt0060": {
         "id": "gt0060",
-        "priority": 49,
+        "priority": 79,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -532,7 +548,7 @@
       },
       "gt0062": {
         "id": "gt0062",
-        "priority": 48,
+        "priority": 78,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -546,7 +562,7 @@
       },
       "gt0063": {
         "id": "gt0063",
-        "priority": 47,
+        "priority": 77,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -560,7 +576,7 @@
       },
       "gt0064": {
         "id": "gt0064",
-        "priority": 46,
+        "priority": 76,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -574,7 +590,7 @@
       },
       "gt0065": {
         "id": "gt0065",
-        "priority": 45,
+        "priority": 75,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -588,7 +604,7 @@
       },
       "gt0066": {
         "id": "gt0066",
-        "priority": 44,
+        "priority": 74,
         "when": [
           "$gt0004|Gender|==local::at0006|Female|",
           "$gt0012|Total Cholesterol|!=null",
@@ -605,7 +621,7 @@
       },
       "gt0067": {
         "id": "gt0067",
-        "priority": 43,
+        "priority": 73,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -622,7 +638,7 @@
       },
       "gt0068": {
         "id": "gt0068",
-        "priority": 42,
+        "priority": 72,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -638,7 +654,7 @@
       },
       "gt0069": {
         "id": "gt0069",
-        "priority": 41,
+        "priority": 71,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -652,7 +668,7 @@
       },
       "gt0070": {
         "id": "gt0070",
-        "priority": 40,
+        "priority": 70,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -668,7 +684,7 @@
       },
       "gt0071": {
         "id": "gt0071",
-        "priority": 39,
+        "priority": 69,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -685,7 +701,7 @@
       },
       "gt0072": {
         "id": "gt0072",
-        "priority": 38,
+        "priority": 68,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -701,7 +717,7 @@
       },
       "gt0077": {
         "id": "gt0077",
-        "priority": 37,
+        "priority": 67,
         "when": [
           "$gt0016|Blood Pressure treated with medication|!=null",
           "$gt0004|Gender|!=null",
@@ -715,7 +731,7 @@
       },
       "gt0078": {
         "id": "gt0078",
-        "priority": 36,
+        "priority": 66,
         "when": [
           "$gt0016|Blood Pressure treated with medication|!=null",
           "$gt0010|Systolic|!=null",
@@ -729,7 +745,7 @@
       },
       "gt0079": {
         "id": "gt0079",
-        "priority": 35,
+        "priority": 65,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -743,7 +759,7 @@
       },
       "gt0080": {
         "id": "gt0080",
-        "priority": 34,
+        "priority": 64,
         "when": [
           "$gt0016|Blood Pressure treated with medication|!=null",
           "$gt0010|Systolic|!=null",
@@ -758,7 +774,7 @@
       },
       "gt0081": {
         "id": "gt0081",
-        "priority": 33,
+        "priority": 63,
         "when": [
           "$gt0016|Blood Pressure treated with medication|!=null",
           "$gt0010|Systolic|!=null",
@@ -772,7 +788,7 @@
       },
       "gt0082": {
         "id": "gt0082",
-        "priority": 32,
+        "priority": 62,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0016|Blood Pressure treated with medication|!=null",
@@ -788,7 +804,7 @@
       },
       "gt0083": {
         "id": "gt0083",
-        "priority": 31,
+        "priority": 61,
         "when": [
           "$gt0016|Blood Pressure treated with medication|!=null",
           "$gt0010|Systolic|!=null",
@@ -804,7 +820,7 @@
       },
       "gt0084": {
         "id": "gt0084",
-        "priority": 30,
+        "priority": 60,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0010|Systolic|!=null",
@@ -818,7 +834,7 @@
       },
       "gt0085": {
         "id": "gt0085",
-        "priority": 29,
+        "priority": 59,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0010|Systolic|!=null",
@@ -832,7 +848,7 @@
       },
       "gt0086": {
         "id": "gt0086",
-        "priority": 28,
+        "priority": 58,
         "when": [
           "$gt0016|Blood Pressure treated with medication|!=null",
           "$gt0010|Systolic|!=null",
@@ -848,7 +864,7 @@
       },
       "gt0087": {
         "id": "gt0087",
-        "priority": 27,
+        "priority": 57,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0010|Systolic|!=null",
@@ -863,7 +879,7 @@
       },
       "gt0088": {
         "id": "gt0088",
-        "priority": 26,
+        "priority": 56,
         "when": [
           "$gt0013|HDL Cholesterol|!=null",
           "$gt0013|HDL Cholesterol|>=50,mg/dl",
@@ -875,7 +891,7 @@
       },
       "gt0089": {
         "id": "gt0089",
-        "priority": 25,
+        "priority": 55,
         "when": [
           "$gt0013|HDL Cholesterol|!=null",
           "$gt0013|HDL Cholesterol|<=49,mg/dl",
@@ -887,7 +903,7 @@
       },
       "gt0090": {
         "id": "gt0090",
-        "priority": 24,
+        "priority": 54,
         "when": [
           "$gt0013|HDL Cholesterol|!=null",
           "$gt0013|HDL Cholesterol|<40,mg/dl"
@@ -898,7 +914,7 @@
       },
       "gt0095": {
         "id": "gt0095",
-        "priority": 23,
+        "priority": 53,
         "when": [
           "$gt0013|HDL Cholesterol|!=null",
           "$gt0013|HDL Cholesterol|>=60,mg/dl"
@@ -909,7 +925,7 @@
       },
       "gt0097": {
         "id": "gt0097",
-        "priority": 22,
+        "priority": 52,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -923,7 +939,7 @@
       },
       "gt0098": {
         "id": "gt0098",
-        "priority": 21,
+        "priority": 51,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -937,7 +953,7 @@
       },
       "gt0099": {
         "id": "gt0099",
-        "priority": 20,
+        "priority": 50,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -951,7 +967,7 @@
       },
       "gt0100": {
         "id": "gt0100",
-        "priority": 19,
+        "priority": 49,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -965,7 +981,7 @@
       },
       "gt0101": {
         "id": "gt0101",
-        "priority": 18,
+        "priority": 48,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -979,7 +995,7 @@
       },
       "gt0102": {
         "id": "gt0102",
-        "priority": 17,
+        "priority": 47,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -993,7 +1009,7 @@
       },
       "gt0103": {
         "id": "gt0103",
-        "priority": 16,
+        "priority": 46,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -1007,7 +1023,7 @@
       },
       "gt0104": {
         "id": "gt0104",
-        "priority": 15,
+        "priority": 45,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -1021,7 +1037,7 @@
       },
       "gt0105": {
         "id": "gt0105",
-        "priority": 14,
+        "priority": 44,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -1035,7 +1051,7 @@
       },
       "gt0106": {
         "id": "gt0106",
-        "priority": 13,
+        "priority": 43,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0005|Male|",
@@ -1049,7 +1065,7 @@
       },
       "gt0108": {
         "id": "gt0108",
-        "priority": 12,
+        "priority": 42,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1063,7 +1079,7 @@
       },
       "gt0109": {
         "id": "gt0109",
-        "priority": 11,
+        "priority": 41,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1077,7 +1093,7 @@
       },
       "gt0110": {
         "id": "gt0110",
-        "priority": 10,
+        "priority": 40,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1091,7 +1107,7 @@
       },
       "gt0111": {
         "id": "gt0111",
-        "priority": 9,
+        "priority": 39,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1105,7 +1121,7 @@
       },
       "gt0112": {
         "id": "gt0112",
-        "priority": 8,
+        "priority": 38,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1119,7 +1135,7 @@
       },
       "gt0113": {
         "id": "gt0113",
-        "priority": 7,
+        "priority": 37,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1133,7 +1149,7 @@
       },
       "gt0114": {
         "id": "gt0114",
-        "priority": 6,
+        "priority": 36,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1147,7 +1163,7 @@
       },
       "gt0115": {
         "id": "gt0115",
-        "priority": 5,
+        "priority": 35,
         "when": [
           "$gt0004|Gender|!=null",
           "$gt0004|Gender|==local::at0006|Female|",
@@ -1161,7 +1177,7 @@
       },
       "gt0116": {
         "id": "gt0116",
-        "priority": 4,
+        "priority": 34,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -1175,7 +1191,7 @@
       },
       "gt0117": {
         "id": "gt0117",
-        "priority": 3,
+        "priority": 33,
         "when": [
           "$gt0004|Gender|!=null",
           "fired($gt0033)",
@@ -1189,7 +1205,7 @@
       },
       "gt0120": {
         "id": "gt0120",
-        "priority": 2,
+        "priority": 32,
         "when": [
           "$gt0004|Gender|==local::at0005|Male|"
         ],
@@ -1199,12 +1215,317 @@
       },
       "gt0121": {
         "id": "gt0121",
-        "priority": 1,
+        "priority": 31,
         "when": [
           "$gt0004|Gender|==local::at0006|Female|"
         ],
         "then": [
           "$gt0031|Total score: women|.magnitude=((($gt0019.value+$gt0021.value)+$gt0076.value)+$gt0023.value)+$gt0024.value"
+        ]
+      },
+      "gt0127": {
+        "id": "gt0127",
+        "priority": 30,
+        "when": [
+          "$gt0030|Total score: men|<0"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=0|local::at0004|0% Risk|"
+        ]
+      },
+      "gt0128": {
+        "id": "gt0128",
+        "priority": 29,
+        "when": [
+          "$gt0030|Total score: men|==0"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=1|local::at0005|< 1% Risk|"
+        ]
+      },
+      "gt0129": {
+        "id": "gt0129",
+        "priority": 28,
+        "when": [
+          "$gt0030|Total score: men|<=4",
+          "$gt0030|Total score: men|>=1"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=2|local::at0006|1% Risk|"
+        ]
+      },
+      "gt0130": {
+        "id": "gt0130",
+        "priority": 27,
+        "when": [
+          "$gt0030|Total score: men|<=6",
+          "$gt0030|Total score: men|>=5"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=3|local::at0007|2% Risk|"
+        ]
+      },
+      "gt0131": {
+        "id": "gt0131",
+        "priority": 26,
+        "when": [
+          "$gt0030|Total score: men|==7"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=4|local::at0008|3% Risk|"
+        ]
+      },
+      "gt0132": {
+        "id": "gt0132",
+        "priority": 25,
+        "when": [
+          "$gt0030|Total score: men|==8"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=5|local::at0009|4% Risk|"
+        ]
+      },
+      "gt0133": {
+        "id": "gt0133",
+        "priority": 24,
+        "when": [
+          "$gt0030|Total score: men|==9"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=6|local::at0010|5% Risk|"
+        ]
+      },
+      "gt0134": {
+        "id": "gt0134",
+        "priority": 23,
+        "when": [
+          "$gt0030|Total score: men|==10"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=7|local::at0011|6% Risk|"
+        ]
+      },
+      "gt0135": {
+        "id": "gt0135",
+        "priority": 22,
+        "when": [
+          "$gt0030|Total score: men|==11"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=8|local::at0012|8% Risk|"
+        ]
+      },
+      "gt0136": {
+        "id": "gt0136",
+        "priority": 21,
+        "when": [
+          "$gt0030|Total score: men|==12"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=9|local::at0013|10% Risk|"
+        ]
+      },
+      "gt0137": {
+        "id": "gt0137",
+        "priority": 20,
+        "when": [
+          "$gt0030|Total score: men|==13"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=10|local::at0014|12% RIsk|"
+        ]
+      },
+      "gt0138": {
+        "id": "gt0138",
+        "priority": 19,
+        "when": [
+          "$gt0030|Total score: men|==14"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=11|local::at0015|16% Risk|"
+        ]
+      },
+      "gt0139": {
+        "id": "gt0139",
+        "priority": 18,
+        "when": [
+          "$gt0030|Total score: men|==15"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=12|local::at0016|20% Risk|"
+        ]
+      },
+      "gt0140": {
+        "id": "gt0140",
+        "priority": 17,
+        "when": [
+          "$gt0030|Total score: men|==16"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=13|local::at0017|25% Risk|"
+        ]
+      },
+      "gt0141": {
+        "id": "gt0141",
+        "priority": 16,
+        "when": [
+          "$gt0030|Total score: men|>=17"
+        ],
+        "then": [
+          "$gt0125|Risk percentage in men|=14|local::at0018|>30% Risk|"
+        ]
+      },
+      "gt0142": {
+        "id": "gt0142",
+        "priority": 15,
+        "when": [
+          "$gt0031|Total score: women|<0"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=0|local::at0019|0% Risk|"
+        ]
+      },
+      "gt0143": {
+        "id": "gt0143",
+        "priority": 14,
+        "when": [
+          "$gt0031|Total score: women|<=8",
+          "$gt0031|Total score: women|>=0"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=1|local::at0020|< 1% Risk|"
+        ]
+      },
+      "gt0144": {
+        "id": "gt0144",
+        "priority": 13,
+        "when": [
+          "$gt0031|Total score: women|<=12",
+          "$gt0031|Total score: women|>=9"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=2|local::at0021|1% Risk|"
+        ]
+      },
+      "gt0145": {
+        "id": "gt0145",
+        "priority": 12,
+        "when": [
+          "$gt0031|Total score: women|<=14",
+          "$gt0031|Total score: women|>=13"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=3|local::at0022|2% Risk|"
+        ]
+      },
+      "gt0146": {
+        "id": "gt0146",
+        "priority": 11,
+        "when": [
+          "$gt0031|Total score: women|==15"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=4|local::at0023|3% Risk|"
+        ]
+      },
+      "gt0147": {
+        "id": "gt0147",
+        "priority": 10,
+        "when": [
+          "$gt0031|Total score: women|==16"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=5|local::at0024|4% Risk|"
+        ]
+      },
+      "gt0148": {
+        "id": "gt0148",
+        "priority": 9,
+        "when": [
+          "$gt0031|Total score: women|==17"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=6|local::at0025|5% Risk|"
+        ]
+      },
+      "gt0149": {
+        "id": "gt0149",
+        "priority": 8,
+        "when": [
+          "$gt0031|Total score: women|==18"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=7|local::at0026|6% Risk|"
+        ]
+      },
+      "gt0150": {
+        "id": "gt0150",
+        "priority": 7,
+        "when": [
+          "$gt0031|Total score: women|==19"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=8|local::at0027|8% Risk|"
+        ]
+      },
+      "gt0151": {
+        "id": "gt0151",
+        "priority": 6,
+        "when": [
+          "$gt0031|Total score: women|==20"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=9|local::at0028|11% Risk|"
+        ]
+      },
+      "gt0152": {
+        "id": "gt0152",
+        "priority": 5,
+        "when": [
+          "$gt0031|Total score: women|==21"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=10|local::at0029|14% Risk|"
+        ]
+      },
+      "gt0153": {
+        "id": "gt0153",
+        "priority": 4,
+        "when": [
+          "$gt0031|Total score: women|==22"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=11|local::at0030|17% Risk|"
+        ]
+      },
+      "gt0154": {
+        "id": "gt0154",
+        "priority": 3,
+        "when": [
+          "$gt0031|Total score: women|==23"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=12|local::at0031|22% Risk|"
+        ]
+      },
+      "gt0155": {
+        "id": "gt0155",
+        "priority": 2,
+        "when": [
+          "$gt0031|Total score: women|==24"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=13|local::at0032|27% Risk|"
+        ]
+      },
+      "gt0156": {
+        "id": "gt0156",
+        "priority": 1,
+        "when": [
+          "$gt0031|Total score: women|>=25"
+        ],
+        "then": [
+          "$gt0126|Risk percentage in women|=14|local::at0033|>30% Risk|"
         ]
       }
     }
@@ -1606,6 +1927,136 @@
             "id": "gt0123",
             "text": "Gender",
             "description": "*"
+          },
+          "gt0125": {
+            "id": "gt0125",
+            "text": "Risk percentage in men",
+            "description": "Framingham risk score result interpretation for men"
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "text": "Risk percentage in women",
+            "description": "Framingham risk score result interpretation for women"
+          },
+          "gt0127": {
+            "id": "gt0127",
+            "text": "Set 0% Risk: men"
+          },
+          "gt0128": {
+            "id": "gt0128",
+            "text": "Set <1% Risk: men"
+          },
+          "gt0129": {
+            "id": "gt0129",
+            "text": "Set 1% Risk: men"
+          },
+          "gt0130": {
+            "id": "gt0130",
+            "text": "Set 2% Risk: men"
+          },
+          "gt0131": {
+            "id": "gt0131",
+            "text": "Set 3% Risk: men"
+          },
+          "gt0132": {
+            "id": "gt0132",
+            "text": "Set 4% Risk: men"
+          },
+          "gt0133": {
+            "id": "gt0133",
+            "text": "Set 5% Risk: men"
+          },
+          "gt0134": {
+            "id": "gt0134",
+            "text": "Set 6% Risk: men"
+          },
+          "gt0135": {
+            "id": "gt0135",
+            "text": "Set 8% Risk: men"
+          },
+          "gt0136": {
+            "id": "gt0136",
+            "text": "Set 10% Risk: men"
+          },
+          "gt0137": {
+            "id": "gt0137",
+            "text": "Set 12% Risk: men"
+          },
+          "gt0138": {
+            "id": "gt0138",
+            "text": "Set 16% Risk: men"
+          },
+          "gt0139": {
+            "id": "gt0139",
+            "text": "Set 20% Risk: men"
+          },
+          "gt0140": {
+            "id": "gt0140",
+            "text": "Set 25% Risk: men"
+          },
+          "gt0141": {
+            "id": "gt0141",
+            "text": "Set >30% Risk: men"
+          },
+          "gt0142": {
+            "id": "gt0142",
+            "text": "Set 0% Risk: women"
+          },
+          "gt0143": {
+            "id": "gt0143",
+            "text": "Set <1% Risk: women"
+          },
+          "gt0144": {
+            "id": "gt0144",
+            "text": "Set 1% Risk: women"
+          },
+          "gt0145": {
+            "id": "gt0145",
+            "text": "Set 2% Risk: women"
+          },
+          "gt0146": {
+            "id": "gt0146",
+            "text": "Set 3% Risk: women"
+          },
+          "gt0147": {
+            "id": "gt0147",
+            "text": "Set 4% Risk: women"
+          },
+          "gt0148": {
+            "id": "gt0148",
+            "text": "Set 5% Risk: women"
+          },
+          "gt0149": {
+            "id": "gt0149",
+            "text": "Set 6% Risk: women"
+          },
+          "gt0150": {
+            "id": "gt0150",
+            "text": "Set 8% Risk: women"
+          },
+          "gt0151": {
+            "id": "gt0151",
+            "text": "Set 11% Risk: women"
+          },
+          "gt0152": {
+            "id": "gt0152",
+            "text": "Set 14% Risk: women"
+          },
+          "gt0153": {
+            "id": "gt0153",
+            "text": "Set 17% Risk: women"
+          },
+          "gt0154": {
+            "id": "gt0154",
+            "text": "Set 22% Risk: women"
+          },
+          "gt0155": {
+            "id": "gt0155",
+            "text": "Set 27% Risk: women"
+          },
+          "gt0156": {
+            "id": "gt0156",
+            "text": "Set >30% Risk: women"
           }
         }
       }

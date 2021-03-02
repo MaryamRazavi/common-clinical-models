@@ -1,7 +1,7 @@
 guidelines:
   1: Cheops_for_post_op_pediatric_pain.v1
 test_cases:
-- id: case_1:Total score 4 
+- id: case_1:Total score 4
   input:
     1:
       gt0011|Cry: 1|local::at0016|No cry|
@@ -13,6 +13,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total Score: 4
+      gt0025|Score interpretation: 0|local::at0003|Analgesia should not be needed|
 
 - id: case_2:Total score 10
   input:
@@ -26,6 +27,7 @@ test_cases:
   expected_output:
     1:
       gt0010|Total Score: 10
+      gt0025|Score interpretation: 1|local::at0004|Consider analgesia|
 
 - id: case_3:Total score 13
   input:
@@ -39,4 +41,4 @@ test_cases:
   expected_output:
     1:
       gt0010|Total Score: 13
-
+      gt0025|Score interpretation: 1|local::at0004|Consider analgesia|

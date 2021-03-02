@@ -15,6 +15,7 @@ test_cases:
   expected_output:
     1:
       gt0030|Total score: 0
+      gt0032|Epworth assessment: 0|local::at0003|Normal|
 
 - id: case_2:Score 8
   input:
@@ -30,6 +31,7 @@ test_cases:
   expected_output:
     1:
       gt0030|Total score: 8
+      gt0032|Epworth assessment: 0|local::at0003|Normal|
 
 
 - id: case_3:score 16
@@ -46,8 +48,9 @@ test_cases:
   expected_output:
     1:
       gt0030|Total score: 16
+      gt0032|Epworth assessment: 2|local::at0005|Possible severe sleep apnea or narcolepsy|
 
-- id: case_3:score 24 (max) 
+- id: case_3:score 24 (max)
   input:
     1:
       gt0003|Sitting and reading: 3|local::at0015|High chance of dozing|
@@ -61,4 +64,4 @@ test_cases:
   expected_output:
     1:
       gt0030|Total score: 24
-
+      gt0032|Epworth assessment: 2|local::at0005|Possible severe sleep apnea or narcolepsy|

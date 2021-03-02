@@ -21,6 +21,7 @@ test_cases:
   expected_output:
     1:
       gt0032|Total Score: 0
+      gt0050|Severity of anxiety: 0|local::at0003|Mild|
 - id: Mild
   input:
     1:
@@ -41,6 +42,7 @@ test_cases:
   expected_output:
     1:
       gt0032|Total Score: 14
+      gt0050|Severity of anxiety: 0|local::at0003|Mild|
 - id: Moderate
   input:
     1:
@@ -61,6 +63,8 @@ test_cases:
   expected_output:
     1:
       gt0032|Total Score: 18
+      gt0050|Severity of anxiety: 1|local::at0004|Mild to moderate|
+
 - id: Moderate to severe
   input:
     1:
@@ -81,6 +85,8 @@ test_cases:
   expected_output:
     1:
       gt0032|Total Score: 26
+      gt0050|Severity of anxiety: 2|local::at0005|Moderate to severe|
+
 - id: Severe
   input:
     1:
@@ -101,6 +107,8 @@ test_cases:
   expected_output:
     1:
       gt0032|Total Score: 31
+      gt0050|Severity of anxiety: 3|local::at0006|Severe|
+
 - id: All severe
   input:
     1:
@@ -121,6 +129,8 @@ test_cases:
   expected_output:
     1:
       gt0032|Total Score: 42
+      gt0050|Severity of anxiety: 3|local::at0006|Severe|
+
 - id: All very severe
   input:
     1:
@@ -141,4 +151,4 @@ test_cases:
   expected_output:
     1:
       gt0032|Total Score: 56
-
+      gt0050|Severity of anxiety: 3|local::at0006|Severe|

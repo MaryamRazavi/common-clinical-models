@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Dennis Forslund, Cambio Healthcare Systems",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -160,12 +160,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0051]"
           }
         }
+      },
+      "gt0062": {
+        "id": "gt0062",
+        "model_id": "openEHR-EHR-EVALUATION.infective_endocarditis_mortality_risk_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.infective_endocarditis_mortality_risk_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0063": {
+            "id": "gt0063",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0041": {
         "id": "gt0041",
-        "priority": 8,
+        "priority": 13,
         "when": [
           "$gt0003|Birthdate|!=null"
         ],
@@ -176,7 +188,7 @@
       },
       "gt0042": {
         "id": "gt0042",
-        "priority": 7,
+        "priority": 12,
         "when": [
           "$gt0005|Age|<=45,a"
         ],
@@ -186,7 +198,7 @@
       },
       "gt0043": {
         "id": "gt0043",
-        "priority": 6,
+        "priority": 11,
         "when": [
           "$gt0005|Age|<=60,a",
           "$gt0005|Age|>=46,a"
@@ -197,7 +209,7 @@
       },
       "gt0044": {
         "id": "gt0044",
-        "priority": 5,
+        "priority": 10,
         "when": [
           "$gt0005|Age|<=70,a",
           "$gt0005|Age|>=61,a"
@@ -208,7 +220,7 @@
       },
       "gt0045": {
         "id": "gt0045",
-        "priority": 4,
+        "priority": 9,
         "when": [
           "$gt0005|Age|>70,a"
         ],
@@ -218,7 +230,7 @@
       },
       "gt0054": {
         "id": "gt0054",
-        "priority": 3,
+        "priority": 8,
         "when": [
           "$gt0007|Heart failure classification|!=null",
           "($gt0007|Heart failure classification|==3|local::at0007|Class III|)||($gt0007|Heart failure classification|==4|local::at0008|Class IV|)"
@@ -229,7 +241,7 @@
       },
       "gt0061": {
         "id": "gt0061",
-        "priority": 2,
+        "priority": 7,
         "when": [
           "$gt0007|Heart failure classification|!=null",
           "!fired($gt0054)"
@@ -240,7 +252,7 @@
       },
       "gt0059": {
         "id": "gt0059",
-        "priority": 1,
+        "priority": 6,
         "when": [
           "$gt0009|History of Dialysis|!=null",
           "$gt0010|Nosocomial IE|!=null",
@@ -259,6 +271,60 @@
         ],
         "then": [
           "$gt0036|Total Score|.magnitude=$gt0015.value+$gt0011.value+$gt0012.value+$gt0013.value+$gt0060.value+$gt0019.value+$gt0017.value+$gt0022.value+$gt0018.value+$gt0009.value+$gt0010.value+$gt0020.value+$gt0016.value+$gt0031.value"
+        ]
+      },
+      "gt0064": {
+        "id": "gt0064",
+        "priority": 5,
+        "when": [
+          "$gt0036|Total Score|<=6"
+        ],
+        "then": [
+          "$gt0063|6-Month Mortality rate|=0|local::at0003|8-12%|"
+        ]
+      },
+      "gt0065": {
+        "id": "gt0065",
+        "priority": 4,
+        "when": [
+          "$gt0036|Total Score|<=8",
+          "$gt0036|Total Score|>=7"
+        ],
+        "then": [
+          "$gt0063|6-Month Mortality rate|=1|local::at0004|16-20%|"
+        ]
+      },
+      "gt0066": {
+        "id": "gt0066",
+        "priority": 3,
+        "when": [
+          "$gt0036|Total Score|<=10",
+          "$gt0036|Total Score|>=9"
+        ],
+        "then": [
+          "$gt0063|6-Month Mortality rate|=2|local::at0005|30-34%|"
+        ]
+      },
+      "gt0067": {
+        "id": "gt0067",
+        "priority": 2,
+        "when": [
+          "$gt0036|Total Score|<=16",
+          "$gt0036|Total Score|>=11"
+        ],
+        "then": [
+          "$gt0063|6-Month Mortality rate|=3|local::at0006|42-50%|"
+        ]
+      },
+      "gt0068": {
+        "id": "gt0068",
+        "priority": 1,
+        "when": [
+          "$gt0036|Total Score|>=17",
+          "$gt0036|Total Score|<=22"
+        ],
+        "then": [
+          "$gt0063|6-Month Mortality rate|=4|local::at0007|>60%|"
         ]
       }
     }
@@ -394,6 +460,36 @@
           "gt0061": {
             "id": "gt0061",
             "text": "CDS NYHA klass 3 eller 4, hjärtsvikt NEJ"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "6-månadersmortalitet",
+            "description": "6-månadersmortalitet, baserat på poängsumma."
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "CDS 6-månadersmortalitet 0-6p",
+            "description": ""
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "CDS 6-månadersmortalitet 7-8p",
+            "description": ""
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "CDS 6-månadersmortalitet 9-10p",
+            "description": ""
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "CDS 6-månadersmortalitet 11-16p",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "CDS 6-månadersmortalitet 17-22p",
+            "description": ""
           }
         }
       },
@@ -526,6 +622,31 @@
           "gt0061": {
             "id": "gt0061",
             "text": "Set NYHA class 3 or 4: NO"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "6-Month Mortality rate",
+            "description": "6 month mortality rate as a percentage per each score bucket"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Set 6-Month mortality for score 0-6"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Set 6-Month mortality for score 7-8"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Set 6-Month mortality for score 9-10"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Set 6-Month mortality for score 11-16"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Set 6-Month mortality for score 17-22"
           }
         }
       }

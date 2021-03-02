@@ -15,7 +15,7 @@
     "other_contributors": [
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Not set",
     "details": {
@@ -150,19 +150,35 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0024]"
           }
         }
+      },
+      "gt0066": {
+        "id": "gt0066",
+        "model_id": "openEHR-EHR-EVALUATION.asrs_for_adhd_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.asrs_for_adhd_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0067": {
+            "id": "gt0067",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "path": "/data[at0001]/items[at0003]"
+          }
+        }
       }
     },
     "rules": {
       "gt0063": {
         "id": "gt0063",
-        "priority": 3,
+        "priority": 7,
         "when": [
-          "$gt0003!=null",
-          "$gt0004!=null",
-          "$gt0022!=null",
-          "$gt0023!=null",
-          "$gt0024!=null",
-          "$gt0025!=null"
+          "$gt0003|1.Trouble wrapping up fine details|!=null",
+          "$gt0004|2.Trouble getting things in order|!=null",
+          "$gt0022|3.Trouble remembering appointments|!=null",
+          "$gt0023|4.Trouble starting things that need a lot of thought|!=null",
+          "$gt0024|5.Trouble with fidgeting when sitting|!=null",
+          "$gt0025|6.Trouble with feeling overly active or compelled|!=null"
         ],
         "then": [
           "$gt0012|Part A: 6 question screening score|.magnitude=$gt0003.value+$gt0004.value+$gt0022.value+$gt0023.value+$gt0024.value+$gt0025.value"
@@ -170,20 +186,20 @@
       },
       "gt0064": {
         "id": "gt0064",
-        "priority": 2,
+        "priority": 6,
         "when": [
-          "$gt0026!=null",
-          "$gt0027!=null",
-          "$gt0028!=null",
-          "$gt0029!=null",
-          "$gt0030!=null",
-          "$gt0031!=null",
-          "$gt0032!=null",
-          "$gt0033!=null",
-          "$gt0034!=null",
-          "$gt0035!=null",
-          "$gt0036!=null",
-          "$gt0037!=null"
+          "$gt0026|7. Careless mistakes|!=null",
+          "$gt0027|8. Difficult with attention|!=null",
+          "$gt0028|9. Difficulty concentrating|!=null",
+          "$gt0029|10. Difficulty finding things|!=null",
+          "$gt0030|11. Easily distracted|!=null",
+          "$gt0031|12. Leave your seat|!=null",
+          "$gt0032|13. Restless or fidgety|!=null",
+          "$gt0033|14. Difficulty relaxing |!=null",
+          "$gt0034|15. Talking too much|!=null",
+          "$gt0035|16. Finishing other's sentences|!=null",
+          "$gt0036|17. Difficulty waiting your turn|!=null",
+          "$gt0037|18. Tendency to interrupt others|!=null"
         ],
         "then": [
           "$gt0054|Part B: 12 additional questions score|.magnitude=$gt0026.value+$gt0027.value+$gt0028.value+$gt0029.value+$gt0030.value+$gt0031.value+$gt0032.value+$gt0033.value+$gt0034.value+$gt0035.value+$gt0036.value+$gt0037.value"
@@ -191,13 +207,53 @@
       },
       "gt0065": {
         "id": "gt0065",
-        "priority": 1,
+        "priority": 5,
         "when": [
-          "$gt0012!=null",
-          "$gt0054!=null"
+          "$gt0012|Part A: 6 question screening score|!=null",
+          "$gt0054|Part B: 12 additional questions score|!=null"
         ],
         "then": [
           "$gt0055|Part A and B total score|.magnitude=$gt0012.magnitude+$gt0054.magnitude"
+        ]
+      },
+      "gt0069": {
+        "id": "gt0069",
+        "priority": 4,
+        "when": [
+          "$gt0012|Part A: 6 question screening score|<15"
+        ],
+        "then": [
+          "$gt0067|Part A screening interpretation|=0|local::at0004|No ADHD likelihood|"
+        ]
+      },
+      "gt0070": {
+        "id": "gt0070",
+        "priority": 3,
+        "when": [
+          "$gt0012|Part A: 6 question screening score|>=15"
+        ],
+        "then": [
+          "$gt0067|Part A screening interpretation|=1|local::at0005|Further investigation for ADHD warranted|"
+        ]
+      },
+      "gt0071": {
+        "id": "gt0071",
+        "priority": 2,
+        "when": [
+          "$gt0054|Part B: 12 additional questions score|<32"
+        ],
+        "then": [
+          "$gt0068|Part B screening interpretation|=0|local::at0006|No further investigation for ADHD needed|"
+        ]
+      },
+      "gt0072": {
+        "id": "gt0072",
+        "priority": 1,
+        "when": [
+          "$gt0054|Part B: 12 additional questions score|>=32"
+        ],
+        "then": [
+          "$gt0068|Part B screening interpretation|=1|local::at0007|Investigate further for ADHD|"
         ]
       }
     }
@@ -214,108 +270,108 @@
           },
           "gt0003": {
             "id": "gt0003",
-            "text": "*(en) 1.Trouble wrapping up fine details",
-            "description": "*(en) How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?"
+            "text": "1.Trouble wrapping up fine details",
+            "description": "How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?"
           },
           "gt0004": {
             "id": "gt0004",
-            "text": "*(en) 2.Trouble getting things in order",
-            "description": "*(en) How often do you have difficulty getting things in order when you have to do a task that requires organization?"
+            "text": "2.Trouble getting things in order",
+            "description": "How often do you have difficulty getting things in order when you have to do a task that requires organization?"
           },
           "gt0012": {
             "id": "gt0012",
             "text": "Del A poäng",
-            "description": "*(en) scores range from 0 to 24 as each is scored on a 0 to 4 range."
+            "description": "scores range from 0 to 24 as each is scored on a 0 to 4 range."
           },
           "gt0022": {
             "id": "gt0022",
-            "text": "*(en) 3.Trouble remembering appointments",
-            "description": "*(en) How often do you have problems remembering appointments or obligations?"
+            "text": "3.Trouble remembering appointments",
+            "description": "How often do you have problems remembering appointments or obligations?"
           },
           "gt0023": {
             "id": "gt0023",
-            "text": "*(en) 4.Trouble starting things that need a lot of thought",
-            "description": "*(en) When you have a task that requires a lot of thought, how often do you avoid or delay getting started?"
+            "text": "4.Trouble starting things that need a lot of thought",
+            "description": "When you have a task that requires a lot of thought, how often do you avoid or delay getting started?"
           },
           "gt0024": {
             "id": "gt0024",
-            "text": "*(en) 5.Trouble with fidgeting when sitting",
-            "description": "*(en) How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?"
+            "text": "5.Trouble with fidgeting when sitting",
+            "description": "How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?"
           },
           "gt0025": {
             "id": "gt0025",
-            "text": "*(en) 6.Trouble with feeling overly active or compelled",
-            "description": "*(en) How often do you feel overly active and compelled to do things, like you\nwere driven by a motor?"
+            "text": "6.Trouble with feeling overly active or compelled",
+            "description": "How often do you feel overly active and compelled to do things, like you\nwere driven by a motor?"
           },
           "gt0026": {
             "id": "gt0026",
-            "text": "*(en) 7. Careless mistakes",
-            "description": "*(en) How often do you make careless mistakes when you have to work on a boring or difficult project?"
+            "text": "7. Careless mistakes",
+            "description": "How often do you make careless mistakes when you have to work on a boring or difficult project?"
           },
           "gt0027": {
             "id": "gt0027",
-            "text": "*(en) 8. Difficult with attention",
-            "description": "*(en) How often do you have difficulty keeping your attention when you are doing boring or repetitive work?"
+            "text": "8. Difficult with attention",
+            "description": "How often do you have difficulty keeping your attention when you are doing boring or repetitive work?"
           },
           "gt0028": {
             "id": "gt0028",
-            "text": "*(en) 9. Difficulty concentrating",
-            "description": "*(en) How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?"
+            "text": "9. Difficulty concentrating",
+            "description": "How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?"
           },
           "gt0029": {
             "id": "gt0029",
-            "text": "*(en) 10. Difficulty finding things",
-            "description": "*(en) How often do you misplace or have difficulty finding things at home or at work?"
+            "text": "10. Difficulty finding things",
+            "description": "How often do you misplace or have difficulty finding things at home or at work?"
           },
           "gt0030": {
             "id": "gt0030",
-            "text": "*(en) 11. Easily distracted",
-            "description": "*(en) How often are you distracted by activity or noise around you?"
+            "text": "11. Easily distracted",
+            "description": "How often are you distracted by activity or noise around you?"
           },
           "gt0031": {
             "id": "gt0031",
-            "text": "*(en) 12. Leave your seat",
-            "description": "*(en) How often do you leave your seat in meetings or other situations in which you are expected to remain seated?"
+            "text": "12. Leave your seat",
+            "description": "How often do you leave your seat in meetings or other situations in which you are expected to remain seated?"
           },
           "gt0032": {
             "id": "gt0032",
-            "text": "*(en) 13. Restless or fidgety",
-            "description": "*(en) How often do you feel restless or fidgety?"
+            "text": "13. Restless or fidgety",
+            "description": "How often do you feel restless or fidgety?"
           },
           "gt0033": {
             "id": "gt0033",
-            "text": "*(en) 14. Difficulty relaxing ",
-            "description": "*(en) How often do you have difficulty unwinding and relaxing when you have time to yourself?"
+            "text": "14. Difficulty relaxing ",
+            "description": "How often do you have difficulty unwinding and relaxing when you have time to yourself?"
           },
           "gt0034": {
             "id": "gt0034",
-            "text": "*(en) 15. Talking too much",
-            "description": "*(en) How often do you find yourself talking too much when you are in social situations?"
+            "text": "15. Talking too much",
+            "description": "How often do you find yourself talking too much when you are in social situations?"
           },
           "gt0035": {
             "id": "gt0035",
-            "text": "*(en) 16. Finishing other's sentences",
-            "description": "*(en) When you’re in a conversation, how often do you find yourself finishing\nthe sentences of the people you are talking to, before they can finish\nthem themselves?"
+            "text": "16. Finishing other's sentences",
+            "description": "When you’re in a conversation, how often do you find yourself finishing\nthe sentences of the people you are talking to, before they can finish\nthem themselves?"
           },
           "gt0036": {
             "id": "gt0036",
-            "text": "*(en) 17. Difficulty waiting your turn",
-            "description": "*(en) How often do you have difficulty waiting your turn in situations when\nturn taking is required?"
+            "text": "17. Difficulty waiting your turn",
+            "description": "How often do you have difficulty waiting your turn in situations when\nturn taking is required?"
           },
           "gt0037": {
             "id": "gt0037",
-            "text": "*(en) 18. Tendency to interrupt others",
-            "description": "*(en) How often do you interrupt others when they are busy?"
+            "text": "18. Tendency to interrupt others",
+            "description": "How often do you interrupt others when they are busy?"
           },
           "gt0054": {
             "id": "gt0054",
             "text": "Del B",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0055": {
             "id": "gt0055",
             "text": "Del A och B total poäng",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0063": {
             "id": "gt0063",
@@ -328,6 +384,36 @@
           "gt0065": {
             "id": "gt0065",
             "text": "Beräkna Del A och B"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Del A - resultat",
+            "description": "Part A screening section of the questionnaire may trigger the need for further investigation on its own."
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Del B - resultat",
+            "description": "Part B score of over 32 would trigger the need to investigate further for ADHD"
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "CDS del A resultat < 15p",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "CDS del A resultat >= 15",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "CDS del B resultat < 32",
+            "description": ""
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "CDS del B resultat >= 32",
+            "description": ""
           }
         }
       },
@@ -455,6 +541,32 @@
           "gt0065": {
             "id": "gt0065",
             "text": "Calculate Part A and B"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Part A screening interpretation",
+            "description": "Part A screening section of the questionnaire may trigger the need for further investigation on its own."
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Part B score interpretation",
+            "description": "Part B score of over 32 would trigger the need to investigate further for ADHD"
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "Set Part A assessment: Score < 15"
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "Set Part A assessment: Score >= 15"
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Set Part B assessment: Score < 32"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Set Part B assessment: Score >= 32"
           }
         }
       }

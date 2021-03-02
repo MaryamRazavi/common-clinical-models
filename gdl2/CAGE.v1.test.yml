@@ -13,6 +13,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 0
+      gt0020|CAGE assessment: 0|local::at0003|Screening negative|
 
 
 - id: Q1(0)-Q2(0)-Q3(0)-Q4(1)
@@ -27,6 +28,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 1
+      gt0020|CAGE assessment: 0|local::at0003|Screening negative|
 
 
 - id: Q1(0)-Q2(0)-Q3(1)-Q4(0)
@@ -41,6 +43,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 1
+      gt0020|CAGE assessment: 0|local::at0003|Screening negative|
 
 
 - id: Q1(0)-Q2(0)-Q3(1)-Q4(1)
@@ -55,6 +58,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 2
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(0)-Q2(1)-Q3(0)-Q4(0)
@@ -69,6 +73,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 1
+      gt0020|CAGE assessment: 0|local::at0003|Screening negative|
 
 
 - id: Q1(0)-Q2(1)-Q3(0)-Q4(1)
@@ -83,6 +88,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 2
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(0)-Q2(1)-Q3(1)-Q4(0)
@@ -97,6 +103,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 2
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(0)-Q2(1)-Q3(1)-Q4(1)
@@ -111,6 +118,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 3
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 - id: Q1(1)-Q2(0)-Q3(0)-Q4(0)
   input:
@@ -124,6 +132,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 1
+      gt0020|CAGE assessment: 0|local::at0003|Screening negative|
 
 
 - id: Q1(1)-Q2(0)-Q3(0)-Q4(1)
@@ -138,6 +147,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 2
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(1)-Q2(0)-Q3(1)-Q4(0)
@@ -152,6 +162,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 2
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(1)-Q2(0)-Q3(1)-Q4(1)
@@ -166,6 +177,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 3
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(1)-Q2(1)-Q3(0)-Q4(0)
@@ -180,6 +192,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 2
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(1)-Q2(1)-Q3(0)-Q4(1)
@@ -194,6 +207,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 3
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(1)-Q2(1)-Q3(1)-Q4(0)
@@ -208,6 +222,7 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 3
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|
 
 
 - id: Q1(1)-Q2(1)-Q3(1)-Q4(1)
@@ -222,4 +237,4 @@ test_cases:
   expected_output:
     1:
       gt0012|Total score: 4
-
+      gt0020|CAGE assessment: 1|local::at0004|Possible misuse - further evaluation required|

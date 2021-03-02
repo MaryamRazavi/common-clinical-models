@@ -16,7 +16,7 @@
       "Eneimi Allwell-Brown",
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -101,12 +101,28 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"
           }
         }
+      },
+      "gt0034": {
+        "id": "gt0034",
+        "model_id": "openEHR-EHR-EVALUATION.panic_disorder_severity_scale_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.panic_disorder_severity_scale_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0035": {
+            "id": "gt0035",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "path": "/data[at0001]/items[at0003]"
+          }
+        }
       }
     },
     "rules": {
       "gt0028": {
         "id": "gt0028",
-        "priority": 2,
+        "priority": 11,
         "when": [
           "$gt0003|Q1. No of attacks|!=null",
           "$gt0004|Q2. Degree of distress|!=null",
@@ -122,7 +138,7 @@
       },
       "gt0029": {
         "id": "gt0029",
-        "priority": 1,
+        "priority": 10,
         "when": [
           "$gt0003|Q1. No of attacks|!=null",
           "$gt0004|Q2. Degree of distress|!=null",
@@ -134,6 +150,113 @@
         ],
         "then": [
           "$gt0019|Total composite score|.magnitude=($gt0003.value+$gt0004.value+$gt0005.value+$gt0006.value+$gt0007.value+$gt0008.value+$gt0009.value)/7"
+        ]
+      },
+      "gt0037": {
+        "id": "gt0037",
+        "priority": 9,
+        "when": [
+          "$gt0033|Total raw score|<=1",
+          "$gt0033|Total raw score|>=0"
+        ],
+        "then": [
+          "$gt0036|Raw score interpretation - without Agoraphobia|=0|local::at0004|Normal|",
+          "$gt0035|Raw score interpretation - with Agoraphobia|=0|local::at0012|Normal|"
+        ]
+      },
+      "gt0038": {
+        "id": "gt0038",
+        "priority": 8,
+        "when": [
+          "$gt0033|Total raw score|>1",
+          "$gt0033|Total raw score|<=2"
+        ],
+        "then": [
+          "$gt0036|Raw score interpretation - without Agoraphobia|=1|local::at0005|Borderline|",
+          "$gt0035|Raw score interpretation - with Agoraphobia|=0|local::at0012|Normal|"
+        ]
+      },
+      "gt0039": {
+        "id": "gt0039",
+        "priority": 7,
+        "when": [
+          "$gt0033|Total raw score|<=5",
+          "$gt0033|Total raw score|>=3"
+        ],
+        "then": [
+          "$gt0035|Raw score interpretation - with Agoraphobia|=1|local::at0013|Borderline|",
+          "$gt0036|Raw score interpretation - without Agoraphobia|=1|local::at0005|Borderline|"
+        ]
+      },
+      "gt0040": {
+        "id": "gt0040",
+        "priority": 6,
+        "when": [
+          "$gt0033|Total raw score|<=7",
+          "$gt0033|Total raw score|>=6"
+        ],
+        "then": [
+          "$gt0036|Raw score interpretation - without Agoraphobia|=2|local::at0017|Slightly ill|",
+          "$gt0035|Raw score interpretation - with Agoraphobia|=1|local::at0013|Borderline|"
+        ]
+      },
+      "gt0041": {
+        "id": "gt0041",
+        "priority": 5,
+        "when": [
+          "$gt0033|Total raw score|<=9",
+          "$gt0033|Total raw score|>=8"
+        ],
+        "then": [
+          "$gt0036|Raw score interpretation - without Agoraphobia|=2|local::at0017|Slightly ill|",
+          "$gt0035|Raw score interpretation - with Agoraphobia|=2|local::at0014|Slightly ill|"
+        ]
+      },
+      "gt0042": {
+        "id": "gt0042",
+        "priority": 4,
+        "when": [
+          "$gt0033|Total raw score|>9",
+          "$gt0033|Total raw score|<=10"
+        ],
+        "then": [
+          "$gt0036|Raw score interpretation - without Agoraphobia|=3|local::at0018|Moderately ill|",
+          "$gt0035|Raw score interpretation - with Agoraphobia|=2|local::at0014|Slightly ill|"
+        ]
+      },
+      "gt0043": {
+        "id": "gt0043",
+        "priority": 3,
+        "when": [
+          "$gt0033|Total raw score|<=13",
+          "$gt0033|Total raw score|>=11"
+        ],
+        "then": [
+          "$gt0035|Raw score interpretation - with Agoraphobia|=3|local::at0015|Moderately ill|",
+          "$gt0036|Raw score interpretation - without Agoraphobia|=3|local::at0018|Moderately ill|"
+        ]
+      },
+      "gt0044": {
+        "id": "gt0044",
+        "priority": 2,
+        "when": [
+          "$gt0033|Total raw score|<=15",
+          "$gt0033|Total raw score|>=14"
+        ],
+        "then": [
+          "$gt0035|Raw score interpretation - with Agoraphobia|=3|local::at0015|Moderately ill|",
+          "$gt0036|Raw score interpretation - without Agoraphobia|=4|local::at0019|Markedly ill|"
+        ]
+      },
+      "gt0045": {
+        "id": "gt0045",
+        "priority": 1,
+        "when": [
+          "$gt0033|Total raw score|>=16"
+        ],
+        "then": [
+          "$gt0035|Raw score interpretation - with Agoraphobia|=4|local::at0016|Markedly ill|",
+          "$gt0036|Raw score interpretation - without Agoraphobia|=4|local::at0019|Markedly ill|"
         ]
       }
     }
@@ -151,42 +274,42 @@
           "gt0003": {
             "id": "gt0003",
             "text": "1. Antal attacker under senaste veckan",
-            "description": "*(en) How many panic and limited symptoms attacks did you have during the week?"
+            "description": "How many panic and limited symptoms attacks did you have during the week?"
           },
           "gt0004": {
             "id": "gt0004",
             "text": "2. Påfrestning av attacker",
-            "description": "*(en) If you had any panic attacks during the past week, how distressing (uncomfortable, frightening) were they\nwhile they were happening? (If you had more than one, give an average rating. If you didn’t have any\npanic attacks but did have limited symptom attacks, answer for the limited symptom attacks.)"
+            "description": "If you had any panic attacks during the past week, how distressing (uncomfortable, frightening) were they\nwhile they were happening? (If you had more than one, give an average rating. If you didn’t have any\npanic attacks but did have limited symptom attacks, answer for the limited symptom attacks.)"
           },
           "gt0005": {
             "id": "gt0005",
             "text": "3. Oro för ytterligare attack",
-            "description": "*(en) During the past week, how much have you worried or felt anxious about when your next panic attack would\noccur or about fears related to the attacks (for example, that they could mean you have physical or mental\nhealth problems or could cause you social embarrassment)?"
+            "description": "During the past week, how much have you worried or felt anxious about when your next panic attack would\noccur or about fears related to the attacks (for example, that they could mean you have physical or mental\nhealth problems or could cause you social embarrassment)?"
           },
           "gt0006": {
             "id": "gt0006",
             "text": "4. Beteendeförändring platser och situationer",
-            "description": "*(en) During the past week were there any places or situations (e.g., public transportation, movie theaters, crowds,\nbridges, tunnels, shopping malls, being alone) you avoided, or felt afraid of (uncomfortable in, wanted to avoid\nor leave), because of fear of having a panic attack? Are there any other situations that you would have avoided\nor been afraid of if they had come up during the week, for the same reason? If yes to either question, please\nrate your level of fear and avoidance this past week."
+            "description": "During the past week were there any places or situations (e.g., public transportation, movie theaters, crowds,\nbridges, tunnels, shopping malls, being alone) you avoided, or felt afraid of (uncomfortable in, wanted to avoid\nor leave), because of fear of having a panic attack? Are there any other situations that you would have avoided\nor been afraid of if they had come up during the week, for the same reason? If yes to either question, please\nrate your level of fear and avoidance this past week."
           },
           "gt0007": {
             "id": "gt0007",
             "text": "5. Beteendeförändring aktiviteter",
-            "description": "*(en) During the past week, were there any activities (e.g., physical exertion, sexual relations, taking a hot shower or\nbath, drinking coffee, watching an exciting or scary movie) that you avoided, or felt afraid of (uncomfortable\ndoing, wanted to avoid or stop), because they caused physical sensations like those you feel during panic\nattacks or that you were afraid might trigger a panic attack? Are there any other activities that you would have\navoided or been afraid of if they had come up during the week for that reason? If yes to either question, please\nrate your level of fear and avoidance of those activities this past week."
+            "description": "During the past week, were there any activities (e.g., physical exertion, sexual relations, taking a hot shower or\nbath, drinking coffee, watching an exciting or scary movie) that you avoided, or felt afraid of (uncomfortable\ndoing, wanted to avoid or stop), because they caused physical sensations like those you feel during panic\nattacks or that you were afraid might trigger a panic attack? Are there any other activities that you would have\navoided or been afraid of if they had come up during the week for that reason? If yes to either question, please\nrate your level of fear and avoidance of those activities this past week."
           },
           "gt0008": {
             "id": "gt0008",
             "text": "6. Påverkan på dagliga livet",
-            "description": "*(en) During the past week, how much did the above symptoms altogether (panic and limited symptom attacks,\nworry about attacks, and fear of situations and activities because of attacks) interfere with your ability to work\nor carry out your responsibilities at home? (If your work or home responsibilities were less than usual this past\nweek, answer how you think you would have done if the responsibilities had been usual.)"
+            "description": "During the past week, how much did the above symptoms altogether (panic and limited symptom attacks,\nworry about attacks, and fear of situations and activities because of attacks) interfere with your ability to work\nor carry out your responsibilities at home? (If your work or home responsibilities were less than usual this past\nweek, answer how you think you would have done if the responsibilities had been usual.)"
           },
           "gt0009": {
             "id": "gt0009",
             "text": "7. Påverkan på socialt liv",
-            "description": "*(en) During the past week, how much did panic and limited symptom attacks, worry about attacks and fear of\nsituations and activities because of attacks interfere with your social life? (If you didn’t have many opportunities\nto socialize this past week, answer how you think you would have done if you did have opportunities.)"
+            "description": "During the past week, how much did panic and limited symptom attacks, worry about attacks and fear of\nsituations and activities because of attacks interfere with your social life? (If you didn’t have many opportunities\nto socialize this past week, answer how you think you would have done if you did have opportunities.)"
           },
           "gt0019": {
             "id": "gt0019",
             "text": "Genomsnittlig poäng",
-            "description": "*(en) The average score across the 7 questions"
+            "description": "The average score across the 7 questions"
           },
           "gt0028": {
             "id": "gt0028",
@@ -199,7 +322,62 @@
           "gt0033": {
             "id": "gt0033",
             "text": "Total poäng",
-            "description": "*(en) The raw sum of all the scores over the 7 questions"
+            "description": "The raw sum of all the scores over the 7 questions"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Resultat - med agorafobi",
+            "description": "Raw score interpretation - with Agoraphobia"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Resultat - utan agorafobi",
+            "description": "Raw score interpretation - without Agoraphobia"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "CDS Resultat - med/utan agorafobi - normalt",
+            "description": ""
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "CDS med agorafobi - Normalt och utan agorafobi - gränsfall",
+            "description": ""
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "CDS -med/utan agorafobi - gränsfall",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "CDS med agorafobi - gränsfall och utan - lätt-milt paniksyndrom",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "CDS med/utan agorafobi - lätt-milt paniksyndrom",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "CDS med/utan agorafobi: lätt-milt resp. måttligt paniksyndrom",
+            "description": ""
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "CDS med/utan agorafobi - måttligt paniksyndrom",
+            "description": ""
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "CDS med/utan agorafobi - måttligt resp. svårt paniksyndrom",
+            "description": ""
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "CDS med/utan agorafobi - svårt paniksyndrom",
+            "description": ""
           }
         }
       },
@@ -263,6 +441,52 @@
             "id": "gt0033",
             "text": "Total raw score",
             "description": "The raw sum of all the scores over the 7 questions"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Raw score interpretation - with Agoraphobia",
+            "description": "Raw score interpretation - with Agoraphobia"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Raw score interpretation - without Agoraphobia",
+            "description": "Raw score interpretation - without Agoraphobia"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Set Raw score - with/without Agoraphobia: Normal"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Set Raw score with Agoraphobia: Normal and without Agoraphobia Borderline"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Set Raw score - with/without Agoraphobia: Borderline"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Set Raw score - with Agoraphobia: Borderline and without: slightly ill"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Set Raw score with/without Agoraphobia: Slightly ill"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Set Raw score - with/without Agoraphobia: Slightly/Moderately ill"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "Set Raw score - with/out Agoraphobia: Moderately ill"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Set Raw score with/without Agoraphobia: Moderately/markedly ill"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Set Raw score with/without Agoraphobia: Markedly ill"
           }
         }
       }

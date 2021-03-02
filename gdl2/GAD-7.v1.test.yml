@@ -27,6 +27,9 @@ test_cases:
   expected_output:
     1:
       gt0055|GAD-7 Total score: 6
+      gt0057|Anxiety severity: local::at0003|Mild anxiety|
+      gt0058|Recommendation: local::at0009|Monitor anxiety symptoms|
+
 - id: Moderate anxiety
   input:
     1:
@@ -40,6 +43,9 @@ test_cases:
   expected_output:
     1:
       gt0055|GAD-7 Total score: 13
+      gt0057|Anxiety severity: local::at0004|Moderate anxiety|
+      gt0058|Recommendation: local::at0010|Probable GAD-7; requires further evaluation|
+
 - id: Severe anxiety
   input:
     1:
@@ -53,3 +59,5 @@ test_cases:
   expected_output:
     1:
       gt0055|GAD-7 Total score: 19
+      gt0057|Anxiety severity: local::at0005|Severe anxiety|
+      gt0058|Recommendation: local::at0011|Active treatment probably warranted|

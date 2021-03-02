@@ -8,6 +8,8 @@ test_cases:
   expected_output:
     1:
       gt0023|Grade: 1|local::at0022|Grade I|
+      gt0033|5 Year Survival: 1|local::at0003|96%|
+
 - id: Larger
   input:
     1:
@@ -15,6 +17,8 @@ test_cases:
   expected_output:
     1:
       gt0023|Grade: 2|local::at0023|Grade II|
+      gt0033|5 Year Survival: 2|local::at0004|84%|
+
 - id: Even larger, no  bizarre
   input:
     1:
@@ -25,6 +29,8 @@ test_cases:
   expected_output:
     1:
       gt0023|Grade: 3|local::at0024|Grade III|
+      gt0033|5 Year Survival: 3|local::at0005|59%|
+
 - id: Even larger, bizarre
   input:
     1:
@@ -35,4 +41,4 @@ test_cases:
   expected_output:
     1:
       gt0023|Grade: 4|local::at0025|Grade IV|
-
+      gt0033|5 Year Survival: 4|local::at0006|31%|

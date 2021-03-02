@@ -15,23 +15,10 @@
     "other_contributors": [
       "Dennis Forslund",
       "Oskar Nielsen",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
-      "sv": {
-        "id": "sv",
-        "purpose": "Att uppskatta sannolikheten för DVT. Genom tillämpning av Wells kriterier kan läkaren identifiera patienter med låg DVT risk och således undvika att utsätta dem för vidare utredningar i onödan.",
-        "keywords": [
-          "dvt",
-          "djup ventrombos",
-          "risk",
-          "utvärdering"
-        ],
-        "use": "Wells DVT kriterier kan användas såväl inom öppenvården som på akutmottagningar. De bör endast appliceras efter noggrann anamnes och status som föranlett misstankar om DVT.\r\n\r\nMindre än två poäng i kombination med negativ d-dimer indikerar låg sannolikhet för DVT.\r\n\r\nPoängen baseras på sju viktade kriterier:\r\n\r\n- Aktuell cancer (behandlad de senaste 6 månaderna eller palliation)\r\n- Paralys, pares eller nyligen gipsat ben\r\n- Immobilisering ≥ 3 dagar eller stor kirurgi de senaste 12 veckorna\r\n- Lokaliserad ömhet längs djupa vener\r\n- Svullnad i hela benet\r\n- Vadomfång > 3 cm större än på den asymtomatiska sidan\r\n- Pittingödem (ensidigt eller mest på den symtomgivande sidan)\r\n- Synliga ytliga venkollateraler (inte enbart åderbråck)\r\n- Tidigare verifierad VTE\r\n- Alternativ diagnos minst lika sannolik som DVT\r\n\r\nÅtta poäng är den maximala totalpoängen. Två poäng eller mer indikerar hög sannolikhet för DVT.",
-        "misuse": "",
-        "copyright": "Cambio Healthcare Systems"
-      },
       "en": {
         "id": "en",
         "purpose": "For evaluating the pre-test probability of DVT. By utilizing the Wells’ DVT criteria, the physician can identify patients with low risk of  DVT, thereby avoiding unnecessary additional clinical investigations. ",
@@ -134,16 +121,38 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
           }
         }
+      },
+      "gt0070": {
+        "id": "gt0070",
+        "model_id": "openEHR-EHR-EVALUATION.wells_criteria_for_dvt_d_dimer_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.wells_criteria_for_dvt_d_dimer_assessment.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0071": {
+            "id": "gt0071",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "path": "/data[at0001]/items[at0005]"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "path": "/data[at0001]/items[at0007]"
+          }
+        }
       }
     },
     "default_actions": [
       "$gt0066|Ultrasound|=0|local::at0039|Not examined|",
-      "$gt0063|D-Dimer|=0|local::at0036|Not tested|"
+      "$gt0063|D-Dimer|=0|local::at0036|Not tested|",
+      "$gt0073|Final result|=0|local::at0008|No result|",
+      "$gt0072|Recommendation|=0|local::at0006|-|"
     ],
     "rules": {
       "gt0043": {
         "id": "gt0043",
-        "priority": 5,
+        "priority": 13,
         "when": [
           "$gt0021|Active cancer|!=null",
           "$gt0022|Paralysis, paresis, or recent plaster immobilisation of the legs|!=null",
@@ -162,7 +171,7 @@
       },
       "gt0064": {
         "id": "gt0064",
-        "priority": 4,
+        "priority": 12,
         "when": [
           "$gt0062|D-dimer value|<0.25,mg/l"
         ],
@@ -172,7 +181,7 @@
       },
       "gt0068": {
         "id": "gt0068",
-        "priority": 3,
+        "priority": 11,
         "when": [
           "$gt0062|D-dimer value|>=0.25,mg/l"
         ],
@@ -182,7 +191,7 @@
       },
       "gt0065": {
         "id": "gt0065",
-        "priority": 2,
+        "priority": 10,
         "when": [
           "$gt0067|Ultrasound|==2|local::at0042|Positive for DVT|"
         ],
@@ -192,111 +201,108 @@
       },
       "gt0069": {
         "id": "gt0069",
-        "priority": 1,
+        "priority": 9,
         "when": [
           "$gt0067|Ultrasound|==1|local::at0040|Negative for DVT|"
         ],
         "then": [
           "$gt0066|Ultrasound|=$gt0067|Ultrasound|"
         ]
+      },
+      "gt0074": {
+        "id": "gt0074",
+        "priority": 8,
+        "when": [
+          "$gt0040|Total score|<2"
+        ],
+        "then": [
+          "$gt0071|Risk level|=0|local::at0003|Low risk of DVT |"
+        ]
+      },
+      "gt0075": {
+        "id": "gt0075",
+        "priority": 7,
+        "when": [
+          "$gt0040|Total score|>=2"
+        ],
+        "then": [
+          "$gt0071|Risk level|=1|local::at0004|High risk of DVT|"
+        ]
+      },
+      "gt0076": {
+        "id": "gt0076",
+        "priority": 6,
+        "when": [
+          "$gt0073|Final result|==0|local::at0008|No result|",
+          "$gt0066|Ultrasound|==0|local::at0039|Not examined|",
+          "$gt0063|D-Dimer|==0|local::at0036|Not tested|",
+          "$gt0071|Risk level|==0|local::at0003|Low risk of DVT |"
+        ],
+        "then": [
+          "$gt0072|Recommendation|=1|local::at0010|Order D-dimer lab test|"
+        ]
+      },
+      "gt0077": {
+        "id": "gt0077",
+        "priority": 5,
+        "when": [
+          "$gt0073|Final result|==0|local::at0008|No result|",
+          "$gt0066|Ultrasound|==0|local::at0039|Not examined|",
+          "$gt0063|D-Dimer|==2|local::at0041|Elevated|",
+          "$gt0071|Risk level|==0|local::at0003|Low risk of DVT |"
+        ],
+        "then": [
+          "$gt0072|Recommendation|=2|local::at0012|Order ultrasound|"
+        ]
+      },
+      "gt0078": {
+        "id": "gt0078",
+        "priority": 4,
+        "when": [
+          "$gt0073|Final result|==0|local::at0008|No result|",
+          "$gt0066|Ultrasound|==0|local::at0039|Not examined|",
+          "$gt0071|Risk level|==1|local::at0004|High risk of DVT|"
+        ],
+        "then": [
+          "$gt0072|Recommendation|=2|local::at0012|Order ultrasound|"
+        ]
+      },
+      "gt0079": {
+        "id": "gt0079",
+        "priority": 3,
+        "when": [
+          "$gt0066|Ultrasound|==1|local::at0040|Negative for DVT|"
+        ],
+        "then": [
+          "$gt0073|Final result|=2|local::at0011|Patient is unlikely have DVT|"
+        ]
+      },
+      "gt0080": {
+        "id": "gt0080",
+        "priority": 2,
+        "when": [
+          "$gt0063|D-Dimer|==1|local::at0037|Normal|",
+          "$gt0071|Risk level|==0|local::at0003|Low risk of DVT |"
+        ],
+        "then": [
+          "$gt0073|Final result|=2|local::at0011|Patient is unlikely have DVT|"
+        ]
+      },
+      "gt0081": {
+        "id": "gt0081",
+        "priority": 1,
+        "when": [
+          "$gt0066|Ultrasound|==2|local::at0042|Positive for DVT|"
+        ],
+        "then": [
+          "$gt0072|Recommendation|=3|local::at0013|Consider anticoagulation treatment|",
+          "$gt0073|Final result|=1|local::at0009|Patient is likely to have DVT|"
+        ]
       }
     }
   },
   "ontology": {
     "term_definitions": {
-      "sv": {
-        "id": "sv",
-        "terms": {
-          "gt0001": {
-            "id": "gt0001",
-            "text": "Wells kriterier för DVT",
-            "description": "Wells kriterier för djup ventrombos (DVT) används för att bedöma sannolikheten för att patienten har DVT. En totalpoäng på två poäng eller mer är förenat med hög risk för djup ventrombos."
-          },
-          "gt0021": {
-            "id": "gt0021",
-            "text": "Aktiv cancer",
-            "description": "*Treatment or palliation within 6 months. (en)"
-          },
-          "gt0022": {
-            "id": "gt0022",
-            "text": "Förlamning, pares, eller nyligen orörlig i benen p.g.a. gips",
-            "description": "** (en)"
-          },
-          "gt0023": {
-            "id": "gt0023",
-            "text": "Sängliggande nyligen i ≥3 dagar eller större operation inom 12 veckor",
-            "description": "** (en)"
-          },
-          "gt0024": {
-            "id": "gt0024",
-            "text": "Lokaliserad ömhet längs det djupa vensystemet",
-            "description": "** (en)"
-          },
-          "gt0025": {
-            "id": "gt0025",
-            "text": "Hela benet svullet",
-            "description": "** (en)"
-          },
-          "gt0026": {
-            "id": "gt0026",
-            "text": "Kollaterala ytliga vener (utan varicer)",
-            "description": "** (en)"
-          },
-          "gt0027": {
-            "id": "gt0027",
-            "text": "Svullen vad >3 cm jämfört med det andra benet",
-            "description": "*Measured 10 cm below the tibial tuberosity. (en)"
-          },
-          "gt0028": {
-            "id": "gt0028",
-            "text": "Pittingödem",
-            "description": "*Greater in the symptomatic leg. (en)"
-          },
-          "gt0039": {
-            "id": "gt0039",
-            "text": "Alternativ diagnos till DVT minst lika sannolikt",
-            "description": "** (en)"
-          },
-          "gt0040": {
-            "id": "gt0040",
-            "text": "Wells' Score",
-            "description": "** (en)"
-          },
-          "gt0043": {
-            "id": "gt0043",
-            "text": "Beräkna total poäng"
-          },
-          "gt0054": {
-            "id": "gt0054",
-            "text": "*(en) Previously documented DVT",
-            "description": "*(en) *"
-          },
-          "gt0062": {
-            "id": "gt0062"
-          },
-          "gt0063": {
-            "id": "gt0063"
-          },
-          "gt0064": {
-            "id": "gt0064"
-          },
-          "gt0065": {
-            "id": "gt0065"
-          },
-          "gt0066": {
-            "id": "gt0066"
-          },
-          "gt0067": {
-            "id": "gt0067"
-          },
-          "gt0068": {
-            "id": "gt0068"
-          },
-          "gt0069": {
-            "id": "gt0069"
-          }
-        }
-      },
       "en": {
         "id": "en",
         "terms": {
@@ -399,6 +405,53 @@
           "gt0069": {
             "id": "gt0069",
             "text": "Set Ultrasound to Negative DVT"
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Wells Score DVT risk level",
+            "description": "*"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Action",
+            "description": "*"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "Result",
+            "description": "*"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "Set Risk level to Low risk"
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Set Risk level to High risk"
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "Set Recommendation to Order D-dimer"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Set Recommendation to Order Ultrasound 1"
+          },
+          "gt0078": {
+            "id": "gt0078",
+            "text": "Set Recommendation to Order Ultrasound 2"
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Set Final Result to No DVT 1"
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "Set Final Result to No DVT 2"
+          },
+          "gt0081": {
+            "id": "gt0081",
+            "text": "Set Final Result to DVT"
           }
         }
       }

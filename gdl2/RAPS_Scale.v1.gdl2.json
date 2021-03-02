@@ -16,7 +16,7 @@
       "Dennis Forslund",
       "Syeeda S Farruque",
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -112,12 +112,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0054]"
           }
         }
+      },
+      "gt0038": {
+        "id": "gt0038",
+        "model_id": "openEHR-EHR-EVALUATION.raps_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.raps_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0039": {
+            "id": "gt0039",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0037": {
         "id": "gt0037",
-        "priority": 1,
+        "priority": 3,
         "when": [
           "$gt0010|General condition|!=null",
           "$gt0011|Physical activity|!=null",
@@ -132,6 +144,26 @@
         ],
         "then": [
           "$gt0025|RAPS Score|.magnitude=$gt0010.value+$gt0011.value+$gt0012.value+$gt0013.value+$gt0014.value+$gt0015.value+$gt0016.value+$gt0017.value+$gt0018.value+$gt0021.value"
+        ]
+      },
+      "gt0040": {
+        "id": "gt0040",
+        "priority": 2,
+        "when": [
+          "$gt0025|Total score|>31"
+        ],
+        "then": [
+          "$gt0039|Pressure sore risk|=0|local::at0003|Low risk|"
+        ]
+      },
+      "gt0041": {
+        "id": "gt0041",
+        "priority": 1,
+        "when": [
+          "$gt0025|Total score|<=31"
+        ],
+        "then": [
+          "$gt0039|Pressure sore risk|=1|local::at0004|High risk|"
         ]
       }
     }
@@ -148,67 +180,82 @@
           },
           "gt0010": {
             "id": "gt0010",
-            "text": "*General condition (en)",
-            "description": "** (en)"
+            "text": "General condition",
+            "description": ""
           },
           "gt0011": {
             "id": "gt0011",
-            "text": "*Physical activity (en)",
-            "description": "** (en)"
+            "text": "Physical activity",
+            "description": ""
           },
           "gt0012": {
             "id": "gt0012",
-            "text": "*Mobility (en)",
-            "description": "** (en)"
+            "text": "Mobility",
+            "description": ""
           },
           "gt0013": {
             "id": "gt0013",
-            "text": "*The degree to which the skin is exposed to moisture (en)",
-            "description": "** (en)"
+            "text": "The degree to which the skin is exposed to moisture",
+            "description": ""
           },
           "gt0014": {
             "id": "gt0014",
-            "text": "*Food intake (en)",
-            "description": "** (en)"
+            "text": "Food intake",
+            "description": ""
           },
           "gt0015": {
             "id": "gt0015",
-            "text": "*Fluid intake (en)",
-            "description": "** (en)"
+            "text": "Fluid intake",
+            "description": ""
           },
           "gt0016": {
             "id": "gt0016",
-            "text": "*Sensory ability (en)",
-            "description": "** (en)"
+            "text": "Sensory ability",
+            "description": ""
           },
           "gt0017": {
             "id": "gt0017",
-            "text": "*Friction and shear (en)",
-            "description": "*3. Moves freely in bed and chair. Has sufficient muscle strength to lift up completely during move.\n2. Somewhat motionless, need some assistance in moving, slipping to some extent against sheets, chair cushions, etc. when moving.  (en)"
+            "text": "Friction and shear",
+            "description": "3. Moves freely in bed and chair. Has sufficient muscle strength to lift up completely during move.\n2. Somewhat motionless, need some assistance in moving, slipping to some extent against sheets, chair cushions, etc. when moving. "
           },
           "gt0018": {
             "id": "gt0018",
-            "text": "*Body temperature (en)",
-            "description": "** (en)"
+            "text": "Body temperature",
+            "description": ""
           },
           "gt0019": {
             "id": "gt0019",
-            "text": "*Sensory ability (en)",
-            "description": "** (en)"
+            "text": "Sensory ability",
+            "description": ""
           },
           "gt0021": {
             "id": "gt0021",
-            "text": "*S-albumin (en)",
-            "description": "** (en)"
+            "text": "S-albumin",
+            "description": ""
           },
           "gt0025": {
             "id": "gt0025",
-            "text": "*RAPS Score (en)",
-            "description": "** (en)"
+            "text": "RAPS Score",
+            "description": ""
           },
           "gt0037": {
             "id": "gt0037",
             "text": "Beräkna total poäng"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Riskgrupp",
+            "description": "Risk assessment of pressure ulcer development in a patient, based on score generated in accordance with RAPS. "
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "CDS låg risk",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "CDS hög risk",
+            "description": ""
           }
         }
       },
@@ -223,37 +270,37 @@
           "gt0010": {
             "id": "gt0010",
             "text": "General condition",
-            "description": "*"
+            "description": ""
           },
           "gt0011": {
             "id": "gt0011",
             "text": "Physical activity",
-            "description": "*"
+            "description": ""
           },
           "gt0012": {
             "id": "gt0012",
             "text": "Mobility",
-            "description": "*"
+            "description": ""
           },
           "gt0013": {
             "id": "gt0013",
             "text": "The degree to which the skin is exposed to moisture",
-            "description": "*"
+            "description": ""
           },
           "gt0014": {
             "id": "gt0014",
             "text": "Food intake",
-            "description": "*"
+            "description": ""
           },
           "gt0015": {
             "id": "gt0015",
             "text": "Fluid intake",
-            "description": "*"
+            "description": ""
           },
           "gt0016": {
             "id": "gt0016",
             "text": "Sensory ability",
-            "description": "*"
+            "description": ""
           },
           "gt0017": {
             "id": "gt0017",
@@ -263,26 +310,39 @@
           "gt0018": {
             "id": "gt0018",
             "text": "Body temperature",
-            "description": "*"
+            "description": ""
           },
           "gt0019": {
             "id": "gt0019",
             "text": "Sensory ability",
-            "description": "*"
+            "description": ""
           },
           "gt0021": {
             "id": "gt0021",
             "text": "S-albumin",
-            "description": "*"
+            "description": ""
           },
           "gt0025": {
             "id": "gt0025",
             "text": "RAPS Score",
-            "description": "*"
+            "description": ""
           },
           "gt0037": {
             "id": "gt0037",
             "text": "Calculate total score"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Pressure sore risk",
+            "description": "Risk assessment of pressure ulcer development in a patient, based on score generated in accordance with RAPS. "
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "CDS low risk"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "CDS high risk"
           }
         }
       }

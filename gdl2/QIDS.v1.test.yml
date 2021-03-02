@@ -39,6 +39,7 @@ test_cases:
       gt0022|2. Mid-Nocturnal Insomnia: 0|local::at0024|Does not wake up at night|
       gt0024|4. Hypersomnia: 0|local::at0032|Sleeps no longer than 7-8 hours/night, without naps|
       gt0034|14. Energy/Fatiguability: 0|local::at0072|No change in usual level of energy.|
+      gt0058|QIDS Depression assessment: 0|local::at0003|Depression not likely|
 
 - id: case_1
   input:
@@ -78,6 +79,7 @@ test_cases:
       gt0022|2. Mid-Nocturnal Insomnia: 0|local::at0024|Does not wake up at night|
       gt0024|4. Hypersomnia: 0|local::at0032|Sleeps no longer than 7-8 hours/night, without naps|
       gt0034|14. Energy/Fatiguability: 1|local::at0073|Tires more easily than usual.|
+      gt0058|QIDS Depression assessment: 1|local::at0004|Indicates mild depression|
 
 - id: case_1
   input:
@@ -117,6 +119,7 @@ test_cases:
       gt0022|2. Mid-Nocturnal Insomnia: 0|local::at0024|Does not wake up at night|
       gt0024|4. Hypersomnia: 0|local::at0032|Sleeps no longer than 7-8 hours/night, without naps|
       gt0034|14. Energy/Fatiguability: 2|local::at0074|Makes significant personal effort to initiate or maintain usual daily activities.|
+      gt0058|QIDS Depression assessment: 3|local::at0006|Indicates severe depression |
 
 - id: case_1
   input:
@@ -156,3 +159,4 @@ test_cases:
       gt0022|2. Mid-Nocturnal Insomnia: 0|local::at0024|Does not wake up at night|
       gt0024|4. Hypersomnia: 0|local::at0032|Sleeps no longer than 7-8 hours/night, without naps|
       gt0034|14. Energy/Fatiguability: 3|local::at0075|Unable to carry out most of usual daily activities due to lack of energy.|
+      gt0058|QIDS Depression assessment: 4|local::at0007|Indicates very severe depression |

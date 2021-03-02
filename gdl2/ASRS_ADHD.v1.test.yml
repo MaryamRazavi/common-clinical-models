@@ -28,6 +28,8 @@ test_cases:
       'gt0012|Part A: 6 question screening score': 0
       gt0055|Part A and B total score: 0
       'gt0054|Part B: 12 additional questions score': 0
+      gt0068|Part B score interpretation: 0|local::at0006|No further investigation for ADHD needed|
+      gt0067|Part A screening interpretation: 0|local::at0004|No ADHD likelihood|
 
 - id: case_1:A=6, B=12, Total=18
   input:
@@ -55,6 +57,8 @@ test_cases:
       'gt0012|Part A: 6 question screening score': 6
       gt0055|Part A and B total score: 18
       'gt0054|Part B: 12 additional questions score': 12
+      gt0068|Part B score interpretation: 0|local::at0006|No further investigation for ADHD needed|
+      gt0067|Part A screening interpretation: 0|local::at0004|No ADHD likelihood|
 
 - id: case_2:A=12, B=24, Total =36
   input:
@@ -82,6 +86,8 @@ test_cases:
       'gt0012|Part A: 6 question screening score': 12
       gt0055|Part A and B total score: 36
       'gt0054|Part B: 12 additional questions score': 24
+      gt0068|Part B score interpretation: 0|local::at0006|No further investigation for ADHD needed|
+      gt0067|Part A screening interpretation: 0|local::at0004|No ADHD likelihood|
 
 - id: case_3:A=18, B=36, Total =54
   input:
@@ -109,6 +115,9 @@ test_cases:
       'gt0012|Part A: 6 question screening score': 18
       gt0055|Part A and B total score: 54
       'gt0054|Part B: 12 additional questions score': 36
+      gt0068|Part B score interpretation: 1|local::at0007|Investigate further for ADHD|
+
+      gt0067|Part A screening interpretation: 1|local::at0005|Further investigation for ADHD warranted|
 
 - id: case_4:A=24, B=48, Total =72
   input:
@@ -136,6 +145,8 @@ test_cases:
       'gt0012|Part A: 6 question screening score': 24
       gt0055|Part A and B total score: 72
       'gt0054|Part B: 12 additional questions score': 48
+      gt0068|Part B score interpretation: 1|local::at0007|Investigate further for ADHD|
+      gt0067|Part A screening interpretation: 1|local::at0005|Further investigation for ADHD warranted|
 
 - id: case_5:A=0, B=48, Total =48
   input:
@@ -163,8 +174,10 @@ test_cases:
       'gt0012|Part A: 6 question screening score': 0
       gt0055|Part A and B total score: 48
       'gt0054|Part B: 12 additional questions score': 48
+      gt0068|Part B score interpretation: 1|local::at0007|Investigate further for ADHD|
+      gt0067|Part A screening interpretation: 0|local::at0004|No ADHD likelihood|
 
-- id: case_6:A=24, B=0, Total = 24 
+- id: case_6:A=24, B=0, Total = 24
   input:
     1:
       gt0003|1.Trouble wrapping up fine details: 4|local::at0085|Very often|
@@ -190,6 +203,5 @@ test_cases:
       'gt0012|Part A: 6 question screening score': 24
       gt0055|Part A and B total score: 24
       'gt0054|Part B: 12 additional questions score': 0
-
-
-
+      gt0068|Part B score interpretation: 0|local::at0006|No further investigation for ADHD needed|
+      gt0067|Part A screening interpretation: 1|local::at0005|Further investigation for ADHD warranted|

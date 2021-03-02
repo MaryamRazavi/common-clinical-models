@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Not set",
     "details": {
@@ -106,6 +106,10 @@
             "id": "gt0011",
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"
           },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0012]"
+          },
           "gt0013": {
             "id": "gt0013",
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
@@ -141,10 +145,22 @@
           "gt0021": {
             "id": "gt0021",
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0018]"
+          }
+        }
+      },
+      "gt0063": {
+        "id": "gt0063",
+        "model_id": "openEHR-EHR-EVALUATION.as_18_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.as_18_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0064": {
+            "id": "gt0064",
+            "path": "/data[at0001]/items[at0002]"
           },
-          "gt0012": {
-            "id": "gt0012",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0012]"
+          "gt0065": {
+            "id": "gt0065",
+            "path": "/data[at0001]/items[at0003]"
           }
         }
       }
@@ -152,17 +168,17 @@
     "rules": {
       "gt0061": {
         "id": "gt0061",
-        "priority": 2,
+        "priority": 6,
         "when": [
-          "$gt0005!=null",
-          "$gt0007!=null",
-          "$gt0008!=null",
-          "$gt0013!=null",
-          "$gt0014!=null",
-          "$gt0015!=null",
-          "$gt0016!=null",
-          "$gt0017!=null",
-          "$gt0020!=null"
+          "$gt0005|...sleeping more than usual?|!=null",
+          "$gt0007|...feeling hopeless?|!=null",
+          "$gt0008|...your movements have been slower?|!=null",
+          "$gt0013|...feeling low or depressed?|!=null",
+          "$gt0014|...inability to take an interest or pleasure in things that you normally enjoy?|!=null",
+          "$gt0015|...a lack of energy?|!=null",
+          "$gt0016|...feelings of guilt or worthlessness?|!=null",
+          "$gt0017|...that your thoughts have been sluggish and slow?|!=null",
+          "$gt0020|...that you have had thoughts of harming yourself or taking your own life?|!=null"
         ],
         "then": [
           "$gt0040|Depression Score|.magnitude=$gt0005.value+$gt0007.value+$gt0008.value+$gt0013.value+$gt0014.value+$gt0015.value+$gt0016.value+$gt0017.value+$gt0020.value"
@@ -170,20 +186,60 @@
       },
       "gt0062": {
         "id": "gt0062",
-        "priority": 1,
+        "priority": 5,
         "when": [
-          "$gt0004!=null",
-          "$gt0006!=null",
-          "$gt0009!=null",
-          "$gt0010!=null",
-          "$gt0011!=null",
-          "$gt0012!=null",
-          "$gt0018!=null",
-          "$gt0019!=null",
-          "$gt0021!=null"
+          "$gt0004|...having been so talkative that it has been hard for others to make themselves heard? |!=null",
+          "$gt0006|...having less need for sleep but still felt energetic and awake?|!=null",
+          "$gt0009|...being wound up or overactive?|!=null",
+          "$gt0010|...being so physically restless that you have had trouble keeping still?|!=null",
+          "$gt0011|...that your thoughts race?|!=null",
+          "$gt0012|...that you have been easily irritated?|!=null",
+          "$gt0018|...that you have been over confident?|!=null",
+          "$gt0019|...that you have had an overly strong sense of happiness and increase in interest?|!=null",
+          "$gt0021|...that you have been taking risks; for example with money, in traffic or in your social contacts?|!=null"
         ],
         "then": [
           "$gt0041|Mania Score|.magnitude=$gt0004.value+$gt0006.value+$gt0009.value+$gt0010.value+$gt0011.value+$gt0012.value+$gt0018.value+$gt0019.value+$gt0021.value"
+        ]
+      },
+      "gt0066": {
+        "id": "gt0066",
+        "priority": 4,
+        "when": [
+          "$gt0040|Depression Score|<=10"
+        ],
+        "then": [
+          "$gt0064|Result - depression|=0|local::at0004|Depression not likely|"
+        ]
+      },
+      "gt0067": {
+        "id": "gt0067",
+        "priority": 3,
+        "when": [
+          "$gt0040|Depression Score|>10"
+        ],
+        "then": [
+          "$gt0064|Result - depression|=1|local::at0005|Depression likely - further investigation required|"
+        ]
+      },
+      "gt0068": {
+        "id": "gt0068",
+        "priority": 2,
+        "when": [
+          "$gt0041|Mania Score|<=10"
+        ],
+        "then": [
+          "$gt0065|Result - mania|=0|local::at0006|Manic episode not likely|"
+        ]
+      },
+      "gt0069": {
+        "id": "gt0069",
+        "priority": 1,
+        "when": [
+          "$gt0041|Mania Score|>10"
+        ],
+        "then": [
+          "$gt0065|Result - mania|=1|local::at0007|Manic episode likely - further investigation required|"
         ]
       }
     }
@@ -200,98 +256,103 @@
           },
           "gt0004": {
             "id": "gt0004",
-            "text": "*(en) ...having been so talkative that it has been hard for others to make themselves heard? ",
-            "description": "*(en) Mania - talkativeness."
+            "text": "...having been so talkative that it has been hard for others to make themselves heard? ",
+            "description": "Mania - talkativeness."
           },
           "gt0005": {
             "id": "gt0005",
-            "text": "*(en) ...sleeping more than usual?",
-            "description": "*(en) Depression - increased sleep."
+            "text": "...sleeping more than usual?",
+            "description": "Depression - increased sleep."
           },
           "gt0006": {
             "id": "gt0006",
-            "text": "*(en) ...having less need for sleep but still felt energetic and awake?",
-            "description": "*(en) Mania - less need for sleep."
+            "text": "...having less need for sleep but still felt energetic and awake?",
+            "description": "Mania - less need for sleep."
           },
           "gt0007": {
             "id": "gt0007",
-            "text": "*(en) ...feeling hopeless?",
-            "description": "*(en) Depression - hopelessness."
+            "text": "...feeling hopeless?",
+            "description": "Depression - hopelessness."
           },
           "gt0008": {
             "id": "gt0008",
-            "text": "*(en) ...your movements have been slower?",
-            "description": "*(en) Depression - retardation."
+            "text": "...your movements have been slower?",
+            "description": "Depression - retardation."
           },
           "gt0009": {
             "id": "gt0009",
-            "text": "*(en) ...being wound up or overactive?",
-            "description": "*(en) Mania - overactive."
+            "text": "...being wound up or overactive?",
+            "description": "Mania - overactive."
           },
           "gt0010": {
             "id": "gt0010",
-            "text": "*(en) ...being so physically restless that you have had trouble keeping still?",
-            "description": "*(en) Mania - agitation."
+            "text": "...being so physically restless that you have had trouble keeping still?",
+            "description": "Mania - agitation."
           },
           "gt0011": {
             "id": "gt0011",
-            "text": "*(en) ...that your thoughts race?",
-            "description": "*(en) Mania - racing thoughts."
+            "text": "...that your thoughts race?",
+            "description": "Mania - racing thoughts."
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "...that you have been easily irritated?",
+            "description": "Mania - irritability."
           },
           "gt0013": {
             "id": "gt0013",
-            "text": "*(en) ...feeling low or depressed?",
-            "description": "*(en) Depression."
+            "text": "...feeling low or depressed?",
+            "description": "Depression."
           },
           "gt0014": {
             "id": "gt0014",
-            "text": "*(en) ...inability to take an interest or pleasure in things that you normally enjoy?",
-            "description": "*(en) Depression - anhedonia."
+            "text": "...inability to take an interest or pleasure in things that you normally enjoy?",
+            "description": "Depression - anhedonia."
           },
           "gt0015": {
             "id": "gt0015",
-            "text": "*(en) ...a lack of energy?",
-            "description": "*(en) Depression - low energy."
+            "text": "...a lack of energy?",
+            "description": "Depression - low energy."
           },
           "gt0016": {
             "id": "gt0016",
-            "text": "*(en) ...feelings of guilt or worthlessness?",
-            "description": "*(en) Depression - guilt."
+            "text": "...feelings of guilt or worthlessness?",
+            "description": "Depression - guilt."
           },
           "gt0017": {
             "id": "gt0017",
-            "text": "*(en) ...that your thoughts have been sluggish and slow?",
-            "description": "*(en) Depression - slow thinking."
+            "text": "...that your thoughts have been sluggish and slow?",
+            "description": "Depression - slow thinking."
           },
           "gt0018": {
             "id": "gt0018",
-            "text": "*(en) ...that you have been over confident?",
-            "description": "*(en) Mania - increased self-esteem."
+            "text": "...that you have been over confident?",
+            "description": "Mania - increased self-esteem."
           },
           "gt0019": {
             "id": "gt0019",
-            "text": "*(en) ...that you have had an overly strong sense of happiness and increase in interest?",
-            "description": "*(en) Mania - euphoria."
+            "text": "...that you have had an overly strong sense of happiness and increase in interest?",
+            "description": "Mania - euphoria."
           },
           "gt0020": {
             "id": "gt0020",
-            "text": "*(en) ...that you have had thoughts of harming yourself or taking your own life?",
-            "description": "*(en) Depression - suicidal ideation."
+            "text": "...that you have had thoughts of harming yourself or taking your own life?",
+            "description": "Depression - suicidal ideation."
           },
           "gt0021": {
             "id": "gt0021",
-            "text": "*(en) ...that you have been taking risks; for example with money, in traffic or in your social contacts?",
-            "description": "*(en) Mania - risk-taking."
+            "text": "...that you have been taking risks; for example with money, in traffic or in your social contacts?",
+            "description": "Mania - risk-taking."
           },
           "gt0040": {
             "id": "gt0040",
-            "text": "*(en) Depression Score",
-            "description": "*(en) Sum of all questions related to depression."
+            "text": "Depression Score",
+            "description": "Sum of all questions related to depression."
           },
           "gt0041": {
             "id": "gt0041",
-            "text": "*(en) Mania Score",
-            "description": "*(en) Sum of all questions related to mania."
+            "text": "Mania Score",
+            "description": "Sum of all questions related to mania."
           },
           "gt0061": {
             "id": "gt0061",
@@ -301,10 +362,35 @@
             "id": "gt0062",
             "text": "Beräkna poäng för mani"
           },
-          "gt0012": {
-            "id": "gt0012",
-            "text": "*(en) ...that you have been easily irritated?",
-            "description": "*(en) Mania - irritability."
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Resultat - depression",
+            "description": "Assessment of depression score in accordance with AS-18. Includes question  2, 4, 5, 10, 11, 12, 13, 14, and 17."
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Resultat - mani",
+            "description": "Assessment of mania score in accordance with AS-18. Includes questions 1, 3, 6, 7, 8, 9, 15, 16 and 18."
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "CDS depression ej sannolikt",
+            "description": ""
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "CDS depression sannolikt",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "CDS manisk episod ej sannolikt",
+            "description": ""
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "CDS manisk episod sannolikt",
+            "description": ""
           }
         }
       },
@@ -355,6 +441,11 @@
             "id": "gt0011",
             "text": "...that your thoughts race?",
             "description": "Mania - racing thoughts."
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "...that you have been easily irritated?",
+            "description": "Mania - irritability."
           },
           "gt0013": {
             "id": "gt0013",
@@ -419,10 +510,31 @@
             "id": "gt0062",
             "text": "Calculate mania score"
           },
-          "gt0012": {
-            "id": "gt0012",
-            "text": "...that you have been easily irritated?",
-            "description": "Mania - irritability."
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Result - depression",
+            "description": "Assessment of depression score in accordance with AS-18. Includes question  2, 4, 5, 10, 11, 12, 13, 14, and 17."
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Result - mania",
+            "description": "Assessment of mania score in accordance with AS-18. Includes questions 1, 3, 6, 7, 8, 9, 15, 16 and 18."
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "CDS depression not likely"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "CDS depression likely"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "CDS manic episode not likely"
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "CDS manic episode likely"
           }
         }
       }

@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -114,12 +114,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0078.11]"
           }
         }
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "model_id": "openEHR-EHR-EVALUATION.kocher_criteria_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.kocher_criteria_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0028": {
+            "id": "gt0028",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0016": {
         "id": "gt0016",
-        "priority": 8,
+        "priority": 13,
         "when": [
           "$gt0005|Fever|==null",
           "$gt0011|ESR > 40mm/h|==null",
@@ -133,7 +145,7 @@
       },
       "gt0022": {
         "id": "gt0022",
-        "priority": 7,
+        "priority": 12,
         "when": [
           "$gt0003|Temperature|.magnitude<=38.5"
         ],
@@ -143,7 +155,7 @@
       },
       "gt0024": {
         "id": "gt0024",
-        "priority": 6,
+        "priority": 11,
         "when": [
           "$gt0014|Erythrocyte sedimentation rate (ESR)|.magnitude<=40"
         ],
@@ -153,7 +165,7 @@
       },
       "gt0025": {
         "id": "gt0025",
-        "priority": 5,
+        "priority": 10,
         "when": [
           "$gt0013|White cell count|.magnitude<=12.0"
         ],
@@ -163,7 +175,7 @@
       },
       "gt0017": {
         "id": "gt0017",
-        "priority": 4,
+        "priority": 9,
         "when": [
           "$gt0003|Temperature|.magnitude>38.5"
         ],
@@ -173,7 +185,7 @@
       },
       "gt0019": {
         "id": "gt0019",
-        "priority": 3,
+        "priority": 8,
         "when": [
           "$gt0014|Erythrocyte sedimentation rate (ESR)|.magnitude>40"
         ],
@@ -183,7 +195,7 @@
       },
       "gt0020": {
         "id": "gt0020",
-        "priority": 2,
+        "priority": 7,
         "when": [
           "$gt0013|White cell count|.magnitude>12.0"
         ],
@@ -193,7 +205,7 @@
       },
       "gt0021": {
         "id": "gt0021",
-        "priority": 1,
+        "priority": 6,
         "when": [
           "$gt0005|Fever|!=null",
           "$gt0009|Non weight-bearing?|!=null",
@@ -202,6 +214,56 @@
         ],
         "then": [
           "$gt0026|Number of criteria met|.magnitude=(($gt0005.value+$gt0009.value)+$gt0011.value)+$gt0012.value"
+        ]
+      },
+      "gt0029": {
+        "id": "gt0029",
+        "priority": 5,
+        "when": [
+          "$gt0026|Number of criteria met|==0"
+        ],
+        "then": [
+          "$gt0028|Probability of septic arthritis|=0|local::at0003|<0,2%|"
+        ]
+      },
+      "gt0030": {
+        "id": "gt0030",
+        "priority": 4,
+        "when": [
+          "$gt0026|Number of criteria met|==1"
+        ],
+        "then": [
+          "$gt0028|Probability of septic arthritis|=1|local::at0004|3%|"
+        ]
+      },
+      "gt0031": {
+        "id": "gt0031",
+        "priority": 3,
+        "when": [
+          "$gt0026|Number of criteria met|==2"
+        ],
+        "then": [
+          "$gt0028|Probability of septic arthritis|=2|local::at0005|40%|"
+        ]
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "priority": 2,
+        "when": [
+          "$gt0026|Number of criteria met|==3"
+        ],
+        "then": [
+          "$gt0028|Probability of septic arthritis|=3|local::at0006|93,1%|"
+        ]
+      },
+      "gt0033": {
+        "id": "gt0033",
+        "priority": 1,
+        "when": [
+          "$gt0026|Number of criteria met|==4"
+        ],
+        "then": [
+          "$gt0028|Probability of septic arthritis|=4|local::at0007|99,6%|"
         ]
       }
     }
@@ -219,42 +281,42 @@
           "gt0003": {
             "id": "gt0003",
             "text": "Temperatur",
-            "description": "*(en) The measured body temperature (as a surrogate for the whole body)."
+            "description": "The measured body temperature (as a surrogate for the whole body)."
           },
           "gt0005": {
             "id": "gt0005",
             "text": "Feber",
-            "description": "*(en) Temperature > 38.5°C"
+            "description": "Temperature > 38.5°C"
           },
           "gt0009": {
             "id": "gt0009",
             "text": "Oförmåga belasta led?",
-            "description": "*(en) Weight-bearing status - unable to bear weight on the limb?"
+            "description": "Weight-bearing status - unable to bear weight on the limb?"
           },
           "gt0011": {
             "id": "gt0011",
             "text": "SR >40mm/h",
-            "description": "*(en) Erythrocyte sedimentation rate > 40 mm/h"
+            "description": "Erythrocyte sedimentation rate > 40 mm/h"
           },
           "gt0012": {
             "id": "gt0012",
             "text": "LPK > 12,000 cells/mm3",
-            "description": "*(en) White blood cell count > 12.0 × 10^9 cells per liter (12000 cells/mm3)"
+            "description": "White blood cell count > 12.0 × 10^9 cells per liter (12000 cells/mm3)"
           },
           "gt0013": {
             "id": "gt0013",
             "text": "LPK",
-            "description": "*(en) The number of white cells per litre"
+            "description": "The number of white cells per litre"
           },
           "gt0014": {
             "id": "gt0014",
             "text": "Sänkningsreaktion (SR)",
-            "description": "*(en) The velocity of sedimentation of red cells in the first hour"
+            "description": "The velocity of sedimentation of red cells in the first hour"
           },
           "gt0015": {
             "id": "gt0015",
             "text": "Total poäng",
-            "description": "*(en) Sum of all factors."
+            "description": "Sum of all factors."
           },
           "gt0016": {
             "id": "gt0016",
@@ -291,7 +353,37 @@
           "gt0026": {
             "id": "gt0026",
             "text": "Uppfyllda kriterier",
-            "description": "*(en) Sum of all factors."
+            "description": "Sum of all factors."
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Septisk artrit - sannolikhet",
+            "description": "Probability of septic arthritis based on the Kocher Criteria."
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "CDS Septisk artrit - sannolikhet - 0 uppfyllda kriterier",
+            "description": ""
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "CDS Septisk artrit - sannolikhet - 1 uppfyllda kriterier",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "CDS Septisk artrit - sannolikhet - 2 uppfyllda kriterier",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "CDS Septisk artrit - sannolikhet - 3 uppfyllda kriterier",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "CDS Septisk artrit - sannolikhet - 4 uppfyllda kriterier",
+            "description": ""
           }
         }
       },
@@ -379,6 +471,31 @@
             "id": "gt0026",
             "text": "Number of criteria met",
             "description": "Sum of all factors."
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Probability of septic arthritis",
+            "description": "Probability of septic arthritis based on the Kocher Criteria."
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "CDS Probability of septic arthritis - 0 criteria met"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "CDS Probability of septic arthritis - 1 criteria met"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "CDS Probability of septic arthritis - 2 criteria met"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "CDS Probability of septic arthritis - 3 criteria met"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "CDS Probability of septic arthritis - 4 criteria met"
           }
         }
       }

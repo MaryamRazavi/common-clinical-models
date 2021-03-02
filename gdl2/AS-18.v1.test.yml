@@ -26,6 +26,9 @@ test_cases:
     1:
       gt0040|Depression Score: 0
       gt0041|Mania Score: 0
+      gt0065|Result - mania: 0|local::at0006|Manic episode not likely|
+      gt0064|Result - depression: 0|local::at0004|Depression not likely|
+
 
 
 - id: case_2:Depr.score=9/ Mania score=9
@@ -53,6 +56,8 @@ test_cases:
     1:
       gt0040|Depression Score: 9
       gt0041|Mania Score: 9
+      gt0065|Result - mania: 0|local::at0006|Manic episode not likely|
+      gt0064|Result - depression: 0|local::at0004|Depression not likely|
 
 - id: case_3:Depr.score=18/ Mania score=18
   input:
@@ -79,6 +84,8 @@ test_cases:
     1:
       gt0040|Depression Score: 18
       gt0041|Mania Score: 18
+      gt0065|Result - mania: 1|local::at0007|Manic episode likely - further investigation required|
+      gt0064|Result - depression: 1|local::at0005|Depression likely - further investigation required|
 
 - id: case_4:Depr.score=27/ Mania score=27
   input:
@@ -105,6 +112,8 @@ test_cases:
     1:
       gt0040|Depression Score: 27
       gt0041|Mania Score: 26
+      gt0065|Result - mania: 1|local::at0007|Manic episode likely - further investigation required|
+      gt0064|Result - depression: 1|local::at0005|Depression likely - further investigation required|
 
 - id: case_5:Depr.score=36/ Mania score=36
   input:
@@ -131,6 +140,8 @@ test_cases:
     1:
       gt0040|Depression Score: 36
       gt0041|Mania Score: 36
+      gt0065|Result - mania: 1|local::at0007|Manic episode likely - further investigation required|
+      gt0064|Result - depression: 1|local::at0005|Depression likely - further investigation required|
 
 - id: case_6:Depr.score=16/Mania score=20
   input:
@@ -157,5 +168,5 @@ test_cases:
     1:
       gt0040|Depression Score: 16
       gt0041|Mania Score: 20
-
-
+      gt0065|Result - mania: 1|local::at0007|Manic episode likely - further investigation required|
+      gt0064|Result - depression: 1|local::at0005|Depression likely - further investigation required|

@@ -1,3 +1,4 @@
+current_datetime: '2019-11-28T00:00:00+01:00'
 guidelines:
   1: TIMI_UA_NSTEMI.v1
 test_cases:
@@ -16,6 +17,8 @@ test_cases:
       gt0004|Age: 70,a
       gt0022|Total score: 1
       gt0009|Age ≥ 65: 1|local::at0025|Yes|
+      gt0035|Risk grading: 0|local::at0003|5% risk at 14 days of all-cause mortality|
+
 
 - id: Below 65, all negative
   input:
@@ -32,6 +35,7 @@ test_cases:
       gt0004|Age: 50,a
       gt0022|Total score: 0
       gt0009|Age ≥ 65: 0|local::at0024|No|
+      gt0035|Risk grading: 0|local::at0003|5% risk at 14 days of all-cause mortality|
 
 
 - id: Some positive
@@ -49,6 +53,7 @@ test_cases:
       gt0004|Age: 67,a
       gt0022|Total score: 4
       gt0009|Age ≥ 65: 1|local::at0025|Yes|
+      gt0035|Risk grading: 3|local::at0006|20% risk at 14 days of all-cause mortality|
 
 - id: All positive
   input:
@@ -65,4 +70,4 @@ test_cases:
       gt0004|Age: 67,a
       gt0022|Total score: 7
       gt0009|Age ≥ 65: 1|local::at0025|Yes|
-
+      gt0035|Risk grading: 5|local::at0008|41% risk at 14 days of all-cause mortality|

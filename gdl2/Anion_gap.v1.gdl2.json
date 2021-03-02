@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Dennis Forslund, Cambio Healthcare Systems",
-	  "Aulia Zahrina Qashri"
+      "Aulia Zahrina Qashri"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -106,12 +106,28 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0008]"
           }
         }
+      },
+      "gt0028": {
+        "id": "gt0028",
+        "model_id": "openEHR-EHR-EVALUATION.anion_gap_delta_ratio_evaluation.v1",
+        "template_id": "openEHR-EHR-EVALUATION.anion_gap_delta_ratio_evaluation.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0029": {
+            "id": "gt0029",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "path": "/data[at0001]/items[at0005]"
+          }
+        }
       }
     },
     "rules": {
       "gt0024": {
         "id": "gt0024",
-        "priority": 4,
+        "priority": 10,
         "when": [
           "$gt0007|Bicarbonate|.unit=='mmol/l'",
           "$gt0005|Sodium|.unit=='mmol/l'",
@@ -125,7 +141,7 @@
       },
       "gt0025": {
         "id": "gt0025",
-        "priority": 3,
+        "priority": 9,
         "when": [
           "$gt0004|Serum albumin|.unit=='gm/dl'",
           "$gt0007|Bicarbonate|.unit=='mmol/l'",
@@ -140,7 +156,7 @@
       },
       "gt0026": {
         "id": "gt0026",
-        "priority": 2,
+        "priority": 8,
         "then": [
           "$gt0022|Delta gap|.magnitude=$gt0020.magnitude-12",
           "$gt0022|Delta gap|.precision=1",
@@ -149,7 +165,7 @@
       },
       "gt0027": {
         "id": "gt0027",
-        "priority": 1,
+        "priority": 7,
         "when": [
           "$gt0007|Bicarbonate|.unit=='mmol/l'"
         ],
@@ -157,6 +173,68 @@
           "$gt0023|Delta ratio|.magnitude=($gt0020.magnitude-12)/(24-$gt0007.magnitude)",
           "$gt0023|Delta ratio|.precision=2",
           "$gt0023|Delta ratio|.unit='1'"
+        ]
+      },
+      "gt0031": {
+        "id": "gt0031",
+        "priority": 6,
+        "when": [
+          "$gt0021|Corrected AG|>$gt0020|Anion gap|"
+        ],
+        "then": [
+          "$gt0029|Anion Gap evaluation|=1|local::at0004|High anion gap acidosis|"
+        ]
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "priority": 5,
+        "when": [
+          "$gt0021|Corrected AG|<=$gt0020|Anion gap|"
+        ],
+        "then": [
+          "$gt0029|Anion Gap evaluation|=0|local::at0003|Non anion gap acidosis|"
+        ]
+      },
+      "gt0033": {
+        "id": "gt0033",
+        "priority": 4,
+        "when": [
+          "$gt0023|Delta ratio|<0.4,1"
+        ],
+        "then": [
+          "$gt0030|Delta ratio evaluation|=0|local::at0006|Hyperchloremic normal anion gap acidosis|"
+        ]
+      },
+      "gt0034": {
+        "id": "gt0034",
+        "priority": 3,
+        "when": [
+          "$gt0023|Delta ratio|<1,1",
+          "$gt0023|Delta ratio|>=0.4,1"
+        ],
+        "then": [
+          "$gt0030|Delta ratio evaluation|=1|local::at0007|High AG & normal AG acidosis|"
+        ]
+      },
+      "gt0035": {
+        "id": "gt0035",
+        "priority": 2,
+        "when": [
+          "$gt0023|Delta ratio|<=2,1",
+          "$gt0023|Delta ratio|>=1,1"
+        ],
+        "then": [
+          "$gt0030|Delta ratio evaluation|=2|local::at0008|Pure anion gap acidosis/Lactic acidosis (see text for more info)|"
+        ]
+      },
+      "gt0036": {
+        "id": "gt0036",
+        "priority": 1,
+        "when": [
+          "$gt0023|Delta ratio|>2,1"
+        ],
+        "then": [
+          "$gt0030|Delta ratio evaluation|=3|local::at0009|High AG acidosis and metabolic alkalosis (see text for more info)|"
         ]
       }
     }
@@ -270,6 +348,46 @@
           "gt0027": {
             "id": "gt0027",
             "text": "Utvärdering delta ratio"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Utvärdering - anjongap",
+            "description": "If the corrected Anion Gap more than 1 mEq/L higher than the AG, there is a high anion gap acidosis"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "Utvärdering - delta ratio",
+            "description": "The delta ratio helps to evaluate whether there is a mixed acid-base picture in the presence of an anion gap acidosis. "
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "*CDS förhöjt AG acidos",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "CDS icke AG-relaterad acidos",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "CDS Delta Ratio < 0.4",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "CDS Delta Ratio < 1",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "CDS Delta Ratio 1-2",
+            "description": ""
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "CDS Delta Ratio > 2",
+            "description": ""
           }
         }
       },
@@ -380,6 +498,40 @@
           "gt0027": {
             "id": "gt0027",
             "text": "Calculate Delta Ratio"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Anion Gap evaluation",
+            "description": "If the corrected Anion Gap more than 1 mEq/L higher than the AG, there is a high anion gap acidosis"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "Delta ratio evaluation",
+            "description": "The delta ratio helps to evaluate whether there is a mixed acid-base picture in the presence of an anion gap acidosis. "
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Set High AG acidosis"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Set no AG acidosis"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Set Delta Ratio < 0.4"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Set Delta Ratio < 1"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Set Delta Ratio 1-2"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Set Delta Ratio > 2"
           }
         }
       }

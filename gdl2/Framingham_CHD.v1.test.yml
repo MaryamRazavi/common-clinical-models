@@ -1,3 +1,4 @@
+current_datetime: '2019-11-28T00:00:00+01:00'
 guidelines:
   1: Framingham_CHD.v1
 test_cases:
@@ -21,6 +22,8 @@ test_cases:
       'gt0075|Systolic BP: men': 1|local::at0047|120-129 if treated or 130-159 if untreated|
       'gt0023|Total Cholesterol: women': 0|local::at0076|<160|
       'gt0022|Total Cholesterol: men': 0|local::at0023|< 160 |
+      gt0125|Risk percentage in men: 13|local::at0017|25% Risk|
+
 - id: Male >75, Hypertension, no medication
   input:
     1:
@@ -41,6 +44,8 @@ test_cases:
       'gt0075|Systolic BP: men': 1|local::at0047|120-129 if treated or 130-159 if untreated|
       'gt0023|Total Cholesterol: women': 0|local::at0076|<160|
       'gt0022|Total Cholesterol: men': 0|local::at0023|< 160 |
+      gt0125|Risk percentage in men: 13|local::at0017|25% Risk|
+
 - id: Male >75, Hypertension, with medication
   input:
     1:
@@ -61,6 +66,8 @@ test_cases:
       'gt0075|Systolic BP: men': 2|local::at0048|130-159 if treated or ≥ 160 if untreated|
       'gt0023|Total Cholesterol: women': 0|local::at0076|<160|
       'gt0022|Total Cholesterol: men': 0|local::at0023|< 160 |
+      gt0125|Risk percentage in men: 14|local::at0018|>30% Risk|
+
 - id: Middle-age smoker man, unhealthy cholesterol
   input:
     1:
@@ -81,6 +88,8 @@ test_cases:
       'gt0075|Systolic BP: men': 3|local::at0049|≥ 160 if treated|
       'gt0023|Total Cholesterol: women': 0|local::at0076|<160|
       'gt0022|Total Cholesterol: men': 0|local::at0023|< 160 |
+      gt0125|Risk percentage in men: 11|local::at0015|16% Risk|
+
 - id: Healthy old lady
   input:
     1:
@@ -101,6 +110,8 @@ test_cases:
       'gt0023|Total Cholesterol: women': 0|local::at0076|<160|
       'gt0022|Total Cholesterol: men': 0|local::at0023|< 160 |
       'gt0031|Total score: women': 13
+      gt0126|Risk percentage in women: 3|local::at0022|2% Risk|
+
 - id: Unhealthy young man
   input:
     1:
@@ -120,3 +131,4 @@ test_cases:
       'gt0020|Smoker: men': 8|local::at0038|Smoker - 20-39|
       'gt0075|Systolic BP: men': 2|local::at0048|130-159 if treated or ≥ 160 if untreated|
       'gt0022|Total Cholesterol: men': 9|local::at0032|240-279 (20-39 years)|
+      gt0125|Risk percentage in men: 8|local::at0012|8% Risk|

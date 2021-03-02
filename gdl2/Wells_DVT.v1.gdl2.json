@@ -15,7 +15,7 @@
     "other_contributors": [
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -109,12 +109,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]"
           }
         }
+      },
+      "gt0044": {
+        "id": "gt0044",
+        "model_id": "openEHR-EHR-EVALUATION.wells_criteria_for_dvt_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.wells_criteria_for_dvt_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0045": {
+            "id": "gt0045",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0043": {
         "id": "gt0043",
-        "priority": 1,
+        "priority": 3,
         "when": [
           "$gt0021|Active cancer|!=null",
           "$gt0022|Paralysis, paresis, or recent plaster immobilisation of the legs|!=null",
@@ -128,6 +140,26 @@
         ],
         "then": [
           "$gt0040|Wells' Score|.magnitude=$gt0021.value+$gt0022.value+$gt0023.value+$gt0024.value+$gt0025.value+$gt0026.value+$gt0027.value+$gt0028.value+$gt0039.value"
+        ]
+      },
+      "gt0046": {
+        "id": "gt0046",
+        "priority": 2,
+        "when": [
+          "$gt0040|Total score|<2"
+        ],
+        "then": [
+          "$gt0045|DVT risk|=0|local::at0003|Low probability|"
+        ]
+      },
+      "gt0047": {
+        "id": "gt0047",
+        "priority": 1,
+        "when": [
+          "$gt0040|Total score|>=2"
+        ],
+        "then": [
+          "$gt0045|DVT risk|=1|local::at0004|High probability|"
         ]
       }
     }
@@ -209,6 +241,21 @@
           "gt0043": {
             "id": "gt0043",
             "text": "Beräkna total poäng"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Riskvärdering DVT",
+            "description": "Assessment of score generated in accordance with Wells' Criteria for risk of DVT."
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "CDS Låg risk",
+            "description": ""
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "CDS Hög risk",
+            "description": ""
           }
         }
       },
@@ -287,6 +334,19 @@
           "gt0043": {
             "id": "gt0043",
             "text": "Calculate Wells' Score"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "DVT probability",
+            "description": "Assessment of score generated in accordance with Wells' Criteria for risk of DVT."
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "CDS Low risk"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "CDS High risk"
           }
         }
       }

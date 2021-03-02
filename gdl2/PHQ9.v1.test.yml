@@ -16,6 +16,8 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 0
+      gt0030|Severity grade: 0|local::at0004|Minimal or no depression|
+      gt0031|Recommendation: 0|local::at0009|Monitor the patient.|
 
 - id: case_2
   input:
@@ -32,6 +34,8 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 9
+      gt0030|Severity grade: 1|local::at0005|Mild depression|
+      gt0031|Recommendation: 1|local::at0010|Use clinical judgment to determine necessity of treatment|
 
 - id: case_3
   input:
@@ -48,6 +52,8 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 18
+      gt0030|Severity grade: 3|local::at0007|Moderately severe depression |
+      gt0031|Recommendation: 2|local::at0011|Warrants active treatment with psychotherapy, medication or combination|
 
 - id: case_4
   input:
@@ -64,4 +70,5 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 27
-
+      gt0030|Severity grade: 4|local::at0008|Severe depression  |
+      gt0031|Recommendation: 2|local::at0011|Warrants active treatment with psychotherapy, medication or combination|

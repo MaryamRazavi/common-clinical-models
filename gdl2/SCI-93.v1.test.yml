@@ -42,7 +42,7 @@ test_cases:
   expected_output:
     1:
       gt0039|Total score: 0
-
+      gt0132|Autonomic dysfunction assessment: 0|local::at0003|No dysfunction|
 
 - id: all_1
   input:
@@ -85,7 +85,8 @@ test_cases:
   expected_output:
     1:
       gt0039|Total score: 35
-
+      gt0133|SCI-93 assessment: 0|local::at0006|Mild effect on ADL|
+      gt0132|Autonomic dysfunction assessment: 1|local::at0004|Probable autonomic dysfunction|
 
 - id: all_2
   input:
@@ -128,7 +129,8 @@ test_cases:
   expected_output:
     1:
       gt0039|Total score: 70
-
+      gt0133|SCI-93 assessment: 1|local::at0007|Considerable effect on ADL - can remain working or return to part-time conditions|
+      gt0132|Autonomic dysfunction assessment: 1|local::at0004|Probable autonomic dysfunction|
 
 - id: all_3
   input:
@@ -171,7 +173,8 @@ test_cases:
   expected_output:
     1:
       gt0039|Total score: 105
-
+      gt0133|SCI-93 assessment: 3|local::at0009|Severe effect - treatment required ahead of rehabilitation process|
+      gt0132|Autonomic dysfunction assessment: 1|local::at0004|Probable autonomic dysfunction|
 
 - id: all_4
   input:
@@ -214,3 +217,5 @@ test_cases:
   expected_output:
     1:
       gt0039|Total score: 140
+      gt0133|SCI-93 assessment: 3|local::at0009|Severe effect - treatment required ahead of rehabilitation process|
+      gt0132|Autonomic dysfunction assessment: 1|local::at0004|Probable autonomic dysfunction|

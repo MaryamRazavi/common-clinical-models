@@ -17,7 +17,7 @@
       "Iago Corbal, Cambio Healthcare Systems",
       "Jimmy Axelsson, Cambio Healthcare Systems",
       "Dennis Forslund, Cambio Healthcare Systems",
-	  "Linda Guttormsdottir"
+      "Linda Guttormsdottir"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -140,12 +140,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
           }
         }
+      },
+      "gt0022": {
+        "id": "gt0022",
+        "model_id": "openEHR-EHR-EVALUATION.stages_chronic_kidney_disease.v1",
+        "template_id": "openEHR-EHR-EVALUATION.stages_chronic_kidney_disease.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0023": {
+            "id": "gt0023",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0014": {
         "id": "gt0014",
-        "priority": 3,
+        "priority": 8,
         "when": [
           "$gt0002|Birthdate|>($currentDateTime-20,a)",
           "$gt0007|Height|.unit=='cm'",
@@ -160,7 +172,7 @@
       },
       "gt0012": {
         "id": "gt0012",
-        "priority": 2,
+        "priority": 7,
         "when": [
           "$gt0002|Birthdate|<=($currentDateTime-20,a)",
           "$gt0003|Gender|==local::at0005|Male|",
@@ -175,7 +187,7 @@
       },
       "gt0013": {
         "id": "gt0013",
-        "priority": 1,
+        "priority": 6,
         "when": [
           "$gt0002|Birthdate|<=($currentDateTime-20,a)",
           "$gt0003|Gender|==local::at0006|Female|",
@@ -186,6 +198,59 @@
           "$gt0011|Estimated GFR|.unit='ml/min'",
           "$gt0011|Estimated GFR|.precision=2",
           "$gt0011|Estimated GFR|.magnitude=(1.04*(140-($currentDateTime.year-$gt0002.year)))*($gt0005.magnitude/$gt0009.magnitude)"
+        ]
+      },
+      "gt0024": {
+        "id": "gt0024",
+        "priority": 5,
+        "when": [
+          "$gt0011|Estimated Glomerular Filtration Rate|>=90,ml/min"
+        ],
+        "then": [
+          "$gt0023|Stage|=local::at0003|1 - Normal kidney function|"
+        ]
+      },
+      "gt0025": {
+        "id": "gt0025",
+        "priority": 4,
+        "when": [
+          "$gt0011|Estimated Glomerular Filtration Rate|<90,ml/min",
+          "$gt0011|Estimated Glomerular Filtration Rate|>=60,ml/min"
+        ],
+        "then": [
+          "$gt0023|Stage|=local::at0004|2 - Mildly reduced kidney function|"
+        ]
+      },
+      "gt0026": {
+        "id": "gt0026",
+        "priority": 3,
+        "when": [
+          "$gt0011|Estimated Glomerular Filtration Rate|<60,ml/min",
+          "$gt0011|Estimated Glomerular Filtration Rate|>=30,ml/min"
+        ],
+        "then": [
+          "$gt0023|Stage|=local::at0005|3 - Moderately reduced kidney function|"
+        ]
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "priority": 2,
+        "when": [
+          "$gt0011|Estimated Glomerular Filtration Rate|<=29,ml/min",
+          "$gt0011|Estimated Glomerular Filtration Rate|>=15,ml/min"
+        ],
+        "then": [
+          "$gt0023|Stage|=local::at0006|4 - Severely reduced kidney function|"
+        ]
+      },
+      "gt0028": {
+        "id": "gt0028",
+        "priority": 1,
+        "when": [
+          "$gt0011|Estimated Glomerular Filtration Rate|<15,ml/min"
+        ],
+        "then": [
+          "$gt0023|Stage|=local::at0007|5 - Very severe, or endstage kidney failure|"
         ]
       }
     }
@@ -249,6 +314,36 @@
             "id": "gt0016",
             "text": "Beräkning av eGFR",
             "description": "Beräkning av estimerad glomerulär filtrationshastighet (GFR) i enlighet med Cockcroft-Gault-formeln, vilken återfinns i den detaljerade beskrivningen."
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Stage",
+            "description": "Stadierna för kronisk njursjukdom."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Ange CKD Stadium 1",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Ange CKD Stadium 2",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Ange CKD Stadium 3",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Ange CKD Stadium 4",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Ange CKD Stadium 5",
+            "description": ""
           }
         }
       },
@@ -307,6 +402,36 @@
           "gt0016": {
             "id": "gt0016",
             "text": "*GFR Calculation (en)"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Stage",
+            "description": "Stages of chronic kidney disease."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Set CKD Stage 1",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set CKD Stage 2",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set CKD Stage 3",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Set CKD Stage 4",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Set CKD Stage 5",
+            "description": ""
           }
         }
       },
@@ -365,6 +490,36 @@
           "gt0016": {
             "id": "gt0016",
             "text": "GFR ????"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Stage",
+            "description": "Stages of chronic kidney disease."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Set CKD Stage 1",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set CKD Stage 2",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set CKD Stage 3",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Set CKD Stage 4",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Set CKD Stage 5",
+            "description": ""
           }
         }
       },
@@ -423,6 +578,36 @@
           "gt0016": {
             "id": "gt0016",
             "text": "*GFR Calculation (en)"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Stage",
+            "description": "Stages of chronic kidney disease."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Set CKD Stage 1",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set CKD Stage 2",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set CKD Stage 3",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Set CKD Stage 4",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Set CKD Stage 5",
+            "description": ""
           }
         }
       },
@@ -482,6 +667,31 @@
             "id": "gt0016",
             "text": "GFR Calculation",
             "description": "Calculation of glomerular filtration rate (GFR) to assess renal function, in accordance with the Cockcroft-Gault formula. The formula is available in the detailed model description. "
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Stage",
+            "description": "Stages of chronic kidney disease."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Set CKD Stage 1"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set CKD Stage 2"
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set CKD Stage 3"
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Set CKD Stage 4"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Set CKD Stage 5"
           }
         }
       },
@@ -541,6 +751,36 @@
             "id": "gt0016",
             "text": "GFR beregning",
             "description": "*Calculation of glomerular filtration rate (GFR) to asssess renal function. (en)"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Stage",
+            "description": "Stages of chronic kidney disease."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Set CKD Stage 1",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set CKD Stage 2",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set CKD Stage 3",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Set CKD Stage 4",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Set CKD Stage 5",
+            "description": ""
           }
         }
       },
@@ -600,6 +840,36 @@
           "gt0016": {
             "id": "gt0016",
             "text": "C�lculo del IFG",
+            "description": ""
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Stage",
+            "description": "Stages of chronic kidney disease."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Set CKD Stage 1",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set CKD Stage 2",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set CKD Stage 3",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Set CKD Stage 4",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Set CKD Stage 5",
             "description": ""
           }
         }

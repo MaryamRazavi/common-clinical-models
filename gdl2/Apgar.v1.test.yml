@@ -12,6 +12,7 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 0
+      gt0028|Apgar assessment: 2|local::at0005|Critically low, intervention required|
 
 
 - id: case_ApgarScore=5
@@ -25,6 +26,7 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 5
+      gt0028|Apgar assessment: 1|local::at0004|Moderately abnormal|
 
 
 - id: case_ApgarScore=10
@@ -38,6 +40,7 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 10
+      gt0028|Apgar assessment: 0|local::at0003|Normal|
 
 
 - id: case_ApgarScore=8
@@ -51,3 +54,4 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 8
+      gt0028|Apgar assessment: 0|local::at0003|Normal|

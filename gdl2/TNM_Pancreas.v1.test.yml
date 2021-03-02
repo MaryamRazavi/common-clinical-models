@@ -49,6 +49,7 @@ test_cases:
       gt0007|Pancreatic Cancer Stage: 6|local::at0037|Stage IV|
       gt0004|Tumour size: 3|local::at0019|T1 - |
       gt0006|Metastases: 2|local::at0028|M1 - |
+      gt0023|5 Year Survival: 6|local::at0017|1%|
 
 - id: case_5
   input:
@@ -62,6 +63,7 @@ test_cases:
       gt0007|Pancreatic Cancer Stage: 6|local::at0037|Stage IV|
       gt0004|Tumour size: 4|local::at0020|T2 - |
       gt0006|Metastases: 2|local::at0028|M1 - |
+      gt0023|5 Year Survival: 6|local::at0017|1%|
 
 - id: case_6
   input:
@@ -75,6 +77,8 @@ test_cases:
       gt0007|Pancreatic Cancer Stage: 6|local::at0037|Stage IV|
       gt0004|Tumour size: 5|local::at0021|T3 - |
       gt0006|Metastases: 2|local::at0028|M1 - |
+      gt0023|5 Year Survival: 6|local::at0017|1%|
+
 
 - id: case_7
   input:
@@ -88,3 +92,4 @@ test_cases:
       gt0007|Pancreatic Cancer Stage: 6|local::at0037|Stage IV|
       gt0004|Tumour size: 6|local::at0022|T4 - |
       gt0006|Metastases: 2|local::at0028|M1 - |
+      gt0023|5 Year Survival: 6|local::at0017|1%|

@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Jimmy Axelsson",
-	  "Daniel Keszthelyi"
+      "Daniel Keszthelyi"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -120,12 +120,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0016]"
           }
         }
+      },
+      "gt0049": {
+        "id": "gt0049",
+        "model_id": "openEHR-EHR-EVALUATION.hamilton_anxiety_scale_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.hamilton_anxiety_scale_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0050": {
+            "id": "gt0050",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0048": {
         "id": "gt0048",
-        "priority": 1,
+        "priority": 5,
         "when": [
           "$gt0004|1. Anxious mood|!=null",
           "$gt0005|2. Tension|!=null",
@@ -145,6 +157,48 @@
         "then": [
           "$gt0032|Total Score|.magnitude=$gt0004.value+$gt0005.value+$gt0006.value+$gt0007.value+$gt0008.value+$gt0009.value+$gt0010.value+$gt0011.value+$gt0012.value+$gt0013.value+$gt0014.value+$gt0015.value+$gt0016.value+$gt0017.value"
         ]
+      },
+      "gt0051": {
+        "id": "gt0051",
+        "priority": 4,
+        "when": [
+          "$gt0032|Total score|<=17"
+        ],
+        "then": [
+          "$gt0050|Severity of anxiety|=0|local::at0003|Mild|"
+        ]
+      },
+      "gt0052": {
+        "id": "gt0052",
+        "priority": 3,
+        "when": [
+          "$gt0032|Total score|>=18",
+          "$gt0032|Total score|<=24"
+        ],
+        "then": [
+          "$gt0050|Severity of anxiety|=1|local::at0004|Mild to moderate|"
+        ]
+      },
+      "gt0053": {
+        "id": "gt0053",
+        "priority": 2,
+        "when": [
+          "$gt0032|Total score|>=25",
+          "$gt0032|Total score|<=30"
+        ],
+        "then": [
+          "$gt0050|Severity of anxiety|=2|local::at0005|Moderate to severe|"
+        ]
+      },
+      "gt0054": {
+        "id": "gt0054",
+        "priority": 1,
+        "when": [
+          "$gt0032|Total score|>30"
+        ],
+        "then": [
+          "$gt0050|Severity of anxiety|=3|local::at0006|Severe|"
+        ]
       }
     }
   },
@@ -161,81 +215,106 @@
           "gt0004": {
             "id": "gt0004",
             "text": "1. Ängslighet",
-            "description": "*(en) Worries, anticipation of the worst, fearful anticipation, irritability."
+            "description": "Worries, anticipation of the worst, fearful anticipation, irritability."
           },
           "gt0005": {
             "id": "gt0005",
             "text": "2. Spändhet",
-            "description": "*(en) Feelings of tension, fatigability, startle response, moved to tears easily, trembling, feelings of restlessness, inability to relax."
+            "description": "Feelings of tension, fatigability, startle response, moved to tears easily, trembling, feelings of restlessness, inability to relax."
           },
           "gt0006": {
             "id": "gt0006",
             "text": "3. Rädslor",
-            "description": "*(en) Of dark, of strangers, of being left alone, of animals, of traffic, of crowds."
+            "description": "Of dark, of strangers, of being left alone, of animals, of traffic, of crowds."
           },
           "gt0007": {
             "id": "gt0007",
             "text": "4. Sömnproblem",
-            "description": "*(en) Difficulty in falling asleep, broken sleep, unsatisfying sleep and fatigue on waking, dreams, nightmares, night terrors."
+            "description": "Difficulty in falling asleep, broken sleep, unsatisfying sleep and fatigue on waking, dreams, nightmares, night terrors."
           },
           "gt0008": {
             "id": "gt0008",
             "text": "5. Kognition",
-            "description": "*(en) Difficulty in concentration, poor memory."
+            "description": "Difficulty in concentration, poor memory."
           },
           "gt0009": {
             "id": "gt0009",
             "text": "6. Depressiva symtom",
-            "description": "*(en) Loss of interest, lack of pleasure in hobbies, depression, early waking, diurnal swing."
+            "description": "Loss of interest, lack of pleasure in hobbies, depression, early waking, diurnal swing."
           },
           "gt0010": {
             "id": "gt0010",
             "text": "7. Somatik (muskulärt)",
-            "description": "*(en) Pains and aches, twitching, stiffness, myoclonic jerks, grinding of teeth, unsteady voice, increased muscular tone."
+            "description": "Pains and aches, twitching, stiffness, myoclonic jerks, grinding of teeth, unsteady voice, increased muscular tone."
           },
           "gt0011": {
             "id": "gt0011",
             "text": "8. Somatik (sensoriskt)",
-            "description": "*(en) Tinnitus, blurring of vision, hot and cold flushes, feelings of weakness, pricking sensation. "
+            "description": "Tinnitus, blurring of vision, hot and cold flushes, feelings of weakness, pricking sensation. "
           },
           "gt0012": {
             "id": "gt0012",
             "text": "9. Kardiovaskulära symptom",
-            "description": "*(en) Tachycardia, palpitations, pain in chest, throbbing of vessels, fainting feelings, missing beat."
+            "description": "Tachycardia, palpitations, pain in chest, throbbing of vessels, fainting feelings, missing beat."
           },
           "gt0013": {
             "id": "gt0013",
             "text": "10. Luftvägsbesvär",
-            "description": "*(en) Pressure or constriction in chest, choking feelings, sighing, dyspnea."
+            "description": "Pressure or constriction in chest, choking feelings, sighing, dyspnea."
           },
           "gt0014": {
             "id": "gt0014",
             "text": "11. Gastrointestinala symtom",
-            "description": "*(en) Difficulty in swallowing, wind abdominal pain, burning sensations, abdominal fullness, nausea, vomiting, borborygmi, looseness of bowels, loss of weight, constipation."
+            "description": "Difficulty in swallowing, wind abdominal pain, burning sensations, abdominal fullness, nausea, vomiting, borborygmi, looseness of bowels, loss of weight, constipation."
           },
           "gt0015": {
             "id": "gt0015",
             "text": "12. Urinvägsbesvär",
-            "description": "*(en) Difficulty in swallowing, wind abdominal pain, burning sensations, abdominal fullness, nausea, vomiting, borborygmi, looseness of bowels, loss of weight, constipation."
+            "description": "Difficulty in swallowing, wind abdominal pain, burning sensations, abdominal fullness, nausea, vomiting, borborygmi, looseness of bowels, loss of weight, constipation."
           },
           "gt0016": {
             "id": "gt0016",
             "text": "13. Autonoma symtom",
-            "description": "*(en) Dry mouth, flushing, pallor, tendency to sweat, giddiness, tension headache, raising of hair."
+            "description": "Dry mouth, flushing, pallor, tendency to sweat, giddiness, tension headache, raising of hair."
           },
           "gt0017": {
             "id": "gt0017",
             "text": "14. Beteende vid samtal",
-            "description": "*(en) Fidgeting, restlessness or pacing, tremor of hands, furrowed brow, strained face, sighing or rapid respiration, facial pallor, swallowing, etc."
+            "description": "Fidgeting, restlessness or pacing, tremor of hands, furrowed brow, strained face, sighing or rapid respiration, facial pallor, swallowing, etc."
           },
           "gt0032": {
             "id": "gt0032",
             "text": "Total poäng",
-            "description": "*(en) Sum of all factors."
+            "description": "Sum of all factors."
           },
           "gt0048": {
             "id": "gt0048",
             "text": "Beräkna total poäng"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Grad av ångest",
+            "description": "Assessment of score generated in accordance with the Hamilton Anxiety Scale."
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "CDS lindrig ångest",
+            "description": ""
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "CDS lindrig till måttlig ångest",
+            "description": ""
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "CDS måttlig till svår ångest",
+            "description": ""
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "CDS svår ångest",
+            "description": ""
           }
         }
       },
@@ -325,6 +404,27 @@
           "gt0048": {
             "id": "gt0048",
             "text": "Calculate total score"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Severity of anxiety",
+            "description": "Assessment of score generated in accordance with the Hamilton Anxiety Scale."
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "CDS mild anxiety"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "CDS mild to moderate anxiety"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "CDS moderate to severe anxiety"
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "CDS severe anxiety"
           }
         }
       }

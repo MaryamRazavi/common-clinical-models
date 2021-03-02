@@ -15,6 +15,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 0
+      gt0060|Score recommendation: 0|local::at0003|A CT scan is not needed due to the low probability of appendicitis.|
 
 
 - id: RLQ(2)-temp(0)-tenderness(0)-pain(0)-anorexia(0)-nausea(0)-leukocytosis(0)-LLS(0)
@@ -31,6 +32,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 2
+      gt0060|Score recommendation: 0|local::at0003|A CT scan is not needed due to the low probability of appendicitis.|
 
 
 - id: RLQ(2)-temp(1)-tenderness(0)-pain(0)-anorexia(0)-nausea(0)-leukocytosis(0)-LLS(0)
@@ -47,6 +49,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 3
+      gt0060|Score recommendation: 0|local::at0003|A CT scan is not needed due to the low probability of appendicitis.|
 
 
 - id: RLQ(2)-temp(1)-tenderness(1)-pain(0)-anorexia(0)-nausea(0)-leukocytosis(0)-LLS(0)
@@ -63,7 +66,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 4
-
+      gt0060|Score recommendation: 1|local::at0004|A CT scan is recommended |
 
 - id: RLQ(2)-temp(1)-tenderness(1)-pain(1)-anorexia(0)-nausea(0)-leukocytosis(0)-LLS(0)
   input:
@@ -79,7 +82,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 5
-
+      gt0060|Score recommendation: 1|local::at0004|A CT scan is recommended |
 
 - id: RLQ(2)-temp(1)-tenderness(1)-pain(1)-anorexia(1)-nausea(0)-leukocytosis(0)-LLS(0)
   input:
@@ -95,7 +98,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 6
-
+      gt0060|Score recommendation: 1|local::at0004|A CT scan is recommended |
 
 - id: RLQ(2)-temp(1)-tenderness(1)-pain(1)-anorexia(1)-nausea(1)-leukocytosis(0)-LLS(0)
   input:
@@ -111,7 +114,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 7
-
+      gt0060|Score recommendation: 2|local::at0005|A surgical consultation is needed|
 
 - id: RLQ(2)-temp(1)-tenderness(1)-pain(1)-anorexia(1)-nausea(1)-leukocytosis(0)-LLS(1)
   input:
@@ -127,7 +130,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 8
-
+      gt0060|Score recommendation: 2|local::at0005|A surgical consultation is needed|
 
 - id: RLQ(2)-temp(1)-tenderness(1)-pain(1)-anorexia(1)-nausea(1)-leukocytosis(2)-LLS(0)
   input:
@@ -143,7 +146,7 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 9
-
+      gt0060|Score recommendation: 2|local::at0005|A surgical consultation is needed|
 
 - id: RLQ(2)-temp(1)-tenderness(1)-pain(1)-anorexia(1)-nausea(1)-leukocytosis(2)-LLS(1)
   input:
@@ -159,4 +162,4 @@ test_cases:
   expected_output:
     1:
       gt0049|Total score: 10
-
+      gt0060|Score recommendation: 2|local::at0005|A surgical consultation is needed|

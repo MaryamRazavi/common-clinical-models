@@ -12,6 +12,9 @@ test_cases:
   expected_output:
     1:
       gt0014|Total score: 0
+      gt0023|Recommendation: 0|local::at0009|No antibiotics recommended.|
+      gt0022|Percentage Isolation of Streptococcus: 0|local::at0005|13-18% isolation of streptococcus|
+
 - id: case_6
   input:
     1:
@@ -23,6 +26,9 @@ test_cases:
   expected_output:
     1:
       gt0014|Total score: 2
+      gt0023|Recommendation: 1|local::at0010|Delayed antibiotic may be appropriate.|
+      gt0022|Percentage Isolation of Streptococcus: 1|local::at0006| 30-35% isolation of streptococcus|
+
 - id: case_7
   input:
     1:
@@ -34,6 +40,9 @@ test_cases:
   expected_output:
     1:
       gt0014|Total score: 3
+      gt0023|Recommendation: 1|local::at0010|Delayed antibiotic may be appropriate.|
+      gt0022|Percentage Isolation of Streptococcus: 2|local::at0007|39-48% isolation of streptococcus|
+
 - id: case_8
   input:
     1:
@@ -45,3 +54,5 @@ test_cases:
   expected_output:
     1:
       gt0014|Total score: 5
+      gt0023|Recommendation: 2|local::at0011|Consider antibiotics|
+      gt0022|Percentage Isolation of Streptococcus: 3|local::at0008| 62-65% isolation of streptococcus|

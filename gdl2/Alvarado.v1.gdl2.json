@@ -15,7 +15,7 @@
     "other_contributors": [
       "Dennis Forslund",
       "Jimmy Axelsson",
-	  "Aulia Zahrina Qashri"
+      "Aulia Zahrina Qashri"
     ],
     "lifecycle_state": "Not set",
     "details": {
@@ -99,12 +99,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0012]"
           }
         }
+      },
+      "gt0059": {
+        "id": "gt0059",
+        "model_id": "openEHR-EHR-EVALUATION.alvarado_appendicitis_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.alvarado_appendicitis_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0060": {
+            "id": "gt0060",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0058": {
         "id": "gt0058",
-        "priority": 1,
+        "priority": 4,
         "when": [
           "$gt0033|Right Lower Quadrant Tenderness?|!=null",
           "$gt0034|Elevated Temperature (>37.3°C or 99.1°F)?|!=null",
@@ -117,6 +129,37 @@
         ],
         "then": [
           "$gt0049|Total score|.magnitude=$gt0033.value+$gt0034.value+$gt0035.value+$gt0036.value+$gt0037.value+$gt0038.value+$gt0044.value+$gt0045.value"
+        ]
+      },
+      "gt0061": {
+        "id": "gt0061",
+        "priority": 3,
+        "when": [
+          "$gt0049|Total score|<=3"
+        ],
+        "then": [
+          "$gt0060|Score recommendation|=0|local::at0003|A CT scan is not needed due to the low probability of appendicitis.\n\n|"
+        ]
+      },
+      "gt0062": {
+        "id": "gt0062",
+        "priority": 2,
+        "when": [
+          "$gt0049|Total score|<=6",
+          "$gt0049|Total score|>=4"
+        ],
+        "then": [
+          "$gt0060|Score recommendation|=1|local::at0004|A CT scan is recommended |"
+        ]
+      },
+      "gt0063": {
+        "id": "gt0063",
+        "priority": 1,
+        "when": [
+          "$gt0049|Total score|>=7"
+        ],
+        "then": [
+          "$gt0060|Score recommendation|=2|local::at0005|A surgical consultation is needed|"
         ]
       }
     }
@@ -179,6 +222,26 @@
           "gt0058": {
             "id": "gt0058",
             "text": "Resultat"
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Rekommendation",
+            "description": "Score interpretation and recommended action:"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "Rekommendation: ingen DT krävs",
+            "description": ""
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Reckmmendation: DT krävs",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Rekommendation: Konsultation för kirurgi krävs",
+            "description": ""
           }
         }
       },
@@ -238,6 +301,23 @@
           "gt0058": {
             "id": "gt0058",
             "text": "Total score"
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Score recommendation",
+            "description": "Score interpretation and recommended action:"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "Recommendation: No CT scan needed"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Recommendation: CT scan needed"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Recommendation: Surgical consultation needed"
           }
         }
       }

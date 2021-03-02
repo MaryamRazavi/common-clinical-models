@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Jimmy Axelsson",
-	  "Aulia Zahrina Qashri"
+      "Aulia Zahrina Qashri"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -104,12 +104,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0016]"
           }
         }
+      },
+      "gt0024": {
+        "id": "gt0024",
+        "model_id": "openEHR-EHR-EVALUATION.dash_prediction_score_for_recurrent_vte_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.dash_prediction_score_for_recurrent_vte_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0025": {
+            "id": "gt0025",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0016": {
         "id": "gt0016",
-        "priority": 5,
+        "priority": 12,
         "when": [
           "$gt0004|Birthdate|!=null",
           "$gt0004|Birthdate|>=($currentDateTime-50,a)"
@@ -120,7 +132,7 @@
       },
       "gt0023": {
         "id": "gt0023",
-        "priority": 4,
+        "priority": 11,
         "when": [
           "$gt0004|Birthdate|!=null",
           "$gt0004|Birthdate|<($currentDateTime-50,a)"
@@ -131,7 +143,7 @@
       },
       "gt0017": {
         "id": "gt0017",
-        "priority": 3,
+        "priority": 10,
         "when": [
           "$gt0003|Gender|!=null",
           "$gt0003|Gender|==local::at0005|Male|"
@@ -142,7 +154,7 @@
       },
       "gt0022": {
         "id": "gt0022",
-        "priority": 2,
+        "priority": 9,
         "when": [
           "$gt0003|Gender|!=null",
           "$gt0003|Gender|==local::at0006|Female|"
@@ -153,7 +165,7 @@
       },
       "gt0019": {
         "id": "gt0019",
-        "priority": 1,
+        "priority": 8,
         "when": [
           "$gt0006|D-Dimer abnormal|!=null",
           "$gt0007|Hormone use at VTE onset|!=null",
@@ -162,6 +174,76 @@
         ],
         "then": [
           "$gt0013|Total Score|.magnitude=$gt0006.value+$gt0007.value+$gt0010.value+$gt0011.value"
+        ]
+      },
+      "gt0026": {
+        "id": "gt0026",
+        "priority": 7,
+        "when": [
+          "$gt0013|Total Score|.magnitude==2-4"
+        ],
+        "then": [
+          "$gt0025|Annual risk of recurring VTE|=0|local::at0003|1.8%|"
+        ]
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "priority": 6,
+        "when": [
+          "$gt0013|Total Score|.magnitude==1-2"
+        ],
+        "then": [
+          "$gt0025|Annual risk of recurring VTE|=1|local::at0004|1%|"
+        ]
+      },
+      "gt0028": {
+        "id": "gt0028",
+        "priority": 5,
+        "when": [
+          "$gt0013|Total Score|.magnitude==0"
+        ],
+        "then": [
+          "$gt0025|Annual risk of recurring VTE|=2|local::at0005|2.4%|"
+        ]
+      },
+      "gt0029": {
+        "id": "gt0029",
+        "priority": 4,
+        "when": [
+          "$gt0013|Total Score|.magnitude==1"
+        ],
+        "then": [
+          "$gt0025|Annual risk of recurring VTE|=3|local::at0006|3.9%|"
+        ]
+      },
+      "gt0030": {
+        "id": "gt0030",
+        "priority": 3,
+        "when": [
+          "$gt0013|Total Score|.magnitude==2"
+        ],
+        "then": [
+          "$gt0025|Annual risk of recurring VTE|=4|local::at0007|6.3%|"
+        ]
+      },
+      "gt0031": {
+        "id": "gt0031",
+        "priority": 2,
+        "when": [
+          "$gt0013|Total Score|.magnitude==3"
+        ],
+        "then": [
+          "$gt0025|Annual risk of recurring VTE|=5|local::at0008|10.8%|"
+        ]
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "priority": 1,
+        "when": [
+          "$gt0013|Total Score|.magnitude==4"
+        ],
+        "then": [
+          "$gt0025|Annual risk of recurring VTE|=6|local::at0009|19.9%|"
         ]
       }
     }
@@ -179,37 +261,37 @@
           "gt0003": {
             "id": "gt0003",
             "text": "Kön",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0004": {
             "id": "gt0004",
             "text": "Födelsedatum",
-            "description": "*(en) *"
+            "description": "*"
           },
           "gt0006": {
             "id": "gt0006",
             "text": "Förhöjd D-dimer",
-            "description": "*(en) Measured after withdrawal of anticoagulation therapy"
+            "description": "Measured after withdrawal of anticoagulation therapy"
           },
           "gt0007": {
             "id": "gt0007",
             "text": "Hormonbehandling vid VTE",
-            "description": "*(en) Hormone use at onset of venous thromboembolism"
+            "description": "Hormone use at onset of venous thromboembolism"
           },
           "gt0010": {
             "id": "gt0010",
             "text": "Ålder ≤ 50 år",
-            "description": "*(en) Is the patient 50 years old or younger?"
+            "description": "Is the patient 50 years old or younger?"
           },
           "gt0011": {
             "id": "gt0011",
             "text": "Manligt kön",
-            "description": "*(en) Is the patient male? "
+            "description": "Is the patient male? "
           },
           "gt0013": {
             "id": "gt0013",
             "text": "Total poäng",
-            "description": "*(en) Sum of all factors"
+            "description": "Sum of all factors"
           },
           "gt0016": {
             "id": "gt0016",
@@ -225,12 +307,52 @@
           },
           "gt0022": {
             "id": "gt0022",
-            "text": "*(en) Copy of Set male",
+            "text": "CDS kvinnligt kön",
             "description": ""
           },
           "gt0023": {
             "id": "gt0023",
-            "text": "*(en) Copy of Set age",
+            "text": "CDS ålder saknas",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Årlig risk för ny VTE",
+            "description": "Assessment of score generated in accordance with DASH Prediction Score for Recurrent VTE."
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "CDS årlig risk -2p",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "CDS årlig risk -1p",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "CDS årlig risk 0p",
+            "description": ""
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "CDS årlig risk 1p",
+            "description": ""
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "CDS årlig risk 2p",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "CDS årlig risk 3p",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "CDS årlig risk 4p",
             "description": ""
           }
         }
@@ -297,6 +419,39 @@
           "gt0023": {
             "id": "gt0023",
             "text": "Set age to Absent"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Annual risk of recurring VTE",
+            "description": "Assessment of score generated in accordance with DASH Prediction Score for Recurrent VTE."
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "CDS annual risk -2p"
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "CDS annual risk -1p"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "CDS annual risk 0p"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "CDS annual risk 1p"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "CDS annual risk 2p"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "CDS annual risk 3p"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "CDS annual risk 4p"
           }
         }
       }

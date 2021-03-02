@@ -10,6 +10,10 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score of First 2 Grades: 2
+      gt0016|Prognostic Grade Group: 0|local::at0003|Grade I|
+      gt0018|Prognostic Grade group management: 0|local::at0009|With Tertiary Grade score 1|
+      gt0017|Tertiary Grade score: 0|local::at0015|Prognostic grade group I - Unlikely severe cancer is present. Consider close monitoring.|
+
 - id: Grade I
   input:
     1:
@@ -19,6 +23,10 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score of First 2 Grades: 5
+      gt0016|Prognostic Grade Group: 0|local::at0003|Grade I|
+      gt0018|Prognostic Grade group management: 0|local::at0009|With Tertiary Grade score 1|
+      gt0017|Tertiary Grade score: 0|local::at0015|Prognostic grade group I - Unlikely severe cancer is present. Consider close monitoring.|
+
 - id: hypothetical case 5+2 not handled by the other guideline
   input:
     1:
@@ -28,6 +36,8 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score of First 2 Grades: 7
+      gt0018|Prognostic Grade group management: 3|local::at0012|With Tertiary Grade score 4|
+
 - id: Grade V
   input:
     1:
@@ -37,6 +47,10 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score of First 2 Grades: 9
+      gt0016|Prognostic Grade Group: 4|local::at0007|Grade V|
+      gt0018|Prognostic Grade group management: 2|local::at0011|With Tertiary Grade score 3|
+      gt0017|Tertiary Grade score: 5|local::at0020|Prognostic grade group V - 66.7 - 58.5% remission of tumor within 2 years of diagnosis.|
+
 - id: Grade III
   input:
     1:
@@ -46,6 +60,10 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score of First 2 Grades: 7
+      gt0016|Prognostic Grade Group: 2|local::at0005|Grade III|
+      gt0018|Prognostic Grade group management: 1|local::at0010|With Tertiary Grade score 2|
+      gt0017|Tertiary Grade score: 3|local::at0018|Prognostic grade group III - < 90.6% remission of tumor within 2 years of diagnosis.|
+
 - id: Grade IV
   input:
     1:
@@ -55,4 +73,6 @@ test_cases:
   expected_output:
     1:
       gt0010|Total score of First 2 Grades: 8
-
+      gt0016|Prognostic Grade Group: 3|local::at0006|Grade IV|
+      gt0018|Prognostic Grade group management: 2|local::at0011|With Tertiary Grade score 3|
+      gt0017|Tertiary Grade score: 4|local::at0019|Prognostic grade group IV - 70.9 - 73.7% remission of tumor within 2 years of diagnosis.|

@@ -16,6 +16,7 @@ test_cases:
   expected_output:
     1:
       gt0040|Wells' Score: 0
+      gt0045|DVT probability: 0|local::at0003|Low probability|
 
 - id: case_2
   input:
@@ -32,3 +33,4 @@ test_cases:
   expected_output:
     1:
       gt0040|Wells' Score: 6
+      gt0045|DVT probability: 1|local::at0004|High probability|

@@ -15,7 +15,7 @@
     "other_contributors": [
       "Jimmy Axelsson",
       "Dennis Forslund",
-	  "Aulia Zahrina Qashri"
+      "Aulia Zahrina Qashri"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -82,12 +82,28 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
           }
         }
+      },
+      "gt0016": {
+        "id": "gt0016",
+        "model_id": "openEHR-EHR-EVALUATION.behavioral_observational_pain_scale_pediatric_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.behavioral_observational_pain_scale_pediatric_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0017": {
+            "id": "gt0017",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/data[at0001]/items[at0003]"
+          }
+        }
       }
     },
     "rules": {
       "gt0015": {
         "id": "gt0015",
-        "priority": 1,
+        "priority": 3,
         "when": [
           "$gt0003|Facial expression|!=null",
           "$gt0004|Verbalization|!=null",
@@ -95,6 +111,28 @@
         ],
         "then": [
           "$gt0010|Total score|.magnitude=$gt0003.value+$gt0004.value+$gt0005.value"
+        ]
+      },
+      "gt0019": {
+        "id": "gt0019",
+        "priority": 2,
+        "when": [
+          "$gt0010|Total score|<=2"
+        ],
+        "then": [
+          "$gt0018|Recommendation|=0|local::at0006|Consider reassessing after 30 minutes.|",
+          "$gt0017|Pain scale|=0|local::at0004|Minimal or no pain|"
+        ]
+      },
+      "gt0020": {
+        "id": "gt0020",
+        "priority": 1,
+        "when": [
+          "$gt0010|Total score|>=3"
+        ],
+        "then": [
+          "$gt0018|Recommendation|=1|local::at0007|Consider analgesia and reassess afterward.|",
+          "$gt0017|Pain scale|=1|local::at0005|Significant pain present|"
         ]
       }
     }
@@ -112,26 +150,46 @@
           "gt0003": {
             "id": "gt0003",
             "text": "Ansiktsuttryck",
-            "description": "*(en) Facial expression"
+            "description": "Facial expression"
           },
           "gt0004": {
             "id": "gt0004",
             "text": "Verbala uttryck",
-            "description": "*(en) Verbalization"
+            "description": "Verbalization"
           },
           "gt0005": {
             "id": "gt0005",
             "text": "Kroppsspråk",
-            "description": "*(en) Body position"
+            "description": "Body position"
           },
           "gt0010": {
             "id": "gt0010",
             "text": "Total poäng",
-            "description": "*(en) Sum of individual scores"
+            "description": "Sum of individual scores"
           },
           "gt0015": {
             "id": "gt0015",
             "text": "Beräkna resultat"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Smärtskattning",
+            "description": "Frequency of performing pain assessments: Every 3 hours; \r\n15-20 minutes after IV. administration of analgesics; 30-45 minutes after oral/rectal administration"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Rekommendation",
+            "description": "Treatment options"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "CDS Smärtskattning - minimal/ingen smärta",
+            "description": ""
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "CDS Smärtskattning -  Signifikant smärta",
+            "description": ""
           }
         }
       },
@@ -166,6 +224,24 @@
           "gt0015": {
             "id": "gt0015",
             "text": "Calculate Score"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Pain scale",
+            "description": "Frequency of performing pain assessments: Every 3 hours; \r\n15-20 minutes after IV. administration of analgesics; 30-45 minutes after oral/rectal administration"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Recommendation",
+            "description": "Treatment options"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Set Pain scale - minimal/no pain"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Set Pain scale - Significant pain present"
           }
         }
       }

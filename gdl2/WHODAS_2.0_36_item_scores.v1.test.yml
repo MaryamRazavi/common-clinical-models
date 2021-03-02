@@ -53,6 +53,7 @@ test_cases:
       gt0177|D1 Understanding and communicating domain score: 0.00,%
       gt0181|D5 Life activities domain score: 0.00,%
       gt0179|D3 Self-care domain score: 0.00,%
+      gt0200|36 item score interpretation: 0|local::at0004|No Difficulty|
 
 - id: case_2
   input:
@@ -106,6 +107,7 @@ test_cases:
       gt0177|D1 Understanding and communicating domain score: 25.00,%
       gt0181|D5 Life activities domain score: 25.00,%
       gt0179|D3 Self-care domain score: 25.00,%
+      gt0200|36 item score interpretation: 1|local::at0005|Mild Difficulty|
 
 - id: case_3
   input:
@@ -159,6 +161,8 @@ test_cases:
       gt0177|D1 Understanding and communicating domain score: 50.00,%
       gt0181|D5 Life activities domain score: 50.00,%
       gt0179|D3 Self-care domain score: 50.00,%
+      gt0200|36 item score interpretation: 2|local::at0006|Moderate Difficulty|
+
 
 - id: case_4
   input:
@@ -212,6 +216,8 @@ test_cases:
       gt0177|D1 Understanding and communicating domain score: 75.00,%
       gt0181|D5 Life activities domain score: 75.00,%
       gt0179|D3 Self-care domain score: 75.00,%
+      gt0200|36 item score interpretation: 3|local::at0007|Severe Difficulty|
+
 
 - id: case_5
   input:
@@ -265,4 +271,4 @@ test_cases:
       gt0177|D1 Understanding and communicating domain score: 100.00,%
       gt0181|D5 Life activities domain score: 100.00,%
       gt0179|D3 Self-care domain score: 100.00,%
-
+      gt0200|36 item score interpretation: 4|local::at0008|Extreme Difficulty or Cannot Do|

@@ -11,8 +11,9 @@ test_cases:
   expected_output:
     1:
       gt0003|TIMI Risk Index: 3,1
+      gt0017|30-day mortality estimate: 0|local::at0003|0.8% 30-day mortality estimate|
 
-- id: case_2:Group 2 
+- id: case_2:Group 2
   input:
     1:
       gt0005|Systolic Blood Pressure: 140,mm[Hg]
@@ -21,9 +22,9 @@ test_cases:
   expected_output:
     1:
       gt0003|TIMI Risk Index: 13,1
+      gt0017|30-day mortality estimate: 1|local::at0004|1.9% 30-day mortality estimate|
 
-
-- id: case_3:Group 3 
+- id: case_3:Group 3
   input:
     1:
       gt0005|Systolic Blood Pressure: 120,mm[Hg]
@@ -32,8 +33,9 @@ test_cases:
   expected_output:
     1:
       gt0003|TIMI Risk Index: 22,1
+      gt0017|30-day mortality estimate: 2|local::at0005|3.3% 30-day mortality estimate|
 
-- id: case_4:Group 4 
+- id: case_4:Group 4
   input:
     1:
       gt0005|Systolic Blood Pressure: 140,mm[Hg]
@@ -42,8 +44,9 @@ test_cases:
   expected_output:
     1:
       gt0003|TIMI Risk Index: 24,1
+      gt0017|30-day mortality estimate: 3|local::at0006|7.3% 30-day mortality estimate|
 
-- id: case_5:Group 5 
+- id: case_5:Group 5
   input:
     1:
       gt0005|Systolic Blood Pressure: 160,mm[Hg]
@@ -52,3 +55,4 @@ test_cases:
   expected_output:
     1:
       gt0003|TIMI Risk Index: 32,1
+      gt0017|30-day mortality estimate: 4|local::at0007|17.4% 30-day mortality estimate|

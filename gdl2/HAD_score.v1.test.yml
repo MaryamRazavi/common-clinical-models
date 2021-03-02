@@ -22,6 +22,9 @@ test_cases:
     1:
       gt0054|Depression total score: 0
       gt0053|Anxiety total score: 0
+      gt0074|Result Anxiety: 0|local::at0007|No anxiety|
+      gt0073|Result Depression: 0|local::at0004|No depression|
+
 - id: Slight bipolar
   input:
     1:
@@ -43,6 +46,9 @@ test_cases:
     1:
       gt0054|Depression total score: 7
       gt0053|Anxiety total score: 7
+      gt0074|Result Anxiety: 0|local::at0007|No anxiety|
+      gt0073|Result Depression: 0|local::at0004|No depression|
+
 - id: Moderate-severe bipolar
   input:
     1:
@@ -64,6 +70,9 @@ test_cases:
     1:
       gt0054|Depression total score: 14
       gt0053|Anxiety total score: 14
+      gt0074|Result Anxiety: 2|local::at0009|Anxiety|
+      gt0073|Result Depression: 2|local::at0006|Depression|
+
 - id: Severe bipolar
   input:
     1:
@@ -85,6 +94,9 @@ test_cases:
     1:
       gt0054|Depression total score: 21
       gt0053|Anxiety total score: 21
+      gt0074|Result Anxiety: 2|local::at0009|Anxiety|
+      gt0073|Result Depression: 2|local::at0006|Depression|
+
 - id: Moderate bipolar
   input:
     1:
@@ -106,5 +118,5 @@ test_cases:
     1:
       gt0054|Depression total score: 13
       gt0053|Anxiety total score: 12
-
-
+      gt0074|Result Anxiety: 2|local::at0009|Anxiety|
+      gt0073|Result Depression: 2|local::at0006|Depression|

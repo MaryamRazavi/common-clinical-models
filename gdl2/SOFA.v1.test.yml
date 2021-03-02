@@ -13,6 +13,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 0|local::at0036|N/A|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: Normal PF
   input:
@@ -29,6 +30,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 0|local::at0036|N/A|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: score 2
   input:
@@ -48,6 +50,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 1|local::at0037|<150|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: score 5 platelets, gcs, bilirubin
   input:
@@ -67,6 +70,7 @@ test_cases:
       gt0030|BR score: 1|local::at0027|1.2–1.9 [>20-32]|
       gt0028|Platlets score: 2|local::at0038|<100|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id:  score 8 platelets, gcs, bilirubin
   input:
@@ -86,6 +90,7 @@ test_cases:
       gt0030|BR score: 2|local::at0028|2.0–5.9 [33-101]|
       gt0028|Platlets score: 3|local::at0039|<50|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 1|local::at0004|15-20% mortality|
 
 - id:  score 11 platelets, gcs, bilirubin
   input:
@@ -105,8 +110,7 @@ test_cases:
       gt0030|BR score: 3|local::at0029|6.0–11.9 [102-204]|
       gt0028|Platlets score: 4|local::at0040|<20|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
-
-
+      gt0082|Mortality percentage: 2|local::at0005|40-50% mortality|
 
 - id: platelets>150
   input:
@@ -124,7 +128,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 0|local::at0036|N/A|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
-
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: pf<=400
   input:
@@ -141,6 +145,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 0|local::at0036|N/A|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: pf <=300
   input:
@@ -157,6 +162,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 0|local::at0036|N/A|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: pf<=200
   input:
@@ -173,6 +179,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 0|local::at0036|N/A|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: pf<=100
   input:
@@ -189,6 +196,7 @@ test_cases:
       gt0030|BR score: 0|local::at0026|N/A|
       gt0028|Platlets score: 0|local::at0036|N/A|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 0|local::at0003|<10 % mortality|
 
 - id: BR high, urine<500ml
   input:
@@ -209,8 +217,7 @@ test_cases:
       gt0030|BR score: 4|local::at0030|>12.0 [>204]|
       gt0028|Platlets score: 4|local::at0040|<20|
       gt0032|Creatinine or urine output: 3|local::at0024|3.5–4.9 [302-433] (or < 500 ml/d)|
-
-
+      gt0082|Mortality percentage: 2|local::at0005|40-50% mortality|
 
 - id: Normal creatinine
   input:
@@ -232,6 +239,7 @@ test_cases:
       gt0030|BR score: 4|local::at0030|>12.0 [>204]|
       gt0028|Platlets score: 4|local::at0040|<20|
       gt0032|Creatinine or urine output: 0|local::at0021|<1.2 [<106]|
+      gt0082|Mortality percentage: 1|local::at0004|15-20% mortality|
 
 - id: MAP, vp
   input:
@@ -255,7 +263,7 @@ test_cases:
       gt0030|BR score: 4|local::at0030|>12.0 [>204]|
       gt0028|Platlets score: 4|local::at0040|<20|
       gt0032|Creatinine or urine output: 1|local::at0022|1.2–1.9 [106-168]|
-
+      gt0082|Mortality percentage: 2|local::at0005|40-50% mortality|
 
 - id: creatinie at the threshold
   input:
@@ -277,3 +285,4 @@ test_cases:
       gt0030|BR score: 4|local::at0030|>12.0 [>204]|
       gt0028|Platlets score: 4|local::at0040|<20|
       gt0032|Creatinine or urine output: 1|local::at0022|1.2–1.9 [106-168]|
+      gt0082|Mortality percentage: 1|local::at0004|15-20% mortality|

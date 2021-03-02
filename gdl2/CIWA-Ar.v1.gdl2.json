@@ -14,7 +14,7 @@
     },
     "other_contributors": [
       "Jimmy Axelsson",
-	  "Aulia Zahrina Qashri"
+      "Aulia Zahrina Qashri"
     ],
     "lifecycle_state": "Author draft",
     "details": {
@@ -106,12 +106,24 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0014]"
           }
         }
+      },
+      "gt0037": {
+        "id": "gt0037",
+        "model_id": "openEHR-EHR-EVALUATION.ciwa_ar_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.ciwa_ar_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0038": {
+            "id": "gt0038",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
       }
     },
     "rules": {
       "gt0036": {
         "id": "gt0036",
-        "priority": 1,
+        "priority": 4,
         "when": [
           "$gt0006|Nausea/vomiting|!=null",
           "$gt0007|Tremor|!=null",
@@ -126,6 +138,37 @@
         ],
         "then": [
           "$gt0024|Total score|.magnitude=$gt0006.value+$gt0007.value+$gt0008.value+$gt0009.value+$gt0010.value+$gt0011.value+$gt0012.value+$gt0013.value+$gt0014.value+$gt0015.value"
+        ]
+      },
+      "gt0039": {
+        "id": "gt0039",
+        "priority": 3,
+        "when": [
+          "$gt0024|Total score|<=15"
+        ],
+        "then": [
+          "$gt0038|Alcohol withdrawal|=0|local::at0003|Mild|"
+        ]
+      },
+      "gt0040": {
+        "id": "gt0040",
+        "priority": 2,
+        "when": [
+          "$gt0024|Total score|>=16",
+          "$gt0024|Total score|<=24"
+        ],
+        "then": [
+          "$gt0038|Alcohol withdrawal|=1|local::at0004|Moderate|"
+        ]
+      },
+      "gt0041": {
+        "id": "gt0041",
+        "priority": 1,
+        "when": [
+          "$gt0024|Total score|>=25"
+        ],
+        "then": [
+          "$gt0038|Alcohol withdrawal|=2|local::at0005|Severe|"
         ]
       }
     }
@@ -143,61 +186,81 @@
           "gt0006": {
             "id": "gt0006",
             "text": "Illamående och kräkning",
-            "description": "*(en) Sample questions - Do you feel sick to your stomach? Have you vomited?"
+            "description": "Sample questions - Do you feel sick to your stomach? Have you vomited?"
           },
           "gt0007": {
             "id": "gt0007",
             "text": "Tremor",
-            "description": "*(en) With arms extended and fingers spread apart."
+            "description": "With arms extended and fingers spread apart."
           },
           "gt0008": {
             "id": "gt0008",
             "text": "Svettning",
-            "description": "*(en) Observation."
+            "description": "Observation."
           },
           "gt0009": {
             "id": "gt0009",
             "text": "Ångest",
-            "description": "*(en) Level of anxiety."
+            "description": "Level of anxiety."
           },
           "gt0010": {
             "id": "gt0010",
             "text": "Psykomotorisk oro",
-            "description": "*(en) Observation."
+            "description": "Observation."
           },
           "gt0011": {
             "id": "gt0011",
             "text": "Taktila förändringar",
-            "description": "*(en) Sample questions - Have you any itching, pins and needles sensations, any burning, any numbness or do you feel\nbugs crawling on or under your skin?"
+            "description": "Sample questions - Have you any itching, pins and needles sensations, any burning, any numbness or do you feel\nbugs crawling on or under your skin?"
           },
           "gt0012": {
             "id": "gt0012",
             "text": "Hörselförändringar",
-            "description": "*(en) Sample questions - Are you more aware of sounds around you? Are they harsh? Do they frighten you? Are you hearing anything that is disturbing to you? "
+            "description": "Sample questions - Are you more aware of sounds around you? Are they harsh? Do they frighten you? Are you hearing anything that is disturbing to you? "
           },
           "gt0013": {
             "id": "gt0013",
             "text": "Synförändringar",
-            "description": "*(en) Sample questions - Does the light appear to be too bright? Is its colour different? Does it hurt your eyes? Are you\n seeing anything that is disturbing to you? "
+            "description": "Sample questions - Does the light appear to be too bright? Is its colour different? Does it hurt your eyes? Are you\n seeing anything that is disturbing to you? "
           },
           "gt0014": {
             "id": "gt0014",
             "text": "Huvudvärk",
-            "description": "*(en) Do not rate for dizziness or lightheadedness. Sample questions - Does your head feel\ndifferent? Does it feel like there is a band around your head?"
+            "description": "Do not rate for dizziness or lightheadedness. Sample questions - Does your head feel\ndifferent? Does it feel like there is a band around your head?"
           },
           "gt0015": {
             "id": "gt0015",
             "text": "Orienteringsgrad",
-            "description": "*(en) Sample questions - What day is this? Where are you? Who am I?"
+            "description": "Sample questions - What day is this? Where are you? Who am I?"
           },
           "gt0024": {
             "id": "gt0024",
             "text": "Total poäng",
-            "description": "*(en) Sum of all factors"
+            "description": "Sum of all factors"
           },
           "gt0036": {
             "id": "gt0036",
             "text": "Beräkna total poäng"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Grad av abstinens",
+            "description": "Severity of alcohol withdrawal based on assessment of score generated in accordance with CIWA-Ar."
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "CDS grad av abstinens - lindrig",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "CDS grad av abstinens - måttlig",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "CDS grad av abstinens - svår",
+            "description": ""
           }
         }
       },
@@ -267,6 +330,23 @@
           "gt0036": {
             "id": "gt0036",
             "text": "Calculate total score"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Alcohol withdrawal",
+            "description": "Severity of alcohol withdrawal based on assessment of score generated in accordance with CIWA-Ar."
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "CDS alcohol withdrawal - mild"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "CDS alcohol withdrawal - moderate"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "CDS alcohol withdrawal - severe"
           }
         }
       }

@@ -38,6 +38,7 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 15
+      gt0041|YMRS assessment: 0|local::at0003|Hypomania|
 
 
 - id: case_4
@@ -58,6 +59,7 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 30
+      gt0041|YMRS assessment: 1|local::at0004|Moderate mania|
 
 - id: case_5
   input:
@@ -76,6 +78,7 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 45
+      gt0041|YMRS assessment: 2|local::at0005|Severe mania|
 
 - id: case_6
   input:
@@ -94,3 +97,4 @@ test_cases:
   expected_output:
     1:
       gt0026|Total score: 60
+      gt0041|YMRS assessment: 2|local::at0005|Severe mania|
