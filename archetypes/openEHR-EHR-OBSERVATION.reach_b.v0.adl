@@ -116,39 +116,39 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Sex">
-					description = <"*">
+					description = <"">
 				>
 				["at0005"] = <
 					text = <"Female">
-					description = <"*">
+					description = <"">
 				>
 				["at0006"] = <
 					text = <"Male">
-					description = <"*">
+					description = <"">
 				>
 				["at0007"] = <
 					text = <"Age (years)">
-					description = <"*">
+					description = <"">
 				>
 				["at0008"] = <
 					text = <"30–34">
-					description = <"*">
+					description = <"">
 				>
 				["at0009"] = <
 					text = <"35–39">
-					description = <"*">
+					description = <"">
 				>
 				["at0010"] = <
 					text = <"40–44">
-					description = <"*">
+					description = <"">
 				>
 				["at0011"] = <
 					text = <"45–49">
-					description = <"*">
+					description = <"">
 				>
 				["at0012"] = <
 					text = <"50–54">
-					description = <"*">
+					description = <"">
 				>
 				["at0013"] = <
 					text = <"55–59">
@@ -156,7 +156,7 @@ ontology
 				>
 				["at0014"] = <
 					text = <"60–65">
-					description = <"*">
+					description = <"">
 				>
 				["at0015"] = <
 					text = <"ALT (U/L)">
@@ -164,15 +164,15 @@ ontology
 				>
 				["at0016"] = <
 					text = <"<15">
-					description = <"*">
+					description = <"">
 				>
 				["at0017"] = <
 					text = <"15-44">
-					description = <"*">
+					description = <"">
 				>
 				["at0018"] = <
 					text = <"≥45">
-					description = <"*">
+					description = <"">
 				>
 				["at0019"] = <
 					text = <"HBeAg">
@@ -180,11 +180,11 @@ ontology
 				>
 				["at0020"] = <
 					text = <"Negative">
-					description = <"*">
+					description = <"">
 				>
 				["at0021"] = <
 					text = <"Positive">
-					description = <"*">
+					description = <"">
 				>
 				["at0022"] = <
 					text = <"Hepatitis B virus DNA level (copies/mL)">
@@ -192,11 +192,11 @@ ontology
 				>
 				["at0023"] = <
 					text = <"<300 (undetectable)">
-					description = <"*">
+					description = <"">
 				>
 				["at0024"] = <
 					text = <"300–9,999">
-					description = <"*">
+					description = <"">
 				>
 				["at0025"] = <
 					text = <"10,000–99,999">
@@ -204,15 +204,15 @@ ontology
 				>
 				["at0026"] = <
 					text = <"100,000–999,999">
-					description = <"*">
+					description = <"">
 				>
 				["at0027"] = <
 					text = <"≥10⁶">
-					description = <"*">
+					description = <"">
 				>
 				["at0028"] = <
 					text = <"Total score">
-					description = <"*">
+					description = <"">
 				>
 			>
 		>
